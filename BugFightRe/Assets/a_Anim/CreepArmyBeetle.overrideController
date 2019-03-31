@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CreepArmyBeetle
+  m_Controller: {fileID: 9100000, guid: 2b4e86093ccedd54da8c91976846fd57, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 78678e40d2fe3cc47a356490e74643ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b70429a708d2cff4487accf296d29168, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: afa491fd006f70f45bb3f0a4df4fce60, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 037cb63ad2b28d647acfd9724445f480, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e84fc50137cb87a4c8f54f620aecc4ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: de6eecf80f6d75f44a3a8403a805cecd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2934453cecf04c84b8096c9a1fa82d6b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed42f9e3b8838ca41b9d059bede6e77f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b12e15c64f44074d8e56a2d086e855c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 73a0095c76f15494f83413a752d7f099, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 04929fafd8b5f314eb5d0ed2197a392f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6222d3736b1ccf04c85b92f204f7b40b, type: 2}

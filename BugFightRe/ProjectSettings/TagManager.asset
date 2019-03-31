@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Unit
+  - Structure
+  - LeftCreep
+  - RightCreep
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - LeftUnit
+  - RightUnit
+  - Ground
+  - LeftStructure
+  - RightStructure
+  - MiniMapRender
+  - PlayerHero
+  - EnemyHero
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Log
+    uniqueID: 1952464207
+    locked: 0
+  - name: Shadow
+    uniqueID: 34929315
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Nexus
+    uniqueID: 2740196049
+    locked: 0
+  - name: WorldUi
+    uniqueID: 1717586649
+    locked: 0
