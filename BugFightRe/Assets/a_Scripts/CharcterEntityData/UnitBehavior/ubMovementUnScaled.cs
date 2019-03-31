@@ -1,14 +1,14 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class ubMovement :myUnitBehavior
+public class ubMovementUnScaled : myUnitBehavior
 {
     public float myMovementSpeed { get; set; }
- 
+
     Vector3 _MoveDir = Vector3.right;
 
- 
+
 
     public override void SetInstance()
     {
@@ -48,11 +48,11 @@ public class ubMovement :myUnitBehavior
     //프레임마다 계속 처넣고있음
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
+        GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
+        GameManager.myInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
     }
 }

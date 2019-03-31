@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneForceMove : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-    public int SceneIndex = 2;
-    public mySceneManager mySceneManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +13,6 @@ public class SceneForceMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            mySceneManager.MoveScene(SceneIndex);
-        }
+        
     }
 }

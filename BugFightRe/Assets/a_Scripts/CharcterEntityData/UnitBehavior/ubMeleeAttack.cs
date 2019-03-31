@@ -88,13 +88,13 @@ public class ubMeleeAttack : myUnitBehavior
 
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddTickToManager(FixedTickFloat);
+        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
      
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveTickFromManager(FixedTickFloat);
+        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
      
     }
 

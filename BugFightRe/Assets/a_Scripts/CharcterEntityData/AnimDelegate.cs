@@ -8,19 +8,22 @@ public class AnimDelegate : myUnitBehavior
 
     public Animator myAnim { get => _anim; set => _anim = value; }
 
-    public override void AddTickToManager()
-    {
-       
-    }
+  
 
     public override void FixedTickFloat(float _tick)
     {
        
     }
 
+    public override void AddTickToManager()
+    {
+        GameManager.myInstance.AddOnlyScaleTickToManager(SetAnimSpeedScale);
+    }
+
     public override void RemoveTickFromManager()
     {
-     
+        GameManager.myInstance.RemoveOnlyScaleTickFromManager(SetAnimSpeedScale);
+        
     }
 
     public override void SetInstance()
@@ -31,6 +34,8 @@ public class AnimDelegate : myUnitBehavior
 
 
         SetDelegateToMainUnitClass();
+
+        AddTickToManager();
     }
     void SetDelegateToMainUnitClass()
     {
@@ -41,6 +46,8 @@ public class AnimDelegate : myUnitBehavior
         myUnit.myOnKillAction += ResetTriggerAll;
         myUnit.myOnWalking += SetBoolOnStartWalk;
         myUnit.myOnNotWalking += SetBoolOnStopWalk;
+
+      
     }
 
     public void SetBoolOnStartWalk()
@@ -67,5 +74,9 @@ public class AnimDelegate : myUnitBehavior
     {
         myAnim.ResetTrigger("Attack1");
         myAnim.ResetTrigger("OnDamage");
+    }
+    public void SetAnimSpeedScale(float _v)
+    {
+        myAnim.speed = _v;
     }
 }

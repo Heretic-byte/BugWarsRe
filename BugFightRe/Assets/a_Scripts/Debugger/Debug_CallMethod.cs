@@ -28,6 +28,15 @@ public class Debug_CallMethod : MonoBehaviour
     {
         Debug.Log("Hash:" + ColliderDicSingletone.myInstance.myColliderDamageAble[CheckUnitHash].name);
     }
+
+
+    public void ChangeScaleTime(float _v)
+    {
+        TimeManager.myInstance.SetCustomTimeScale = _v;
+
+        TempleManager.myInstance.myMonsterTemple.SetCreepLoopTimeScale(_v);
+        TempleManager.myInstance.myPlayerTemple.SetCreepLoopTimeScale(_v);
+    }
 }
 
 

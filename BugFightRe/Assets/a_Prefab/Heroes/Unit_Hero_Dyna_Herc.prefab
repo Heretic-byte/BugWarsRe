@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 3139949643550616634}
   - component: {fileID: 1346232400}
   - component: {fileID: 1346232404}
-  - component: {fileID: 1346232402}
   - component: {fileID: 1346232401}
   - component: {fileID: 1462303631}
+  - component: {fileID: 266504092960421293}
   m_Layer: 14
   m_Name: Unit_Hero_Dyna_Herc
   m_TagString: Unit
@@ -177,18 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7466ae98353f7240a941817765d637e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1346232402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6826963051989170208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c8bea4701f925429308ef6e7f38e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1346232401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +205,18 @@ MonoBehaviour:
   _enemyHeroLayer:
     serializedVersion: 2
     m_Bits: 32768
+--- !u!114 &266504092960421293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826963051989170208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38531d1fa3edff34a8960e847cd82e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7927682901041055310
 GameObject:
   m_ObjectHideFlags: 0

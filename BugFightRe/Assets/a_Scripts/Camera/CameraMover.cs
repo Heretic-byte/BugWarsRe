@@ -63,12 +63,12 @@ public class CameraMover : MonoBehaviour, IfixedTickFloat
    
     public void AddTickToManager()
     {
-        GameManager.myInstance.AddTickToManager(FixedTickFloat);
+        GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);
     }
 
     public void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveTickFromManager(FixedTickFloat);
+        GameManager.myInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
     }
 
 }

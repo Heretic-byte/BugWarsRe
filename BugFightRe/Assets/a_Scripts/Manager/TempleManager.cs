@@ -13,20 +13,20 @@ public class TempleManager : Singleton<TempleManager>
     public SpawnTemple myMonsterTemple { get => _monsterTemple;  }
 
     [SerializeField]
-    private Transform _playerHeroTemple;
-    public Transform myPlayerHeroTemple { get => _playerHeroTemple; }
+    private Transform _playerHeroTempleTrans;
+    public Transform myPlayerHeroTempleTrans { get => _playerHeroTempleTrans; }
 
     [SerializeField]
-    private Transform _monsterHeroTemple;
-    public Transform myMonsterHeroTemple { get => _monsterHeroTemple; }
+    private Transform _monsterHeroTempleTrans;
+    public Transform myMonsterHeroTempleTrans { get => _monsterHeroTempleTrans; }
 
     [SerializeField]
-    private Transform[] _playerHeroTemplePos;
-    public Transform[] myPlayerHeroTemplePos { get => _playerHeroTemplePos; }
+    private Transform[] _playerHeroPos;
+    public Transform[] myPlayerHeroPos { get => _playerHeroPos; }
 
     [SerializeField]
-    private Transform[] _monsterHeroTemplePos;
-    public Transform[] myMonsterHeroTemplePos { get => _monsterHeroTemplePos; }
+    private Transform[] _monsterHeroPos;
+    public Transform[] myMonsterHeroPos { get => _monsterHeroPos; }
 
 
 

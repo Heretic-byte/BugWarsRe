@@ -26,7 +26,7 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
     {
         for (int i = 0; i < HeroStageManager.myInstance.mySelectedHero.Length; i++)
         {
-            var CreatedHero = Instantiate(HeroStageManager.myInstance.mySelectedHero[i], TempleManager.myInstance.myPlayerHeroTemplePos[i].position,Quaternion.identity, myTans);
+            var CreatedHero = Instantiate(HeroStageManager.myInstance.mySelectedHero[i], TempleManager.myInstance.myPlayerHeroPos[i].position,Quaternion.identity, myTans);
             var HeroUnit = CreatedHero.GetComponent<UnitHero>();
             AddPlayerHero(CreatedHero.GetInstanceID(), HeroUnit);
 

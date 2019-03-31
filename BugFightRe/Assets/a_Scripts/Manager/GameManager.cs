@@ -16,27 +16,50 @@ public class GameManager : Singleton<GameManager>
     private SpawnTemple _enemyTemple;
     public SpawnTemple myEnemyTemple { get => _enemyTemple; set => _enemyTemple = value; }
 
-    event deleUpdateTick _myDeleUpdateTick;
-
+    event deleUpdateTick _myDeleScaledUpdateTick;
+    event deleUpdateTick _myDeleUnScaledUpdateTick;
+    event deleUpdateTick _myDeleScaleOnlyUpateTick;
     UnityAction _onGameEnd;
     public UnityAction myOnGameEnd { get => _onGameEnd; set => _onGameEnd = value; }
   
   
-    public void AddTickToManager(deleUpdateTick _deleUpdateTick)
+    public void AddScaledTickToManager(deleUpdateTick _deleUpdateTick)
     {
-        _myDeleUpdateTick += _deleUpdateTick;
+        _myDeleScaledUpdateTick += _deleUpdateTick;
     }
 
-    public void RemoveTickFromManager(deleUpdateTick _deleUpdateTick)
+    public void RemoveScaledTickFromManager(deleUpdateTick _deleUpdateTick)
     {
-        _myDeleUpdateTick-= _deleUpdateTick;
+        _myDeleScaledUpdateTick-= _deleUpdateTick;
+    }
+
+    public void AddUnScaledTickToManager(deleUpdateTick _deleUpdateTick)
+    {
+        _myDeleUnScaledUpdateTick += _deleUpdateTick;
+    }
+
+    public void RemoveUnScaledTickFromManager(deleUpdateTick _deleUpdateTick)
+    {
+        _myDeleUnScaledUpdateTick -= _deleUpdateTick;
+    }
+    public void AddOnlyScaleTickToManager(deleUpdateTick _deleUpdateTick)
+    {
+        _myDeleScaleOnlyUpateTick += _deleUpdateTick;
+    }
+
+    public void RemoveOnlyScaleTickFromManager(deleUpdateTick _deleUpdateTick)
+    {
+        _myDeleScaleOnlyUpateTick -= _deleUpdateTick;
     }
 
     private void FixedUpdate()
     {
-        float tick = Time.fixedDeltaTime;
-        _myDeleUpdateTick?.Invoke(tick);
-
+        float ScaleOnly = TimeManager.myInstance.GetTimeScaleOnly;
+        _myDeleScaleOnlyUpateTick?.Invoke(ScaleOnly);
+        float ScaledTick = TimeManager.myInstance.GetScaledDeltaTimeTick;
+        _myDeleScaledUpdateTick?.Invoke(ScaledTick);
+        float unScaledTick = TimeManager.myInstance.GetUnScaledDeltaTimeTick;
+        _myDeleUnScaledUpdateTick?.Invoke(unScaledTick);
     }
 
     private void OnLevelWasLoaded(int level)

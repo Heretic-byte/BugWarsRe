@@ -61,12 +61,12 @@ public class ubCheckBlockAlly : myUnitBehavior
     //프레임마다 계속 처넣고있음
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddTickToManager(FixedTickFloat);
+        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveTickFromManager(FixedTickFloat);
+        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
     }
     public void SetNullTarget()
     {

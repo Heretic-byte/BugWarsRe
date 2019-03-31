@@ -16,7 +16,8 @@ public abstract class DamageAble : MonoBehaviour
     public event OnDamageBySomeone myOnDamageBySomeone;
     public event OnKillFromAttackerDele myOnKillFromAttacker;
     public event UnityAction myOnKillAction;
-   
+  
+
     public bool myIsDead { get => _isDead; set => _isDead = value; }
     protected bool _isDead = false;
     [SerializeField]
@@ -49,6 +50,7 @@ public abstract class DamageAble : MonoBehaviour
 
         myManagerColider = ColliderDicSingletone.myInstance;
         SetColliderDic();
+      
     }
     public void SetColliderDic()
     {

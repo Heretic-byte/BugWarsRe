@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-public class SpawnTemple : MonoBehaviour,IgameEnd
+public class SpawnTemple : MonoBehaviour, IgameEnd
 {
     #region VarAndProperties
 
@@ -62,31 +62,43 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
 
     Dictionary<int, UnitCreep> _creepEntityDic = new Dictionary<int, UnitCreep>();
     public Dictionary<int, UnitCreep> myCreepEntityDic { get => _creepEntityDic; set => _creepEntityDic = value; }
-  
-  
+
 
     GameObject myObj { get; set; }
     Transform myTrans { get; set; }
-    
+
     Dictionary<int, Nexus> _laneAndNexus = new Dictionary<int, Nexus>();
     public Dictionary<int, Nexus> myLaneAndNexus { get => _laneAndNexus; set => _laneAndNexus = value; }
-  
+
     bool _isILose = false;
     public bool myIsILose { get => _isILose; set => _isILose = value; }
+
+    Sequence _spawnCreepSeq;
+    public Sequence mySpawnCreepSeq { get => _spawnCreepSeq; private set => _spawnCreepSeq = value; }
    
+    Sequence _spawnCreepUiShowSeq;
+    public Sequence mySpawnCreepUiShowSeq { get => _spawnCreepUiShowSeq; set => _spawnCreepUiShowSeq = value; }
+
+
+
     #endregion
     void Start()
     {
         myObj = gameObject;
         myTrans = transform;
-        
+
         CreatePoolObj();
         SetDeleOnGameEnd();
         SetShuffleArray();
         SetLaneLoadAndNexus();
         SetNexusKillDelegate();
-        StartCoroutine("SpawnCreep", myEachSpawnDelay);
+        //StartCoroutine("SpawnCreep", myEachSpawnDelay);
 
+        mySpawnCreepSeq = DOTween.Sequence();
+        mySpawnCreepUiShowSeq = DOTween.Sequence();
+
+        CreepSpawnLoops();
+        CreepSpawnUiShowLoops();
         mySpawnTermUi.fillAmount = 0f;
     }
 
@@ -103,7 +115,6 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
     void ShuffleArrayForRandomLine(int loopCount)
     {
         var count = myCreepNexus.Length;
-
         for (int j = 0; j < loopCount; j++)
         {
             for (int i = 0; i < count; i++)
@@ -112,10 +123,8 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
                 var temp = myCreepLineShuffleArray[count - 1];
                 myCreepLineShuffleArray[count - 1] = myCreepLineShuffleArray[rand];
                 myCreepLineShuffleArray[rand] = temp;
-
             }
         }
-
     }
     void CreatePoolObj()
     {
@@ -128,41 +137,90 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
             myPoolingQueue.Enqueue(CreatedObj);
             var CreatedEntity = CreatedObj.GetComponent<UnitCreep>();
             myCreepEntityDic.Add(CreatedObj.GetInstanceID(), CreatedEntity);
-
             CreatedEntity.OnEnqueueMySelfDele += EnqueueCreep;
             CreatedObj.SetActive(false);
-
-
         }
-
     }
-    IEnumerator SpawnCreep(float _spawnDelay)
+    //IEnumerator SpawnCreep(float _spawnDelay)
+    //{
+    //    while (true)
+    //    {
+
+
+    //        ShowSpawnTermUi(_spawnDelay);
+    //        ShuffleArrayForRandomLine(3);
+
+    //        yield return new WaitForSeconds(myUiShowDelay);
+
+    //        ShowSpawnCreepLineUi();
+
+    //        yield return new WaitForSeconds(_spawnDelay - myUiShowDelay);
+
+    //        for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
+    //        {
+    //            DequeueCreep(myCreepNexus[myCreepLineShuffleArray[i]].GetSpawnPos());
+    //        }
+
+    //        HideAllSpawnCreepUi();
+    //    }
+    //}
+    //dg
+   
+    public Sequence CreepSpawnLoops()
     {
-        while (true)
-        {
-            ShowSpawnTermUi(_spawnDelay);
-            ShuffleArrayForRandomLine(3);
 
-            yield return new WaitForSeconds(myUiShowDelay);
-            ShowSpawnCreepLineUi();
+        return mySpawnCreepSeq.SetLoops(-1)
+            .AppendCallback(
+              delegate
+              {
+                  SetCreepLoopTimeScale(TimeManager.myInstance.GetTimeScaleOnly);
+              })
+               .AppendCallback(
+              delegate
+              {
+                  ShuffleArrayForRandomLine(3);
+              })
+              .Append(
 
-            yield return new WaitForSeconds(_spawnDelay - myUiShowDelay);
-
-            for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
+                  ShowSpawnTermUi()
+              )
+             
+             .AppendCallback(
+            delegate
             {
-                DequeueCreep(myCreepNexus[myCreepLineShuffleArray[i]].GetSpawnPos());
-            }
-
-            HideAllSpawnCreepUi();
-        }
+                for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
+                {
+                    DequeueCreep(myCreepNexus[myCreepLineShuffleArray[i]].GetSpawnPos());
+                }
+            })
+             .AppendCallback(
+            delegate
+            {
+                HideAllSpawnCreepUi();
+            });       
     }
-    private void ShowSpawnCreepLineUi()
+     Sequence CreepSpawnUiShowLoops()
     {
-        for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
-        {
-            myLineCreepCheckUiObj[myCreepLineShuffleArray[i]].SetActive(true);
-        }
+        return mySpawnCreepUiShowSeq.SetLoops(-1).PrependInterval(_uiShowDelay)
+            .AppendCallback(
+            delegate
+            {
+                for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
+                {
+                    myLineCreepCheckUiObj[myCreepLineShuffleArray[i]].SetActive(true);
+                }
+            })
+            .AppendInterval(_EachSpawnDelay-_uiShowDelay);
+        //둘이 딜레이가 달라서 생기는일
     }
+
+    public void SetCreepLoopTimeScale(float _v)
+    {
+        mySpawnCreepSeq.timeScale = _v;
+        mySpawnCreepUiShowSeq.timeScale = _v;
+    }
+
+
     void HideAllSpawnCreepUi()
     {
         for (int i = 0; i < myCreepNexus.Length; i++)
@@ -205,7 +263,8 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
     }
     public void SetDeleOnGameEnd()
     {
-        GameManager.myInstance.myOnGameEnd += delegate { StopCoroutine("SpawnCreep"); };
+        //GameManager.myInstance.myOnGameEnd += delegate { StopCoroutine("SpawnCreep"); };
+        GameManager.myInstance.myOnGameEnd += delegate { mySpawnCreepSeq.Kill();mySpawnCreepUiShowSeq.Kill(); };
     }
     void SetLaneLoadAndNexus()
     {
@@ -242,9 +301,9 @@ public class SpawnTemple : MonoBehaviour,IgameEnd
         GameManager.myInstance.FinishGame();
     }
 
-    void ShowSpawnTermUi(float _dur)
+    Tweener ShowSpawnTermUi()
     {
-        mySpawnTermUi.DOFillAmount(1, _dur)
+       return mySpawnTermUi.DOFillAmount(1, _EachSpawnDelay)
             .OnComplete
             (
             delegate {
