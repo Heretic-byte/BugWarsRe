@@ -92,8 +92,8 @@ GameObject:
   - component: {fileID: 1619233943}
   - component: {fileID: 1619233947}
   - component: {fileID: 1619233945}
-  - component: {fileID: 1619233944}
   - component: {fileID: 2077548911}
+  - component: {fileID: 2065124002698564695}
   m_Layer: 14
   m_Name: Unit_Hero_Moth_Vene
   m_TagString: Unit
@@ -189,18 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c8bea4701f925429308ef6e7f38e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1619233944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6101944861823034444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 318d91049b491bd47b4e89b69d12c791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2077548911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +205,18 @@ MonoBehaviour:
   _enemyHeroLayer:
     serializedVersion: 2
     m_Bits: 32768
+--- !u!114 &2065124002698564695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101944861823034444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cb58b2ffe911542911950792ca1aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8698598407077779869
 GameObject:
   m_ObjectHideFlags: 0
