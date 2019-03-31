@@ -1,0 +1,2 @@
+# BugWarsRe
+BugsWars in SmileGateRemaster
