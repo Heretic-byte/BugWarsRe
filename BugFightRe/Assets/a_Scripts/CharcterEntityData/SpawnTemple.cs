@@ -141,30 +141,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
             CreatedObj.SetActive(false);
         }
     }
-    //IEnumerator SpawnCreep(float _spawnDelay)
-    //{
-    //    while (true)
-    //    {
-
-
-    //        ShowSpawnTermUi(_spawnDelay);
-    //        ShuffleArrayForRandomLine(3);
-
-    //        yield return new WaitForSeconds(myUiShowDelay);
-
-    //        ShowSpawnCreepLineUi();
-
-    //        yield return new WaitForSeconds(_spawnDelay - myUiShowDelay);
-
-    //        for (int i = 0; i < myCreepSpawnCountAtOnce; i++)
-    //        {
-    //            DequeueCreep(myCreepNexus[myCreepLineShuffleArray[i]].GetSpawnPos());
-    //        }
-
-    //        HideAllSpawnCreepUi();
-    //    }
-    //}
-    //dg
+  
    
     public Sequence CreepSpawnLoops()
     {
