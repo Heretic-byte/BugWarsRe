@@ -4,17 +4,13 @@ using UnityEngine;
 
 public  class Serializer :MonoBehaviour
 {
-    public Transform[] transs;
-    public Nexus target;
+    public Transform transs;
+    public ubRangeAttack target;
 
     [ContextMenu("SavePosition")]
     public void Test()
     {
-
-        for(int i=0; i < target.mySpawnPointArray.Length;i++)
-        {
-            target.mySpawnPointArray[i] = transs[i].localPosition;
-        }
+       target.myBulletShootingPos = transs.localPosition;
     }
 
 

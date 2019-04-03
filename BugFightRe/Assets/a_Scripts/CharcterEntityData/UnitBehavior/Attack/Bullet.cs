@@ -4,18 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+
+
+
 public class Bullet : Projectile
 {
-    public Transform myTargetTrans { get; private set; }
-    public float myBulletDamage { get => _BulletDamage; set => _BulletDamage = value; }
-    public string myTargetTag { get => _TargetTag; set => _TargetTag = value; }
-    public DamageAble myTheBulletCaster { get => _theBulletCaster; set => _theBulletCaster = value; }
+    public DamageAble myTargetUnit { get; private set; }
 
     float _BulletDamage;
-    string _TargetTag;
-    DamageAble _theBulletCaster;
+    public float myBulletDamage { get => _BulletDamage; set => _BulletDamage = value; }
 
-    public UnityAction _backToQue;
+    int _TargetHash;
+    public int myTargetHash { get => _TargetHash; set => _TargetHash = value; }
+
+    Unit _theBulletCaster;
+    public Unit myTheBulletCaster { get => _theBulletCaster; set => _theBulletCaster = value; }
+
+    public event UnityAction _backToQue;
+    public event UnityAction _OnBulletTrigger;
+
+    Sequence _timerCounter = null;
+    public Sequence myTimerCounter { get => _timerCounter; set => _timerCounter = value; }
+
+    [SerializeField]
+    private float _bulletMaxLifeDur = 2f;
+    public float myBulletMaxLifeDur { get => _bulletMaxLifeDur; set => _bulletMaxLifeDur = value; }
 
     public override void AddTickToManager()
     {
@@ -25,7 +38,7 @@ public class Bullet : Projectile
     public override void FixedTickFloat(float _tick)
     {
 
-        myTrans.position = Vector3.MoveTowards(myTrans.position, myTargetTrans.position, myMoveSpeed * _tick);
+        myTrans.position = Vector3.MoveTowards(myTrans.position, myTargetUnit.myTrans.position, myMoveSpeed * _tick);
     }
 
     public override void RemoveTickFromManager()
@@ -34,42 +47,45 @@ public class Bullet : Projectile
     }
 
 
-    public void SetInstance(string _tag, UnityAction _onBack)
+    public void SetInstance(UnityAction _onBulletTriggered, UnityAction _onBack)
     {
-        myTargetTag = _tag;
+        _OnBulletTrigger += _OnBulletTrigger;
         _backToQue += _onBack;
-        _backToQue += OnEnqueue;
+       
     }
-    public  void OnDequeue(DamageAble _myTheBulletCaster, Transform _targetTrans,float _damage)
+    public  void BulletShooting( DamageAble _targetUnit)
     {
-        myTheBulletCaster = _myTheBulletCaster;
-        myBulletDamage = _damage;
-        myTargetTrans = _targetTrans;
-        AddTickToManager();
+        if(myTimerCounter!=null)
+        {
+            myTimerCounter.Kill();
+        }
 
-        //n초후에 총알 날아간거 돌아오게
-        //이후 다른풀링도 배열로 바꿔볼것
+        myTargetUnit = _targetUnit;
+        myTargetHash = myTargetUnit.myCollider2D.GetInstanceID();
+        AddTickToManager();
+        StartCountAutoEnque();
     }
+
+    private void StartCountAutoEnque()
+    {
+        myTimerCounter = DOTween.Sequence();
+        myTimerCounter.SetDelay(myBulletMaxLifeDur).OnComplete(OnEnqueue);
+    }
+
     public  void OnEnqueue()
     {
+        _backToQue?.Invoke();
         RemoveTickFromManager();
+       
     }
 
     protected override void OnTriggerEnter2D(Collider2D coll)
     {
-       if(coll.CompareTag(myTargetTag))
+       if(coll.GetInstanceID()==myTargetHash)//다른타겟은 맞으면 안됨
         {
-            DealDamageToTarget(coll);
-            _backToQue?.Invoke();
+            _OnBulletTrigger?.Invoke();
+             
+            OnEnqueue();
         }
     }
-
-   
-
-    protected void DealDamageToTarget(Collider2D _coll)
-    {
-        ColliderDicSingletone.myInstance.myColliderDamageAble[_coll.GetInstanceID()].GetPhysicalDamage(myBulletDamage, myTheBulletCaster);
-    }
-    
-
 }

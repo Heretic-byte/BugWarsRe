@@ -6,11 +6,11 @@ public class ubRangeAttackScaled : ubRangeAttack
 {
     public override void AddTickToManager()
     {
-        throw new System.NotImplementedException();
+        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        throw new System.NotImplementedException();
+        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
     }
 }

@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1619233947}
   - component: {fileID: 1619233945}
   - component: {fileID: 2077548911}
-  - component: {fileID: 2065124002698564695}
+  - component: {fileID: 5920558957845672515}
   m_Layer: 14
   m_Name: Unit_Hero_Moth_Vene
   m_TagString: Unit
@@ -205,7 +205,7 @@ MonoBehaviour:
   _enemyHeroLayer:
     serializedVersion: 2
     m_Bits: 32768
---- !u!114 &2065124002698564695
+--- !u!114 &5920558957845672515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,9 +214,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6101944861823034444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0cb58b2ffe911542911950792ca1aa3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b926f88444d66d4b8d02b5b5132b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 5487554799148875753, guid: bfc2c5827a407f44cb3276de39888bd4,
+    type: 3}
+  _bulletShootingPos: {x: 1.45, y: 2.47, z: 0}
+  _bulletMaxCount: 10
 --- !u!1 &8698598407077779869
 GameObject:
   m_ObjectHideFlags: 0

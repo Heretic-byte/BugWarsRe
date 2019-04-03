@@ -2,46 +2,108 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public abstract class ubRangeAttack : ubAttackBase
 {
     [SerializeField]
     private GameObject _bulletPrefab;
     public GameObject myBulletPrefab { get => _bulletPrefab; }
-   
 
-    //총알생성 및 오브젝트풀링필요
+    [Header("오른쪽이 디폴트")]
     [SerializeField]
     private Vector3 _bulletShootingPos;
-    public Vector3 BulletShootingPos { get => _bulletShootingPos; }
+    public Vector3 myBulletShootingPos { get => _bulletShootingPos; set => _bulletShootingPos = value; }
+
+    int _currentBulletIndex = 0;
+    public int myCurrentBulletIndex { get => _currentBulletIndex; set => _currentBulletIndex = value; }
 
     [SerializeField]
     private  int _bulletMaxCount=10;
+    public int myBulletMaxCount { get => _bulletMaxCount; set => _bulletMaxCount = value; }
 
     GameObject[] _bulletsArray;
+    public GameObject[] myBulletsArray { get => _bulletsArray; set => _bulletsArray = value; }
+
+    Bullet[] _bullets;
+    public Bullet[] myBullets { get => _bullets; set => _bullets = value; }
 
     public override void SetInstance()
     {
         base.SetInstance();
         CreateBullet();
+      
+    }
+    protected override void SetTranslateDir()
+    {
+        if (!myUnit.myIsFacingRight)
+        {
+            _attackDir = Vector3.left;
+            _bulletShootingPos.x *= -1;
+        }
+        else
+        {
+            _attackDir = Vector3.right;
+
+        }
     }
 
     private void CreateBullet()
     {
         var _bulletHolder = new GameObject(myUnit.myObj.name + "'s BulletHolder");
-        _bulletsArray = new GameObject[_bulletMaxCount];
+        myBulletsArray = new GameObject[myBulletMaxCount];
+        myBullets = new Bullet[myBulletMaxCount];
 
-        for(int i=0; i< _bulletsArray.Length; i++)
+        for (int i=0; i< myBulletsArray.Length; i++)
         {
-            _bulletsArray[i] = Instantiate(myBulletPrefab, myTrans.position, Quaternion.identity);
+            myBulletsArray[i] = Instantiate(myBulletPrefab, myTrans.position, Quaternion.identity, _bulletHolder.transform);
+            myBullets[i]= myBulletsArray[i].GetComponent<Bullet>();
+            myBullets[i].SetInstance(OnBulletDealDamage, delegate { myBulletsArray[i].SetActive(false); });
+            myBulletsArray[i].SetActive(false);
         }
-
     }
 
     protected override void TryAttack()
     {
-       
+        rayOrigin = myTrans.position + myUnit.myRayCastOffset;
+        targetHitten = Physics2D.Raycast(rayOrigin, _attackDir, myAttackRange, myUnit.myTargetLayers);
+
+        if (targetHitten.collider != null)
+        {
+            myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
+            myUnit.myAttackTarget.myOnKillFromAttacker += SetNullTargetFromTarget;
+        }
+        else
+        {
+            myUnit.myAttackTarget = null;
+            return;
+        }
 
 
+        if (_attackTimer > myAttackSpeed)
+        {
+            myUnit.myOnAttack?.Invoke();
+            _attackTimer = 0f;
+            ShootBullet();
+        }
     }
+
+    void ShootBullet()
+    {
+       myBulletsArray[myCurrentBulletIndex].SetActive(true);
+       myBullets[myCurrentBulletIndex].myTrans.position = myTrans.position + myBulletShootingPos;
+        myBullets[myCurrentBulletIndex].BulletShooting(myUnit.myAttackTarget);
+
+
+        myCurrentBulletIndex++;
+        if(myCurrentBulletIndex >= myBulletMaxCount)
+        {
+            myCurrentBulletIndex = 0;
+        }
+    }
+
+    void OnBulletDealDamage()
+    {
+        myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
+    }
+
 }

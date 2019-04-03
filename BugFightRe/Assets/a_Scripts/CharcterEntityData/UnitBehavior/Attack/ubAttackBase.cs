@@ -32,7 +32,7 @@ public abstract class ubAttackBase : myUnitBehavior
         myUnit.OnEnqueueAction += RemoveTickFromManager;
         myUnit.OnEnqueueAction += SetNullTarget;
     }
-   protected  void SetTranslateDir()
+   protected virtual void SetTranslateDir()
     {
         if (!myUnit.myIsFacingRight)
         {
