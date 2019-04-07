@@ -20,7 +20,7 @@ public class ubCheckBlockAlly : myUnitBehavior
 
         myUnit.OnDequeueAction += AddTickToManager;
         myUnit.OnEnqueueAction += RemoveTickFromManager;
-        myUnit.myOnKillAction += SetNullTarget;
+        myUnit.myOnGetKillAction += SetNullTarget;
     }
     public void SetRayCastDir()
     {

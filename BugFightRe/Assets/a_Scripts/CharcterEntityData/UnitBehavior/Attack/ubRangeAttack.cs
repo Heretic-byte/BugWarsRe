@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 public abstract class ubRangeAttack : ubAttackBase
 {
     [SerializeField]
@@ -26,12 +27,14 @@ public abstract class ubRangeAttack : ubAttackBase
 
     Bullet[] _bullets;
     public Bullet[] myBullets { get => _bullets; set => _bullets = value; }
-
+    //
+    
     public override void SetInstance()
     {
         base.SetInstance();
         CreateBullet();
-      
+        //
+    
     }
     protected override void SetTranslateDir()
     {
@@ -57,7 +60,7 @@ public abstract class ubRangeAttack : ubAttackBase
         {
             myBulletsArray[i] = Instantiate(myBulletPrefab, myTrans.position, Quaternion.identity, _bulletHolder.transform);
             myBullets[i]= myBulletsArray[i].GetComponent<Bullet>();
-            myBullets[i].SetInstance(OnBulletDealDamage, delegate { myBulletsArray[i].SetActive(false); });
+            myBullets[i].SetInstance(myUnit,OnBulletDealDamage);
             myBulletsArray[i].SetActive(false);
         }
     }
@@ -70,7 +73,7 @@ public abstract class ubRangeAttack : ubAttackBase
         if (targetHitten.collider != null)
         {
             myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
-            myUnit.myAttackTarget.myOnKillFromAttacker += SetNullTargetFromTarget;
+           
         }
         else
         {
@@ -81,18 +84,26 @@ public abstract class ubRangeAttack : ubAttackBase
 
         if (_attackTimer > myAttackSpeed)
         {
+            
             myUnit.myOnAttack?.Invoke();
-            _attackTimer = 0f;
-            ShootBullet();
-        }
-    }
 
+        }
+
+    }
+    public override void Attack()
+    {
+
+        _attackTimer = 0f;
+
+        ShootBullet();
+    }
+ 
     void ShootBullet()
     {
        myBulletsArray[myCurrentBulletIndex].SetActive(true);
-       myBullets[myCurrentBulletIndex].myTrans.position = myTrans.position + myBulletShootingPos;
+       myBullets[myCurrentBulletIndex].myTrans.position = myTrans.TransformPoint(  myBulletShootingPos);
         myBullets[myCurrentBulletIndex].BulletShooting(myUnit.myAttackTarget);
-
+        Debug.Log("ShootBulletPos_ myTransPos:" + myTrans.position + "_BulletShootingPos:" + myBulletShootingPos);
 
         myCurrentBulletIndex++;
         if(myCurrentBulletIndex >= myBulletMaxCount)

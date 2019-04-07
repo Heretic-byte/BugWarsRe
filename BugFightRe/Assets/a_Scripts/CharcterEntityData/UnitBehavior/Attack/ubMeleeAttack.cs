@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public abstract class ubMeleeAttack : ubAttackBase
 {
     protected override void TryAttack()
@@ -14,8 +14,7 @@ public abstract class ubMeleeAttack : ubAttackBase
         {
 
             myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
-            myUnit.myAttackTarget.myOnKillFromAttacker += SetNullTargetFromTarget;
-
+        
         }
         else
         {
@@ -26,11 +25,18 @@ public abstract class ubMeleeAttack : ubAttackBase
 
         if (_attackTimer > myAttackSpeed)
         {
-
-
+           
             myUnit.myOnAttack?.Invoke();
-            _attackTimer = 0f;
-            myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
+
+         
         }
     }
+   public override void Attack()
+    {
+        _attackTimer = 0f;
+       
+        myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
+
+    }
+
 }

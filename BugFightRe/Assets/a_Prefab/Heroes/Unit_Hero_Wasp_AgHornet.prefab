@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 6015427808182204016}
   - component: {fileID: 6015427808182204022}
   - component: {fileID: 6015427808182204021}
+  - component: {fileID: 6015427808182204019}
   m_Layer: 10
   m_Name: Model_AsianGiantHornet
   m_TagString: Untagged
@@ -933,6 +934,34 @@ MonoBehaviour:
   m_Bounds:
     m_Center: {x: 1.3282847, y: -1.4081135, z: 0}
     m_Extent: {x: 4.7406487, y: 5.136715, z: 0}
+--- !u!114 &6015427808182204019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015427808182204018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec7533972a7e4242ba1bf8c8ef17d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttackKeyFrameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 337403756425388817}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6100954619542072713
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +976,7 @@ GameObject:
   - component: {fileID: 910253880}
   - component: {fileID: 910253878}
   - component: {fileID: 1739552850}
-  - component: {fileID: 3164588547178940202}
+  - component: {fileID: 337403756425388817}
   m_Layer: 14
   m_Name: Unit_Hero_Wasp_AgHornet
   m_TagString: Unit
@@ -984,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IsFacingRight: 1
-  _stat: {fileID: 11400000, guid: 39df510fd5050d7408a438668098a8f4, type: 2}
+  _stat: {fileID: 11400000, guid: 8b603bf176b69d043b31a87245e59529, type: 2}
   _rayCastOffset: {x: 0, y: 0.2, z: 0}
   _targetLayers:
     serializedVersion: 2
@@ -1003,7 +1032,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.41464782, y: 1.31}
@@ -1059,7 +1088,7 @@ MonoBehaviour:
   _enemyHeroLayer:
     serializedVersion: 2
     m_Bits: 32768
---- !u!114 &3164588547178940202
+--- !u!114 &337403756425388817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1068,9 +1097,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6100954619542072713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0cb58b2ffe911542911950792ca1aa3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b926f88444d66d4b8d02b5b5132b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 3480535054345602705, guid: 9acf1e11105aa064babd2a3a401dfd50,
+    type: 3}
+  _bulletShootingPos: {x: 1.45, y: 2.47, z: 0}
+  _bulletMaxCount: 10
 --- !u!1 &8922990006543527992
 GameObject:
   m_ObjectHideFlags: 0

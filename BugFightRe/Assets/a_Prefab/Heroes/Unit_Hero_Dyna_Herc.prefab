@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.22213233, y: 1.31}
@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 7927682902279341023}
   - component: {fileID: 7927682902279341016}
   - component: {fileID: 7927682902279341017}
+  - component: {fileID: 7927682902279341019}
   m_Layer: 10
   m_Name: Model_DynaHercules
   m_TagString: Untagged
@@ -760,6 +761,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7927682902279341019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927682902279341018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec7533972a7e4242ba1bf8c8ef17d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttackKeyFrameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4623030056593184083}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &7927682902306916267
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public abstract class DamageAble : MonoBehaviour
 {
     public delegate void OnDamageFloatDele(float _damageTaken);
-    public delegate void OnDamageBySomeone(DamageAble _attacker);
-    public delegate void OnKillFromAttackerDele(DamageAble _attacker);
+    public delegate void OnDamageBySomeone(Unit _attacker);
+    public delegate void OnKillFromAttackerDele(Unit _attacker);
 
     public Transform myTrans { get ; set ; }
     public GameObject myObj { get ; set ; }
@@ -15,7 +15,7 @@ public abstract class DamageAble : MonoBehaviour
     public event OnDamageFloatDele myOnDamageFloat;
     public event OnDamageBySomeone myOnDamageBySomeone;
     public event OnKillFromAttackerDele myOnKillFromAttacker;
-    public event UnityAction myOnKillAction;
+    public event UnityAction myOnGetKillAction;
   
 
     public bool myIsDead { get => _isDead; set => _isDead = value; }
@@ -65,7 +65,7 @@ public abstract class DamageAble : MonoBehaviour
         CurrentHealth = GetHealth();
     }
 
-    public  void GetPhysicalDamage(float _damageTaken, DamageAble _attacker)
+    public  void GetPhysicalDamage(float _damageTaken, Unit _attacker)
     {
         myOnDamageAction?.Invoke();
         myOnDamageFloat?.Invoke(_damageTaken);
@@ -80,12 +80,13 @@ public abstract class DamageAble : MonoBehaviour
         CurrentHealth -= _damageTaken;
         if (CurrentHealth <= 0)
         {
-            myOnKillFromAttacker?.Invoke(this);
+            myOnKillFromAttacker?.Invoke(_attacker);
+            _attacker.AttackTargetDead();
             GetKill();
         }
     }
     
-    public void GetMagicalDamage(float _damageTaken, DamageAble _attacker)
+    public void GetMagicalDamage(float _damageTaken, Unit _attacker)
     {
         myOnDamageAction?.Invoke();
         myOnDamageFloat?.Invoke(_damageTaken);
@@ -98,7 +99,8 @@ public abstract class DamageAble : MonoBehaviour
         CurrentHealth -= _damageTaken;
         if (CurrentHealth <= 0)
         {
-            myOnKillFromAttacker?.Invoke(this);
+            myOnKillFromAttacker?.Invoke(_attacker);
+            _attacker.AttackTargetDead();
             GetKill();
         }
 
@@ -107,7 +109,7 @@ public abstract class DamageAble : MonoBehaviour
     public virtual void GetKill()
     {
 
-        myOnKillAction?.Invoke();
+        myOnGetKillAction?.Invoke();
         
         myIsDead = true;
 

@@ -50,7 +50,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02489376, y: 0.12360644}
+  m_Offset: {x: 0.02489376, y: 0.17535913}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -61,7 +61,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5978699, y: 0.49953604}
+  m_Size: {x: 0.5978699, y: 0.6030414}
   m_EdgeRadius: 0
 --- !u!114 &2409637610470144096
 MonoBehaviour:
@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 6630062228672266524}
   - component: {fileID: 6630062228672266523}
   - component: {fileID: 6630062228672266522}
+  - component: {fileID: 29529298}
   m_Layer: 0
   m_Name: Monster Longhornbug
   m_TagString: Untagged
@@ -672,6 +673,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &29529298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630062228672266521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec7533972a7e4242ba1bf8c8ef17d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttackKeyFrameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3651737397423451674}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6630062228685912467
 GameObject:
   m_ObjectHideFlags: 0

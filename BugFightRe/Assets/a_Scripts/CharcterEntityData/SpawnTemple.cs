@@ -256,7 +256,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
         //넥서스의 죽음 이벤트를 등록
         foreach (var nexus in myCreepNexus)
         {
-            nexus.myOnKillAction += DiscountNexus;
+            nexus.myOnGetKillAction += DiscountNexus;
         }
 
     }

@@ -36,7 +36,7 @@ public class ubGiveManaOnDeath : myUnitBehavior
     {
         myUnit = GetComponent<Unit>();
         myTrans = myUnit.myTrans;
-        myUnit.myOnKillAction += GiveManaIfHeroHere;
+        myUnit.myOnGetKillAction += GiveManaIfHeroHere;
        
     }
 

@@ -9,18 +9,16 @@ using DG.Tweening;
 
 public class Bullet : Projectile
 {
-    public DamageAble myTargetUnit { get; private set; }
-
+    public DamageAble myTargetUnit { get => _targetUnit; private set => _targetUnit = value; }
+    DamageAble _targetUnit;
     float _BulletDamage;
     public float myBulletDamage { get => _BulletDamage; set => _BulletDamage = value; }
 
-    int _TargetHash;
-    public int myTargetHash { get => _TargetHash; set => _TargetHash = value; }
-
+  
     Unit _theBulletCaster;
     public Unit myTheBulletCaster { get => _theBulletCaster; set => _theBulletCaster = value; }
 
-    public event UnityAction _backToQue;
+   
     public event UnityAction _OnBulletTrigger;
 
     Sequence _timerCounter = null;
@@ -39,6 +37,13 @@ public class Bullet : Projectile
     {
 
         myTrans.position = Vector3.MoveTowards(myTrans.position, myTargetUnit.myTrans.position, myMoveSpeed * _tick);
+
+        if(Vector2.SqrMagnitude(myTargetUnit.myTrans.position - myTrans.position) < Mathf.Pow(0.1f,2))
+        {
+            _OnBulletTrigger?.Invoke();
+
+            OnEnqueue();
+        }
     }
 
     public override void RemoveTickFromManager()
@@ -47,10 +52,11 @@ public class Bullet : Projectile
     }
 
 
-    public void SetInstance(UnityAction _onBulletTriggered, UnityAction _onBack)
+    public void SetInstance(Unit _myCaster,UnityAction _onBulletTriggered)
     {
-        _OnBulletTrigger += _OnBulletTrigger;
-        _backToQue += _onBack;
+        myTheBulletCaster = _myCaster;
+        myTheBulletCaster.myOnAttackTargetDead += OnEnqueue;
+        _OnBulletTrigger += _onBulletTriggered;
        
     }
     public  void BulletShooting( DamageAble _targetUnit)
@@ -61,7 +67,7 @@ public class Bullet : Projectile
         }
 
         myTargetUnit = _targetUnit;
-        myTargetHash = myTargetUnit.myCollider2D.GetInstanceID();
+       
         AddTickToManager();
         StartCountAutoEnque();
     }
@@ -74,18 +80,12 @@ public class Bullet : Projectile
 
     public  void OnEnqueue()
     {
-        _backToQue?.Invoke();
+        myObj.SetActive(false);
         RemoveTickFromManager();
-       
+        myTargetUnit = null;
+
+
     }
 
-    protected override void OnTriggerEnter2D(Collider2D coll)
-    {
-       if(coll.GetInstanceID()==myTargetHash)//다른타겟은 맞으면 안됨
-        {
-            _OnBulletTrigger?.Invoke();
-             
-            OnEnqueue();
-        }
-    }
+   
 }

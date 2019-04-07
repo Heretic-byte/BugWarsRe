@@ -17,12 +17,12 @@ public class AnimDelegate : myUnitBehavior
 
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddOnlyScaleTickToManager(SetAnimSpeedScale);
+        GameManager.myInstance.AddOnlyScaleTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveOnlyScaleTickFromManager(SetAnimSpeedScale);
+        GameManager.myInstance.RemoveOnlyScaleTickFromManager(FixedTickFloat);
         
     }
 
@@ -34,20 +34,19 @@ public class AnimDelegate : myUnitBehavior
 
 
         SetDelegateToMainUnitClass();
-
-        AddTickToManager();
     }
     void SetDelegateToMainUnitClass()
     {
        
         myUnit.myOnAttack += SetTriggerOnAttack;
         myUnit.myOnDamageAction += SetTriggerOnDamage;
-        myUnit.myOnKillAction += SetTriggerOnDead;
-        myUnit.myOnKillAction += ResetTriggerAll;
+        myUnit.myOnGetKillAction += SetTriggerOnDead;
+        myUnit.myOnGetKillAction += ResetTriggerAll;
         myUnit.myOnWalking += SetBoolOnStartWalk;
         myUnit.myOnNotWalking += SetBoolOnStopWalk;
+        myUnit.myOnAttackTargetDead += ResetTriggerAttackMotion;
 
-      
+
     }
 
     public void SetBoolOnStartWalk()
@@ -74,6 +73,11 @@ public class AnimDelegate : myUnitBehavior
     {
         myAnim.ResetTrigger("Attack1");
         myAnim.ResetTrigger("OnDamage");
+    }
+    public void ResetTriggerAttackMotion()
+    {
+        myAnim.ResetTrigger("Attack1");
+       
     }
     public void SetAnimSpeedScale(float _v)
     {

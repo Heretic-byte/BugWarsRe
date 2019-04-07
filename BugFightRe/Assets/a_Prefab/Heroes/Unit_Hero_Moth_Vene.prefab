@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IsFacingRight: 1
-  _stat: {fileID: 11400000, guid: 39df510fd5050d7408a438668098a8f4, type: 2}
+  _stat: {fileID: 11400000, guid: 8b603bf176b69d043b31a87245e59529, type: 2}
   _rayCastOffset: {x: 0, y: 0.2, z: 0}
   _targetLayers:
     serializedVersion: 2
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023384094, y: 1.018156}
@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 8698598407743728199}
   - component: {fileID: 8698598407743728196}
   - component: {fileID: 8698598407743728197}
+  - component: {fileID: 8698598407743728203}
   m_Layer: 0
   m_Name: Model_MothVenePoodle
   m_TagString: Untagged
@@ -706,6 +707,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8698598407743728203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8698598407743728202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec7533972a7e4242ba1bf8c8ef17d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAttackKeyFrameEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5920558957845672515}
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &8698598407876964349
 GameObject:
   m_ObjectHideFlags: 0

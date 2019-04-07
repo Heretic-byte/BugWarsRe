@@ -33,7 +33,5 @@ public abstract class Projectile : MonoBehaviour,IfixedTickFloat
 
   
 
-    protected abstract void OnTriggerEnter2D(Collider2D coll);
-
    
 }

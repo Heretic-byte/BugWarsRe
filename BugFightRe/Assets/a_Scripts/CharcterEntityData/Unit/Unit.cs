@@ -38,8 +38,9 @@ public abstract class Unit : DamageAble
 
     UnityAction _onWalking;
     UnityAction _onNotWalking;
-    public UnityAction OnDequeueAction;
-    public UnityAction OnEnqueueAction;
+    public UnityAction OnDequeueAction { get; set; }
+    public UnityAction OnEnqueueAction { get; set; }
+    public UnityAction myOnAttackTargetDead { get; set; }
 
     protected override void MainSetInstance()
     {
@@ -52,7 +53,15 @@ public abstract class Unit : DamageAble
             myB.SetInstance();
         }
     }
-
+    public virtual void SetAttackTargetNull()
+    {
+        myAttackTarget = null;
+    }
+    public virtual void AttackTargetDead()
+    {
+        SetAttackTargetNull();
+        myOnAttackTargetDead?.Invoke();
+    }
   
 }
 

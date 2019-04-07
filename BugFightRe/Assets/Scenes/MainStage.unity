@@ -3565,11 +3565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6819aa6940d3b1144b44b8e7bd94eebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  target: {fileID: 1767785773}
+  transs: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &913118895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5902,8 +5899,8 @@ MonoBehaviour:
   _EachSpawnDelay: 7
   _creepPrefab: {fileID: 3611640401269419563, guid: ee7f13927fe5fa047bdffa43314777ea,
     type: 3}
-  _CreepPoolCount: 15
-  _CreepSpawnCountAtOnce: 3
+  _CreepPoolCount: 0
+  _CreepSpawnCountAtOnce: 0
   _uiShowDelay: 2
   _nexusLifeCount: 3
   _spawnTermUi: {fileID: 2019481513}
