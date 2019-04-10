@@ -25,18 +25,19 @@ public abstract class DamageAble : MonoBehaviour
     public bool myIsFacingRight { get => _IsFacingRight; set => _IsFacingRight = value; }
     public StatDataBase myStat { get => _stat; set => _stat = value; }
     public ColliderDicSingletone myManagerColider { get => _managerColider; set => _managerColider = value; }
- 
+    public float GetCurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+
     [SerializeField]
     protected StatDataBase _stat;
 
-    public abstract float GetHealth();
+    public abstract float GetMaxHealth();
     public abstract float GetAttackSpeed();
     public abstract float GetAttackDamage();
     public abstract float GetSpellDamagePercent();
     public abstract float GetArmor();
     public abstract float GetSpellArmorPercent();
 
-    protected float CurrentHealth = 0f;
+    private float _currentHealth = 0f;
     protected Vector2 myDir = Vector2.right;
 
     protected ColliderDicSingletone _managerColider;
@@ -62,7 +63,7 @@ public abstract class DamageAble : MonoBehaviour
     }
     public void SetHpToMax()
     {
-        CurrentHealth = GetHealth();
+        GetCurrentHealth = GetMaxHealth();
     }
 
     public  void GetPhysicalDamage(float _damageTaken, Unit _attacker)
@@ -77,8 +78,8 @@ public abstract class DamageAble : MonoBehaviour
 
         _damageTaken *= ratio;
 
-        CurrentHealth -= _damageTaken;
-        if (CurrentHealth <= 0)
+        GetCurrentHealth -= _damageTaken;
+        if (GetCurrentHealth <= 0)
         {
             myOnKillFromAttacker?.Invoke(_attacker);
             _attacker.AttackTargetDead();
@@ -96,8 +97,8 @@ public abstract class DamageAble : MonoBehaviour
 
         _damageTaken *= 1 - (mySpellArmor / 100f);
 
-        CurrentHealth -= _damageTaken;
-        if (CurrentHealth <= 0)
+        GetCurrentHealth -= _damageTaken;
+        if (GetCurrentHealth <= 0)
         {
             myOnKillFromAttacker?.Invoke(_attacker);
             _attacker.AttackTargetDead();

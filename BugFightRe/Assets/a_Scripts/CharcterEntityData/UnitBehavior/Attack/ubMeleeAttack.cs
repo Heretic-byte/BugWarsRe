@@ -22,10 +22,11 @@ public abstract class ubMeleeAttack : ubAttackBase
             return;
         }
 
-
+      
         if (_attackTimer > myAttackSpeed)
         {
-           
+            _attackTimer = 0f;
+
             myUnit.myOnAttack?.Invoke();
 
          
@@ -33,8 +34,12 @@ public abstract class ubMeleeAttack : ubAttackBase
     }
    public override void Attack()
     {
-        _attackTimer = 0f;
-       
+
+        if (myUnit.myAttackTarget==null)
+        {
+          
+            return;
+        }
         myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
 
     }

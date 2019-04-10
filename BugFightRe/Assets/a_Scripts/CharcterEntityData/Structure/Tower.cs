@@ -19,7 +19,7 @@ public class Tower : Unit
         throw new System.NotImplementedException();
     }
 
-    public override float GetHealth()
+    public override float GetMaxHealth()
     {
         throw new System.NotImplementedException();
     }

@@ -84,7 +84,8 @@ public abstract class ubRangeAttack : ubAttackBase
 
         if (_attackTimer > myAttackSpeed)
         {
-            
+            _attackTimer = 0f;
+
             myUnit.myOnAttack?.Invoke();
 
         }
@@ -93,8 +94,11 @@ public abstract class ubRangeAttack : ubAttackBase
     public override void Attack()
     {
 
-        _attackTimer = 0f;
+        if (myUnit.myAttackTarget == null)
+        {
 
+            return;
+        }
         ShootBullet();
     }
  
@@ -103,7 +107,7 @@ public abstract class ubRangeAttack : ubAttackBase
        myBulletsArray[myCurrentBulletIndex].SetActive(true);
        myBullets[myCurrentBulletIndex].myTrans.position = myTrans.TransformPoint(  myBulletShootingPos);
         myBullets[myCurrentBulletIndex].BulletShooting(myUnit.myAttackTarget);
-        Debug.Log("ShootBulletPos_ myTransPos:" + myTrans.position + "_BulletShootingPos:" + myBulletShootingPos);
+
 
         myCurrentBulletIndex++;
         if(myCurrentBulletIndex >= myBulletMaxCount)
@@ -114,6 +118,10 @@ public abstract class ubRangeAttack : ubAttackBase
 
     void OnBulletDealDamage()
     {
+        if (myUnit.myAttackTarget==null)
+        {
+            return;
+        }
         myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
     }
 

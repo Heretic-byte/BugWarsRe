@@ -46,7 +46,7 @@ public abstract class Unit : DamageAble
     {
         base.MainSetInstance();
 
-        myUnitBehaviors = GetComponents<myUnitBehavior>();
+        myUnitBehaviors = GetComponentsInChildren<myUnitBehavior>();
         
         foreach(var myB in myUnitBehaviors)
         {

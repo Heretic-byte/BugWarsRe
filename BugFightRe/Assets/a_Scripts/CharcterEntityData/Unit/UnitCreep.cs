@@ -6,8 +6,7 @@ using DG.Tweening;
 
 public class UnitCreep : Unit,IpoolingObj
 {
-    public  EnqueueMySelfDele OnEnqueueMySelfDele { get ; set; }
- 
+  
    public GameManager myManagerGame { get ; set ; }
 
     
@@ -25,7 +24,7 @@ public class UnitCreep : Unit,IpoolingObj
         myManagerGame = GameManager.myInstance;
 
     }
-
+    #region GetStat
     public override float GetArmor()
     {
         return myStat.m_BaseArmor;
@@ -38,7 +37,7 @@ public class UnitCreep : Unit,IpoolingObj
     {
         return myStat.m_BaseAttackSpeed;
     }
-    public override float GetHealth()
+    public override float GetMaxHealth()
     {
         return myStat.m_BaseHealth;
     }
@@ -50,12 +49,13 @@ public class UnitCreep : Unit,IpoolingObj
     {
         return myStat.m_BaseSpellAmply;
     }
-
+    #endregion
     public override void GetKill()
     {
         base.GetKill();
-        OnEnqueueMySelfDele?.Invoke(myObj);
-      
+
+        myObj.SetActive(false);
+        OnEnqueue();
     }
 
     public void OnDequeue()

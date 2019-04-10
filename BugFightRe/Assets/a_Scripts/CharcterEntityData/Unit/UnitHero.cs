@@ -26,7 +26,7 @@ public class UnitHero : Unit
     {
         return myStat.m_BaseAttackSpeed;
     }
-    public override float GetHealth()
+    public override float GetMaxHealth()
     {
         return myStat.m_BaseHealth;
     }

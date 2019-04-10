@@ -5899,8 +5899,8 @@ MonoBehaviour:
   _EachSpawnDelay: 7
   _creepPrefab: {fileID: 3611640401269419563, guid: ee7f13927fe5fa047bdffa43314777ea,
     type: 3}
-  _CreepPoolCount: 0
-  _CreepSpawnCountAtOnce: 0
+  _CreepPoolCount: 15
+  _CreepSpawnCountAtOnce: 3
   _uiShowDelay: 2
   _nexusLifeCount: 3
   _spawnTermUi: {fileID: 2019481513}

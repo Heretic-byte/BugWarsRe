@@ -32,7 +32,7 @@ public class CameraMover : MonoBehaviour, IfixedTickFloat
     public void FixedTickFloat(float _tick)
     {
         
-        //input.x = Input.GetAxisRaw("Horizontal");
+     
         myTrans.Translate(input * _CamMoveSpeed * _tick);
 
         if (myTrans.position.x > myCamRightBound.x)
