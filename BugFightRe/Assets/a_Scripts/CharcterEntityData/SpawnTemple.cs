@@ -53,13 +53,10 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     int[] _creepLineShuffleArray;
     public int[] myCreepLineShuffleArray { get => _creepLineShuffleArray; set => _creepLineShuffleArray = value; }
 
-    private int _CreepSceneCount;
-    public int myCreepSceneCount { get => _CreepSceneCount; set => _CreepSceneCount = value; }
-    //
-    GameObject[] _poolingArray;
-    public GameObject[] myPoolingArray { get => _poolingArray; set => _poolingArray = value; }
-    int _poolAryIndex;
-    public int myPoolAryIndex { get => _poolAryIndex; set => _poolAryIndex = value; }
+  
+    Queue<GameObject> _creepPoolQue = new Queue<GameObject>();
+    public Queue<GameObject> myCreepPoolQue { get => _creepPoolQue; set => _creepPoolQue = value; }
+
 
     Dictionary<int, UnitCreep> _creepEntityDic = new Dictionary<int, UnitCreep>();
     public Dictionary<int, UnitCreep> myCreepEntityDic { get => _creepEntityDic; set => _creepEntityDic = value; }
@@ -87,7 +84,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     {
         myObj = gameObject;
         myTrans = transform;
-        SetPoolArray();
+       
         CreatePoolObj();
         SetDeleOnGameEnd();
         SetShuffleArray();
@@ -129,33 +126,25 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     }
     void CreatePoolObj()
     {
-        myCreepSceneCount = 0;
+     
         GameObject CreepHolder = new GameObject(myObj.name + "'s CreepHolder");
 
-
+        
         for (int i = 0; i < myCreepPoolCount; i++)
         {
             var CreatedObj = Instantiate(CreepPrefab, CreepHolder.transform);
             CreatedObj.name += ".No_" + i;
-            AddObjToPoolAry(CreatedObj);
-
+           
             var CreatedEntity = CreatedObj.GetComponent<UnitCreep>();
             myCreepEntityDic.Add(CreatedObj.GetInstanceID(), CreatedEntity);
-            CreatedEntity.OnEnqueueAction += EnqueueCreep;
+
+            myCreepPoolQue.Enqueue(CreatedObj);
+
+            CreatedEntity.OnEnqueActionObj += EnqueueCreep;
             CreatedObj.SetActive(false);
         }
 
-        myPoolAryIndex = 0;
-    }
-    void SetPoolArray()
-    {
-        myPoolAryIndex = 0;
-        myPoolingArray = new GameObject[myCreepPoolCount];
-    }
-    void AddObjToPoolAry(GameObject _obj)
-    {
-        myPoolingArray[myPoolAryIndex] = _obj;
-        myPoolAryIndex++;
+       
     }
 
     public Sequence CreepSpawnLoops()
@@ -223,38 +212,25 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     void DequeueCreep(Vector3 _spawnPos)
     {
 
-        if (myCreepSceneCount >= myCreepPoolCount)
+        if (myCreepPoolQue.Count< myCreepSpawnCountAtOnce)
         {
             return;
         }
-        myCreepSceneCount++;
-
-        var DequeuedObj = myPoolingArray[myPoolAryIndex];
-        if(DequeuedObj.activeSelf)//debug
-        {
-            Debug.Log("MyIndex:" + myPoolAryIndex + " MyNameID:" + DequeuedObj.name + DequeuedObj.GetInstanceID()+" CurrentCount:" + myCreepSceneCount.ToString()+ " CurrentIndex:" + myPoolAryIndex);
-        }
-        myPoolAryIndex++;
-
-        var DequeueEntity = myCreepEntityDic[DequeuedObj.GetInstanceID()];
-
       
 
+        var DequeuedObj = myCreepPoolQue.Dequeue();
+           
+        var DequeueEntity = myCreepEntityDic[DequeuedObj.GetInstanceID()];
+   
         DequeueEntity.myTrans.position = _spawnPos;
 
         DequeueEntity.OnDequeue();
-        DequeuedObj.SetActive(true);
-
-       
-       if(myPoolAryIndex >= myPoolingArray.Length)
-        {
-            myPoolAryIndex = 0;
-        }
-       
+        DequeuedObj.SetActive(true);   
     }
-    void EnqueueCreep()
-    {    
-        myCreepSceneCount--;
+    void EnqueueCreep(GameObject unitSelf)
+    {
+        myCreepPoolQue.Enqueue(unitSelf);
+      
     }
     public void SetDeleOnGameEnd()
     {

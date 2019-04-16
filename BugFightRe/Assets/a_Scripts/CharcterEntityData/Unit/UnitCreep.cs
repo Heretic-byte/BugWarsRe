@@ -8,7 +8,7 @@ public class UnitCreep : Unit,IpoolingObj
 {
   
    public GameManager myManagerGame { get ; set ; }
-
+    public UnityAction<GameObject> OnEnqueActionObj { get; set; } 
     
     private void Awake()
     {
@@ -69,6 +69,7 @@ public class UnitCreep : Unit,IpoolingObj
     public void OnEnqueue()
     {
         OnEnqueueAction?.Invoke();
+        OnEnqueActionObj?.Invoke(myObj);
     }
 
    
