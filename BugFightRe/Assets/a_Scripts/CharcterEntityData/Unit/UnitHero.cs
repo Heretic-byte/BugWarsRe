@@ -12,7 +12,9 @@ public class UnitHero : Unit
     
      UnityAction _onRushBattleField;
     public UnityAction myOnRushBattleField { get => _onRushBattleField; set => _onRushBattleField = value; }
-
+   
+    private Vector3 _startTemplePos;
+    public Vector3 myStartTemplePos { get => _startTemplePos;  }
 
     public override float GetArmor()
     {
@@ -43,6 +45,7 @@ public class UnitHero : Unit
     {
         MainSetInstance();
         SetHpToMax();
+        _startTemplePos = myTrans.position;
     }
     public override void GetKill()
     {
@@ -64,6 +67,8 @@ public class UnitHero : Unit
     }
     public void GoBackToTemple()
     {
+        myTrans.position = myStartTemplePos;
+
         foreach (var behav in myUnitBehaviors)
         {
             behav.RemoveTickFromManager();

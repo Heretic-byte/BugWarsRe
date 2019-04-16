@@ -68,9 +68,8 @@ public abstract class DamageAble : MonoBehaviour
 
     public  void GetPhysicalDamage(float _damageTaken, Unit _attacker)
     {
-        myOnDamageAction?.Invoke();
-        myOnDamageFloat?.Invoke(_damageTaken);
         myOnDamageBySomeone?.Invoke(_attacker);
+
 
         float myArmor = GetArmor();
 
@@ -79,6 +78,10 @@ public abstract class DamageAble : MonoBehaviour
         _damageTaken *= ratio;
 
         GetCurrentHealth -= _damageTaken;
+        //
+        myOnDamageAction?.Invoke();    
+        myOnDamageFloat?.Invoke(_damageTaken);
+
         if (GetCurrentHealth <= 0)
         {
             myOnKillFromAttacker?.Invoke(_attacker);
@@ -89,8 +92,7 @@ public abstract class DamageAble : MonoBehaviour
     
     public void GetMagicalDamage(float _damageTaken, Unit _attacker)
     {
-        myOnDamageAction?.Invoke();
-        myOnDamageFloat?.Invoke(_damageTaken);
+      
         myOnDamageBySomeone?.Invoke(_attacker);
 
         float mySpellArmor = GetSpellArmorPercent();
@@ -98,6 +100,10 @@ public abstract class DamageAble : MonoBehaviour
         _damageTaken *= 1 - (mySpellArmor / 100f);
 
         GetCurrentHealth -= _damageTaken;
+        //
+        myOnDamageAction?.Invoke();
+        myOnDamageFloat?.Invoke(_damageTaken);
+
         if (GetCurrentHealth <= 0)
         {
             myOnKillFromAttacker?.Invoke(_attacker);

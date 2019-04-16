@@ -24,6 +24,15 @@ public class ManaManager : Singleton<ManaManager>
     private Image _manaBarBackGround;
     [SerializeField]
     private Image _manaBarForeGround;
+    [SerializeField]
+    private Text _manaValueText;
+    [SerializeField]
+    private Text _manaMaxValueText;
+    [SerializeField]
+    private float _TweenDur=0.2f;
+    private float _TextTweenDur;
+
+    private Tween _playerManaFillTween;
 
     private Dictionary<LayerMask, DeleGiveMana> _PlayerAndEnemyManaDeleDic = new Dictionary<LayerMask, DeleGiveMana>();
 
@@ -34,13 +43,18 @@ public class ManaManager : Singleton<ManaManager>
     public Dictionary<LayerMask, DeleGiveMana> myPlayerAndEnemyManaDeleDic { get => _PlayerAndEnemyManaDeleDic; set => _PlayerAndEnemyManaDeleDic = value; }
     public LayerMask myPlayerLayer { get => _playerLayer; set => _playerLayer = value; }
     public LayerMask myMonsterLayer { get => _monsterLayer; set => _monsterLayer = value; }
-    public Image myManaBarBackGround { get => _manaBarBackGround; set => _manaBarBackGround = value; }
-    public Image myManaBarForeGround { get => _manaBarForeGround; set => _manaBarForeGround = value; }
+    public Image myManaBarBackGround { get => _manaBarBackGround;  }
+    public Image myManaBarForeGround { get => _manaBarForeGround;  }
+    public Text myManaValueText { get => _manaValueText; }
+    public Text myManaMaxValueText { get => _manaMaxValueText;  }
+    public float myTweenDur { get => _TweenDur;  }
+    public float myTextTweenDur { get => _TextTweenDur; set => _TextTweenDur = value; }
 
     protected override void Awake()
     {
         base.Awake();
         SetInstance();
+        myTextTweenDur = myTweenDur * 2f;
     }
 
     private void SetInstance()
@@ -48,39 +62,87 @@ public class ManaManager : Singleton<ManaManager>
         myPlayerAndEnemyManaDeleDic.Add(myPlayerLayer, AddManaToPlayer);
         myPlayerAndEnemyManaDeleDic.Add(myMonsterLayer, AddManaToMonster);
         SetPlayerManaBar();
+        SetPlayerManaText();
+        myPlayerCurrentMana = 0;
     }
 
     public void AddManaToPlayer(int manaValue)
     {
         myPlayerCurrentMana += manaValue;
-        UpdatePlayerManaBar(manaValue);
 
-        Debug.Log("PlayerGotMana:" + manaValue);
-        if(myPlayerMaxMana > myPlayerCurrentMana)
+      
+        if (myPlayerMaxMana < myPlayerCurrentMana)
         {
             myPlayerCurrentMana = myPlayerMaxMana;
         }
+
+        UpdatePlayerManaBar();
+        UpdatePlayerCurrentManaText();
+
     }
 
     public void AddManaToMonster(int manaValue)
     {
         myMonsterCurrentMana += manaValue;
+
         Debug.Log("MonsterGotMana:" + manaValue);
-        if (myMonsterMaxMana > myMonsterCurrentMana)
+
+        if (myMonsterMaxMana < myMonsterCurrentMana)
         {
             myMonsterCurrentMana = myMonsterMaxMana;
         }
     }
+
+    public bool SubstractManaFromPlayer(int manaValue)
+    {
+
+        if(manaValue> myPlayerCurrentMana)
+        {
+            return false;
+        }
+
+        myPlayerCurrentMana -= manaValue;
+        UpdatePlayerManaBar();
+        UpdatePlayerCurrentManaText();
+
+        return true;
+    }
+    public bool SubstractManaFromMonster(int manaValue)
+    {
+
+        if (manaValue > myMonsterCurrentMana)
+        {
+            return false;
+        }
+
+        myMonsterCurrentMana -= manaValue;
+        return true;
+    }
+    void SetPlayerManaText()
+    {
+        myManaValueText.text = "0";
+        myManaMaxValueText.text ="/"+ myPlayerMaxMana.ToString();
+    }
+
+    void UpdatePlayerCurrentManaText()
+    {
+        myManaValueText.DOText(myPlayerCurrentMana.ToString(), myTextTweenDur, false, ScrambleMode.Numerals);
+    }
+    void UpdatePlayerMaxManaText()
+    {
+        myManaValueText.DOText("/" + myPlayerMaxMana.ToString(), myTextTweenDur, false, ScrambleMode.Numerals);
+    }
+
     void SetPlayerManaBar()
     {
         myManaBarBackGround.fillAmount = 1;
         myManaBarForeGround.fillAmount = 0;
     }
-    void UpdatePlayerManaBar(int manaValue)
+    void UpdatePlayerManaBar()
     {
-        float fillTemp = myManaBarForeGround.fillAmount;
-
-        myManaBarForeGround.DOFillAmount(fillTemp + ((myPlayerMaxMana / manaValue)/100f), 0.3f);
+        _playerManaFillTween?.Complete();
+        float percent = (float)myPlayerCurrentMana / (float)myPlayerMaxMana;
+           _playerManaFillTween = myManaBarForeGround.DOFillAmount(percent, myTweenDur);
     }
 
 }

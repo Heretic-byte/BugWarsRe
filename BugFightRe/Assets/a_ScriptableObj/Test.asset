@@ -21,3 +21,4 @@ MonoBehaviour:
   m_BaseMovementSpeed: 0.5
   m_BaseAttackRange: 0.7
   m_BaseAllyBlockRange: 0.6
+  m_BaseManaReward: 100

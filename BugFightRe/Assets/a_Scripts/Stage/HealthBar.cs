@@ -30,7 +30,7 @@ public class HealthBar : myUnitBehavior
         myUnit.OnDequeueAction += AddTickToManager;
         myUnit.OnDequeueAction += SetBarFillAmount;
         myUnit.OnEnqueueAction += RemoveTickFromManager;
-        myUnit.myOnDamageFloat += MinusBarUpdate;
+        myUnit.myOnDamageAction += BarUpdate;
 
         myFollowOffset = this.myTrans.position - myUnit.myTrans.position;
 
@@ -55,22 +55,11 @@ public class HealthBar : myUnitBehavior
     {
         myForwardBar.fillAmount = myUnit.GetCurrentHealth/ myUnit.GetMaxHealth();
     }
-    void MinusBarUpdate(float barChangeValue)
-    {
-        myBarUpdateTween?.Complete();
-        var percentValue = barChangeValue / myUnit.GetMaxHealth();
-
-        myBarUpdateTween= myForwardBar.DOFillAmount(myForwardBar.fillAmount - percentValue, 0.15f);
-
+    void BarUpdate()
+    { 
+        myBarUpdateTween= myForwardBar.DOFillAmount(myUnit.GetCurrentHealth / myUnit.GetMaxHealth(), 0.15f);
     }
-    void PlusBarUpdate(float barChangeValue)
-    {
-        myBarUpdateTween?.Complete();
-        var percentValue = barChangeValue / myUnit.GetMaxHealth();
-
-        myBarUpdateTween = myForwardBar.DOFillAmount(myForwardBar.fillAmount + percentValue, 0.15f);
-
-    }
+ 
     public override void AddTickToManager()
     {
         GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);

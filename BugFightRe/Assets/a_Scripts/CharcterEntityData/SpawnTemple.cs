@@ -212,10 +212,10 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     void DequeueCreep(Vector3 _spawnPos)
     {
 
-        if (myCreepPoolQue.Count< myCreepSpawnCountAtOnce)
-        {
-            return;
-        }
+        //if (myCreepPoolQue.Count< 1)
+        //{
+        //    return;
+        //}
       
 
         var DequeuedObj = myCreepPoolQue.Dequeue();
