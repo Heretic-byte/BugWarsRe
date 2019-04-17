@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using DG.Tweening;
 using System;
 
-public class HealthBar : myUnitBehavior
+public class ubHealthBar : myUnitBehavior
 {
     [SerializeField]
     private Image _ForwardBar;
@@ -18,24 +18,27 @@ public class HealthBar : myUnitBehavior
     Vector3 _FollowOffset;
     public Vector3 myFollowOffset { get => _FollowOffset; set => _FollowOffset = value; }
 
-
+    GameObject _myObj { get; set; }
     public override void SetInstance()
     {
         myTrans = transform;
-        
+        _myObj = gameObject;
 
-        myUnit = GetComponentInParent<Unit>();
+         myUnit = GetComponentInParent<Unit>();
         SetDir();
         SetBarFillAmountMax();
-        myUnit.OnDequeueAction += AddTickToManager;
-        myUnit.OnDequeueAction += SetBarFillAmount;
-        myUnit.OnEnqueueAction += RemoveTickFromManager;
+        myUnit.myOnDequeueAction += AddTickToManager;
+        myUnit.myOnDequeueAction += SetBarFillAmount;
+        myUnit.myOnEnqueueAction += RemoveTickFromManager;
         myUnit.myOnDamageAction += BarUpdate;
+        myUnit.myOnHealAction += BarUpdate;
+        myUnit.myOnEnqueueAction += HideHealthBar;
+        myUnit.myOnDequeueAction += ShowHealthBar;
 
         myFollowOffset = this.myTrans.position - myUnit.myTrans.position;
 
     }
-    void SetDir()
+    protected void SetDir()
     {
         if (!myUnit.myIsFacingRight)
         {
@@ -47,15 +50,15 @@ public class HealthBar : myUnitBehavior
         }
        
     }
-    void SetBarFillAmountMax()
+    protected void SetBarFillAmountMax()
     {
         myForwardBar.fillAmount = 1f;
     }
-    void SetBarFillAmount()
+    protected void SetBarFillAmount()
     {
         myForwardBar.fillAmount = myUnit.GetCurrentHealth/ myUnit.GetMaxHealth();
     }
-    void BarUpdate()
+    protected void BarUpdate()
     { 
         myBarUpdateTween= myForwardBar.DOFillAmount(myUnit.GetCurrentHealth / myUnit.GetMaxHealth(), 0.15f);
     }
@@ -74,9 +77,17 @@ public class HealthBar : myUnitBehavior
         FollowMyUnit(_tick);
     }
 
-    private void FollowMyUnit(float tick)
+    protected void FollowMyUnit(float tick)
     {
 
         myTrans.position =myUnit.myTrans.position+ myFollowOffset;
+    }
+    protected void HideHealthBar()
+    {
+        _myObj.SetActive(false);
+    }
+  protected  void ShowHealthBar()
+    {
+        _myObj.SetActive(true);
     }
 }

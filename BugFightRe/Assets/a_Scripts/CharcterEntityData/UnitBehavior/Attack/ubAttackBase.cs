@@ -27,8 +27,8 @@ public abstract class ubAttackBase : myUnitBehavior
         myManagerCollDic = ColliderDicSingletone.myInstance;
 
 
-        myUnit.OnDequeueAction += AddTickToManager;
-        myUnit.OnEnqueueAction += RemoveTickFromManager;
+        myUnit.myOnDequeueAction += AddTickToManager;
+        myUnit.myOnEnqueueAction += RemoveTickFromManager;
      
     }
    protected virtual void SetTranslateDir()

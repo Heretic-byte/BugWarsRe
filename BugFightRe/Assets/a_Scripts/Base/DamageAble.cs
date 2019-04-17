@@ -61,9 +61,10 @@ public abstract class DamageAble : MonoBehaviour
     {
         myManagerColider.myColliderDamageAble.Remove(myCollider2D.GetInstanceID());
     }
-    public void SetHpToMax()
+    public virtual void SetHpToMax()
     {
         GetCurrentHealth = GetMaxHealth();
+        
     }
 
     public  void GetPhysicalDamage(float _damageTaken, Unit _attacker)

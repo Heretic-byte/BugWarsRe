@@ -24,23 +24,24 @@ public abstract class Unit : DamageAble
     public LayerMask myAllyLayers { get => _allyLayers; set => _allyLayers = value; }
     [SerializeField]
     protected LayerMask _allyLayers;
+    [SerializeField]
+    private float _deathDelay = 3f;
+    public float myDeathDelay { get => _deathDelay; }
 
-    public DamageAble myBlockingAlly { get => _BlockingAlly; set => _BlockingAlly = value; }
-    public DamageAble myAttackTarget { get => _AttackTarget; set => _AttackTarget = value; }
-    DamageAble _AttackTarget;
-    DamageAble _BlockingAlly;
-
-    public UnityAction myOnAttack { get => _onAttack; set => _onAttack = value; }
-    UnityAction _onAttack;
-    public UnityAction myOnWalking { get => _onWalking; set => _onWalking = value; }
-    public UnityAction myOnNotWalking { get => _onNotWalking; set => _onNotWalking = value; }
+    public DamageAble myBlockingAlly { get;set; }
+    public DamageAble myAttackTarget { get; set; }
+  
+    public UnityAction myOnAttack { get; set ; }
+    public UnityAction myOnWalking { get ; set; }
+    public UnityAction myOnNotWalking { get; set; }
+    public UnityAction myOnDequeueAction { get; set; }
+    public UnityAction myOnEnqueueAction { get; set; }
+    public UnityAction myOnAttackTargetDead { get; set; }
+    public UnityAction myOnHealAction { get; set; }
+   
     public Vector3 myRayCastOffset { get => _rayCastOffset; set => _rayCastOffset = value; }
 
-    UnityAction _onWalking;
-    UnityAction _onNotWalking;
-    public UnityAction OnDequeueAction { get; set; }
-    public UnityAction OnEnqueueAction { get; set; }
-    public UnityAction myOnAttackTargetDead { get; set; }
+
 
     protected override void MainSetInstance()
     {
@@ -62,6 +63,21 @@ public abstract class Unit : DamageAble
         SetAttackTargetNull();
         myOnAttackTargetDead?.Invoke();
     }
-  
+  public virtual void GetHeal(float _HealValue)
+    {
+        GetCurrentHealth += _HealValue;
+
+        myOnHealAction?.Invoke();
+        if (GetCurrentHealth>GetMaxHealth())
+        {
+            SetHpToMax();
+        }
+
+    }
+    public override void SetHpToMax()
+    {
+        base.SetHpToMax();
+        myOnHealAction?.Invoke();
+    }
 }
 

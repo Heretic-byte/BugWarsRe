@@ -841,6 +841,9 @@ MonoBehaviour:
   _whatToHit:
     serializedVersion: 2
     m_Bits: 1024
+  _recallManaCost: 0
+  _recallDelay: 3
+  _healTickValue: 200
 --- !u!1 &214382673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1082,7 @@ GameObject:
   - component: {fileID: 318554787}
   - component: {fileID: 318554790}
   - component: {fileID: 318554789}
+  - component: {fileID: 318554788}
   - component: {fileID: 318554791}
   m_Layer: 5
   m_Name: moveLeftB
@@ -1107,6 +1111,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100.9, y: 88.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &318554788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318554786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c46c6aff02f2b4c8065d62d075d260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnImageDoubleClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1280353454}
+        m_MethodName: MoveCamLeftTemple
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &318554789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1627,7 @@ MonoBehaviour:
   _allyLayers:
     serializedVersion: 2
     m_Bits: 0
+  _deathDelay: 3
 --- !u!1 &388563570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2103,7 @@ MonoBehaviour:
   _allyLayers:
     serializedVersion: 2
     m_Bits: 0
+  _deathDelay: 3
 --- !u!1 &571143020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,6 +2982,7 @@ GameObject:
   - component: {fileID: 844153245}
   - component: {fileID: 844153248}
   - component: {fileID: 844153247}
+  - component: {fileID: 844153246}
   - component: {fileID: 844153249}
   m_Layer: 5
   m_Name: moveRightB
@@ -2976,6 +3011,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100.9, y: 88.6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &844153246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844153244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c46c6aff02f2b4c8065d62d075d260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnImageDoubleClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1280353454}
+        m_MethodName: MoveCamRightTemple
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &844153247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4293,7 +4356,7 @@ GameObject:
   - component: {fileID: 1280353451}
   - component: {fileID: 1280353454}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: '@Main Camera'
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4377,6 +4440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CamMoveSpeed: 6
   _camRightBoundTrans: {fileID: 1094646982}
+  _fastCamMoveSpeed: 0.5
 --- !u!1 &1281551293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,6 +5496,9 @@ MonoBehaviour:
   _whatToHit:
     serializedVersion: 2
     m_Bits: 1024
+  _recallManaCost: 0
+  _recallDelay: 3
+  _healTickValue: 200
 --- !u!114 &1526992679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6279,6 +6346,9 @@ MonoBehaviour:
   _whatToHit:
     serializedVersion: 2
     m_Bits: 1024
+  _recallManaCost: 0
+  _recallDelay: 3
+  _healTickValue: 200
 --- !u!114 &1786993451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 5347546575723712927}
   - component: {fileID: 1649183326782016747}
   - component: {fileID: 1619233943}
-  - component: {fileID: 1619233947}
   - component: {fileID: 1619233945}
   - component: {fileID: 2077548911}
   - component: {fileID: 5920558957845672515}
+  - component: {fileID: 3941220448930821510}
   m_Layer: 14
   m_Name: Unit_Hero_Moth_Vene
   m_TagString: Unit
@@ -139,7 +139,9 @@ MonoBehaviour:
   _allyLayers:
     serializedVersion: 2
     m_Bits: 256
+  _deathDelay: 3
   _portrait: {fileID: 21300000, guid: 75c8ec9e1d0e39b4a91da45138c9be96, type: 3}
+  _respawnTime: 15
 --- !u!61 &1619233943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,18 +168,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5485287, y: 2.6163125}
   m_EdgeRadius: 0
---- !u!114 &1619233947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6101944861823034444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7466ae98353f7240a941817765d637e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1619233945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +212,18 @@ MonoBehaviour:
     type: 3}
   _bulletShootingPos: {x: 1.45, y: 2.47, z: 0}
   _bulletMaxCount: 10
+--- !u!114 &3941220448930821510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101944861823034444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdd9cef73d89ef40a555b595ea3804f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8698598407077779869
 GameObject:
   m_ObjectHideFlags: 0

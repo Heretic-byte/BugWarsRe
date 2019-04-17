@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimDelegate : myUnitBehavior
+public class ubAnimDelegate : myUnitBehavior
 {
-    Animator _anim;
-
-    public Animator myAnim { get => _anim; set => _anim = value; }
-
   
+    public Animator myAnim { get; set; }
 
     public override void FixedTickFloat(float _tick)
     {
@@ -22,8 +19,7 @@ public class AnimDelegate : myUnitBehavior
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveOnlyScaleTickFromManager(FixedTickFloat);
-        
+       GameManager.myInstance.RemoveOnlyScaleTickFromManager(FixedTickFloat);    
     }
 
     public override void SetInstance()
@@ -35,18 +31,18 @@ public class AnimDelegate : myUnitBehavior
 
         SetDelegateToMainUnitClass();
     }
-    void SetDelegateToMainUnitClass()
+    protected virtual void SetDelegateToMainUnitClass()
     {
        
         myUnit.myOnAttack += SetTriggerOnAttack;
         myUnit.myOnDamageAction += SetTriggerOnDamage;
-        myUnit.myOnGetKillAction += SetTriggerOnDead;
         myUnit.myOnGetKillAction += ResetTriggerAll;
+        myUnit.myOnGetKillAction += SetTriggerOnDead;
+      
         myUnit.myOnWalking += SetBoolOnStartWalk;
         myUnit.myOnNotWalking += SetBoolOnStopWalk;
         myUnit.myOnAttackTargetDead += ResetTriggerAttackMotion;
-
-
+        
     }
 
     public void SetBoolOnStartWalk()
@@ -69,10 +65,15 @@ public class AnimDelegate : myUnitBehavior
     {
         myAnim.SetTrigger("OnDamage");
     }
+    public void SetTriggerOnIdle()
+    {
+        myAnim.SetTrigger("Idle");
+    }
     public void ResetTriggerAll()
     {
         myAnim.ResetTrigger("Attack1");
         myAnim.ResetTrigger("OnDamage");
+        myAnim.ResetTrigger("Dead");
     }
     public void ResetTriggerAttackMotion()
     {

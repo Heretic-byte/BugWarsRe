@@ -26,19 +26,26 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private UnitHero _myHeroUnit { get; set; }
     private LaneRoad _myPreLaneRoad { get; set; }
     private Transform _myDragIndicatorTrans { get; set; }
-  private bool _myIsHeroInLine { get; set; }
+   
+    [SerializeField]
+    private float _recallDelay = 3f;
+    public float myRecallDelay { get => _recallDelay; }
+    [SerializeField]
+    private float _healTickValue = 200;
+    public float myHealTickValue { get => _healTickValue;  }
+
+    Sequence _myHeroHealSeq { get; set; }
+  
     public void Init()
     {
         myDragButtonIcon = GetComponent<Image>();
         myDragIndicator = Instantiate(_dragIndicatorP, Vector3.zero, Quaternion.identity);
-        myDragIndicator.SetActive(false);
-        _myIsHeroInLine = false;
+        myDragIndicator.SetActive(false);      
     }
 
     public void SetHero(GameObject heroObj, UnitHero heroUnit)
     {
         Init();
-
         _myHeroObj = heroObj;
         _myHeroUnit = heroUnit;
         myDragButtonIcon.sprite = heroUnit.myPortrait;
@@ -47,28 +54,27 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void GoBattleField()
     {
-     
-     var hittenLog=   GetCollRaycast();
+        var hittenLog = GetCollRaycast();
 
-        if(hittenLog==null)
+        if (hittenLog == null)
         {
             return;
         }
-      
-        _myIsHeroInLine = true;
-        //유닛히어로 출격시작
+        Debug.Log("GOBATTLE");
 
-      var summonNexus=  StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()].myLeftNexus;
+        var summonNexus = StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()].myLeftNexus;
 
         var tempV3 = summonNexus.mySpawnPointArray[0];
         tempV3.z -= 0.1f;
-        _myHeroUnit.GoRushBattleField(summonNexus.myTrans.position+ tempV3);
+
+        _myHeroHealSeq?.Kill();
+
+        _myHeroUnit.GoRushBattleField(summonNexus.myTrans.position + tempV3);
     }
 
     public RaycastHit2D RaycastGround()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 100f, myWhatToHit);
 
@@ -81,21 +87,28 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
         return hitten.collider;
     }
-    void CheckCanHeroGoBattle()
+
+    bool CheckCanHeroGoBattle()
     {
-        if (_myIsHeroInLine)
+        if (_myHeroUnit._myIsHeroInLine)
         {
-            return;
+            return false;
         }
+
         if(_myHeroUnit.myIsDead)
         {
-            return;
+            return false;
         }
+
+        return true;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        CheckCanHeroGoBattle();
+        if (!CheckCanHeroGoBattle())
+        {
+            return;
+        }
 
         var MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         myDragIndicator.transform.position = MousePos;
@@ -106,7 +119,10 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        CheckCanHeroGoBattle();
+        if (!CheckCanHeroGoBattle())
+        {
+            return;
+        }
 
         SetDraggedPosition();
 
@@ -125,7 +141,10 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        CheckCanHeroGoBattle();
+        if (!CheckCanHeroGoBattle())
+        {
+            return;
+        }
 
         HidePreLaneRoadFeedBack();
         myDragIndicator.SetActive(false);
@@ -150,21 +169,29 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void HeroRecall()
     {
         if (ManaManager.myInstance.SubstractManaFromPlayer(myRecallManaCost))
-        {
-
-            _myHeroUnit.GoBackToTemple();
-            //템플이 우물회복기능 가지게하고
-            //귀환시 우물회복 틱 붙여줌
-            //출격시 틱 없애줌
+        {        
+            _myHeroUnit.GoBackToTemple(myRecallDelay).onComplete+= TempleHeroHealSequence;
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clidc");
-       if(!_myHeroUnit.myIsDead &&_myIsHeroInLine)
+       if(!_myHeroUnit.myIsDead && _myHeroUnit._myIsHeroInLine)
         {
+            //귀환시퀀스
+            print("RecallClicked");
             HeroRecall();
+            //완료후 회복시퀀스
         }
+    }
+
+    void TempleHeroHealSequence()
+    {
+        _myHeroHealSeq = DOTween.Sequence();
+        _myHeroHealSeq.SetLoops(-1).PrependInterval(0.5f).PrependCallback(HealHero);
+    }
+    void HealHero()
+    {
+        _myHeroUnit.GetHeal(myHealTickValue);
     }
 }

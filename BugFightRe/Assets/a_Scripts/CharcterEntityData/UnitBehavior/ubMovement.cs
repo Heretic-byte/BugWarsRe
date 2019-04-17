@@ -17,8 +17,8 @@ public class ubMovement :myUnitBehavior
         SetTranslateDir();
         myMovementSpeed = myUnit.myStat.m_BaseMovementSpeed;
 
-        myUnit.OnDequeueAction += AddTickToManager;
-        myUnit.OnEnqueueAction += RemoveTickFromManager;
+        myUnit.myOnDequeueAction += AddTickToManager;
+        myUnit.myOnEnqueueAction += RemoveTickFromManager;
     }
     public void SetTranslateDir()
     {

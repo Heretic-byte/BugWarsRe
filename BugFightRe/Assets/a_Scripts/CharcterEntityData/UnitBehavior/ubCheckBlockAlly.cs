@@ -18,8 +18,8 @@ public class ubCheckBlockAlly : myUnitBehavior
         myManagerCollDic = ColliderDicSingletone.myInstance;
 
 
-        myUnit.OnDequeueAction += AddTickToManager;
-        myUnit.OnEnqueueAction += RemoveTickFromManager;
+        myUnit.myOnDequeueAction += AddTickToManager;
+        myUnit.myOnEnqueueAction += RemoveTickFromManager;
         myUnit.myOnGetKillAction += SetNullTarget;
     }
     public void SetRayCastDir()

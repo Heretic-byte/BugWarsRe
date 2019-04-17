@@ -1,6 +1,8 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+
 public class CameraMover : MonoBehaviour, IfixedTickFloat
 {
     [SerializeField]
@@ -14,9 +16,13 @@ public class CameraMover : MonoBehaviour, IfixedTickFloat
 
     [SerializeField]
     Transform _camRightBoundTrans;
-
+    [SerializeField]
+    private float _fastCamMoveSpeed = 0.5f;
     Vector3 _camLeftBound;
     Vector3 _camRightBound;
+
+    Tween _CamMoveTween { get; set; }
+     float myFastCamMoveSpeed { get => _fastCamMoveSpeed; }
 
     void Start()
     {   
@@ -59,8 +65,20 @@ public class CameraMover : MonoBehaviour, IfixedTickFloat
 
         input.x = 0;
     }
-    
-   
+
+
+    public void MoveCamLeftTemple()
+    {
+        _CamMoveTween?.Kill();
+        _CamMoveTween = myTrans.DOMove(myCamLeftBound, myFastCamMoveSpeed);
+    }
+    public void MoveCamRightTemple()
+    {
+        _CamMoveTween?.Kill();
+        _CamMoveTween = myTrans.DOMove(myCamRightBound, myFastCamMoveSpeed);
+    }
+
+
     public void AddTickToManager()
     {
         GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);

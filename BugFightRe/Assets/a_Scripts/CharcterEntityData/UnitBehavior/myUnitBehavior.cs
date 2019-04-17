@@ -6,8 +6,8 @@ using UnityEngine;
 
 public abstract class myUnitBehavior : MonoBehaviour, IfixedTickFloat
 {
-    protected Unit _unit;
-    public Unit myUnit { get => _unit; set => _unit = value; }
+    
+    public Unit myUnit { get; protected set; }
     public GameManager myManagerGame { get; set ; }
     protected Transform myTrans { get; set; }
 

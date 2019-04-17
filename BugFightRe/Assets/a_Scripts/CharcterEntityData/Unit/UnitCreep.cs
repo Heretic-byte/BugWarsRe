@@ -54,8 +54,9 @@ public class UnitCreep : Unit,IpoolingObj
     {
         base.GetKill();
 
-        myObj.SetActive(false);
-        OnEnqueue();
+        Sequence DieDelay = DOTween.Sequence();
+        myOnEnqueueAction?.Invoke();
+        DieDelay.SetDelay(myDeathDelay).OnComplete(OnEnqueue);
     }
 
     public void OnDequeue()
@@ -63,12 +64,13 @@ public class UnitCreep : Unit,IpoolingObj
         myIsDead = false;
         SetHpToMax();
         myUnitStatement = UnitStatement.Walk;
-        OnDequeueAction?.Invoke();
+        myOnDequeueAction?.Invoke();
         myCollider2D.enabled = true;
     }
     public void OnEnqueue()
     {
-        OnEnqueueAction?.Invoke();
+        myObj.SetActive(false);
+      
         OnEnqueActionObj?.Invoke(myObj);
     }
 
