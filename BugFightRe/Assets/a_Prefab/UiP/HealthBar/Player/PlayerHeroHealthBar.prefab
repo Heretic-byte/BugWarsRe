@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4050472449993448232}
   - component: {fileID: 4050472449993448233}
-  - component: {fileID: 690880688264922534}
+  - component: {fileID: 84077643687482194}
   m_Layer: 5
   m_Name: PlayerHeroHealthBar
   m_TagString: Untagged
@@ -208,7 +208,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 7
   m_TargetDisplay: 0
---- !u!114 &690880688264922534
+--- !u!114 &84077643687482194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4050472449993448237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc4cb5baf3f501489c9a2fd83cdfc8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 61066b4ac67f3f642b66ed20756376b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _ForwardBar: {fileID: 4050472449765950674}

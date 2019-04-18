@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Unit))]
 
 public abstract class myUnitBehavior : MonoBehaviour, IfixedTickFloat
 {
