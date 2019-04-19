@@ -36,8 +36,8 @@ public class ubAnimDelegate : myUnitBehavior
        
         myUnit.myOnAttack += SetTriggerOnAttack;
         myUnit.myOnDamageAction += SetTriggerOnDamage;
-        myUnit.myOnGetKillAction += ResetTriggerAll;
-        myUnit.myOnGetKillAction += SetTriggerOnDead;
+        myUnit.myOnKillAction += ResetTriggerAll;
+        myUnit.myOnKillAction += SetTriggerOnDead;
       
         myUnit.myOnWalking += SetBoolOnStartWalk;
         myUnit.myOnNotWalking += SetBoolOnStopWalk;

@@ -20,27 +20,42 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     private int _recallManaCost;
     public int myRecallManaCost { get => _recallManaCost;  }
-
-    public Image myDragButtonIcon { get; set; }
-    private GameObject _myHeroObj { get; set; }
-    private UnitHero _myHeroUnit { get; set; }
-    private LaneRoad _myPreLaneRoad { get; set; }
-    private Transform _myDragIndicatorTrans { get; set; }
-   
+    [SerializeField]
+    private Text _HeroRespawnTimeText;
+    public Text myHeroRespawnTimeText { get => _HeroRespawnTimeText; }
+    [SerializeField]
+    private Image _HeroRespawnCDImage;
+    public Image myHeroRespawnCDImage { get => _HeroRespawnCDImage; }
     [SerializeField]
     private float _recallDelay = 3f;
     public float myRecallDelay { get => _recallDelay; }
     [SerializeField]
+    private float _recallCoolDown = 20f;
+    public float myRecallCoolDown { get => _recallCoolDown; }
+    [SerializeField]
     private float _healTickValue = 200;
-    public float myHealTickValue { get => _healTickValue;  }
+    public float myHealTickValue { get => _healTickValue; }
 
-    Sequence _myHeroHealSeq { get; set; }
-  
+    private Image _myDragButtonIcon { get; set; }   
+    private Text _myHeroPosText { get; set; }  
+    private GameObject _myHeroObj { get; set; }
+    private UnitHero _myHeroUnit { get; set; }
+    private LaneRoad _myPreLaneRoad { get; set; }
+    private Transform _myDragIndicatorTrans { get; set; }
+    private bool _IsRecallCd { get; set; }
+    private Sequence _myHeroHealSeq { get; set; } 
+    private float myRespawnTimer { get; set; }
+    private Sequence _myRespawnTimerSeq { get; set; }
+    private Tween _myRespawnImageTween { get; set; }
+    private Sequence _myRespawnImageSeq { get; set; }
+
     public void Init()
     {
-        myDragButtonIcon = GetComponent<Image>();
+        _myDragButtonIcon = GetComponent<Image>();
         myDragIndicator = Instantiate(_dragIndicatorP, Vector3.zero, Quaternion.identity);
-        myDragIndicator.SetActive(false);      
+        myDragIndicator.SetActive(false);
+        _IsRecallCd = false;
+        _myHeroPosText = GetComponentInChildren<Text>();
     }
 
     public void SetHero(GameObject heroObj, UnitHero heroUnit)
@@ -48,7 +63,18 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Init();
         _myHeroObj = heroObj;
         _myHeroUnit = heroUnit;
-        myDragButtonIcon.sprite = heroUnit.myPortrait;
+        _myDragButtonIcon.sprite = heroUnit.myPortrait;
+
+        heroUnit.myOnRecall += HideHeroBattleFieldLineNumber;
+
+        heroUnit.myOnRespawnCountDown += ShowHeroDeathRespawnTime;
+        heroUnit.myOnRespawn += HideHeroDeathRespawnTime;
+
+        heroUnit.myOnRespawnCountDown += ShowHeroDeathRespawnImage;
+        heroUnit.myOnRespawn += HideHeroDeathRespawnImage;
+
+        HideHeroBattleFieldLineNumber();
+        HideHeroDeathRespawnTime();
         //ui표시 등등
     }
 
@@ -60,16 +86,17 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             return;
         }
-        Debug.Log("GOBATTLE");
-
-        var summonNexus = StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()].myLeftNexus;
-
-        var tempV3 = summonNexus.mySpawnPointArray[0];
-        tempV3.z -= 0.1f;
+     
+        var SummonLine= StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
+       
+        ShowHeroBattleFieldLineNumber(SummonLine.myLaneNumber);
+        var SummonNexus = SummonLine.myLeftNexus;
+        var TempV3 = SummonNexus.mySpawnPointArray[0];
+        TempV3.z -= 0.1f;
 
         _myHeroHealSeq?.Kill();
 
-        _myHeroUnit.GoRushBattleField(summonNexus.myTrans.position + tempV3);
+        _myHeroUnit.GoRushBattleField(SummonNexus.myTrans.position + TempV3);
     }
 
     public RaycastHit2D RaycastGround()
@@ -166,11 +193,30 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             _myPreLaneRoad.HideFeedBackLaneRoad();
         }
     }
+
+    public void BuyBack()
+    {
+        _myHeroUnit.Respawn();
+    }
+
     public void HeroRecall()
     {
+        if(_IsRecallCd)
+        {
+            return;
+        }
+
+
         if (ManaManager.myInstance.SubstractManaFromPlayer(myRecallManaCost))
         {        
             _myHeroUnit.GoBackToTemple(myRecallDelay).onComplete+= TempleHeroHealSequence;
+            _IsRecallCd = true;
+            Sequence RecallCdSeq = DOTween.Sequence();
+            RecallCdSeq.SetDelay(myRecallCoolDown).OnComplete(delegate { _IsRecallCd = false; });
+            //쿨다운표시랑 리스폰쿨다운이랑 겹침
+            //쿨다운 일단존재하고
+            //죽으면 초상화 검게만들고 부활시간 표시
+            
         }
     }
 
@@ -193,5 +239,52 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     void HealHero()
     {
         _myHeroUnit.GetHeal(myHealTickValue);
+    }
+    
+    void ShowHeroDeathRespawnTime(float respawnTime)
+    {
+        myRespawnTimer = respawnTime;
+      
+        _myRespawnTimerSeq?.Kill();
+        _myRespawnTimerSeq = DOTween.Sequence();
+        _myRespawnTimerSeq.SetEase(Ease.Linear).SetLoops(-1).AppendCallback(RespawnTimer);
+
+    }
+   
+    void ShowHeroDeathRespawnImage(float respawnTime)
+    {
+        myHeroRespawnCDImage.fillAmount = 1;
+        myHeroRespawnCDImage.DOFade(0, 0);
+         _myRespawnImageSeq = DOTween.Sequence();
+        _myRespawnImageSeq.Append(myHeroRespawnCDImage.DOFade(1, 3))
+            .Append(_myDragButtonIcon.DOFillAmount(0, respawnTime))
+            .Append(myHeroRespawnCDImage.DOFade(0, 0.1f)).SetEase(Ease.Linear);
+
+    }
+    void RespawnTimer()
+    {
+        myRespawnTimer -= (Time.deltaTime/2f);
+
+        myHeroRespawnTimeText.text = string.Format("{00:F1}", myRespawnTimer);
+    }
+    void HideHeroDeathRespawnTime()
+    {
+        _myRespawnTimerSeq?.Kill();
+        myHeroRespawnTimeText.text = "";
+    }
+    void HideHeroDeathRespawnImage()
+    {
+        _myRespawnImageSeq?.Kill();
+        myHeroRespawnCDImage.fillAmount = 0;
+        myHeroRespawnCDImage.DOFade(0, 0);
+
+    }
+    void ShowHeroBattleFieldLineNumber(int _laneNumb)
+    {
+        _myHeroPosText.text = _laneNumb.ToString();
+    }
+    void HideHeroBattleFieldLineNumber()
+    {
+        _myHeroPosText.text = "In";
     }
 }

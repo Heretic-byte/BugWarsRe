@@ -15,7 +15,7 @@ public abstract class DamageAble : MonoBehaviour
     public event OnDamageFloatDele myOnDamageFloat;
     public event OnDamageBySomeone myOnDamageBySomeone;
     public event OnKillFromAttackerDele myOnKillFromAttacker;
-    public event UnityAction myOnGetKillAction;
+    public event UnityAction myOnKillAction;
   
 
     public bool myIsDead { get => _isDead; set => _isDead = value; }
@@ -117,7 +117,7 @@ public abstract class DamageAble : MonoBehaviour
     public virtual void GetKill()
     {
 
-        myOnGetKillAction?.Invoke();
+        myOnKillAction?.Invoke();
         
         myIsDead = true;
 

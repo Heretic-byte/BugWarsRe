@@ -12,6 +12,8 @@ public class LaneRoad : MonoBehaviour
     [Header("DragFeedBackSRender")]
     [SerializeField]
     SpriteRenderer _sRenderer;
+    [SerializeField]
+    private int _laneNumber = 0;
 
     Tweener _fadeTweener;
 
@@ -19,6 +21,7 @@ public class LaneRoad : MonoBehaviour
     public Nexus myLeftNexus { get => _leftNexus; set => _leftNexus = value; }
     public Nexus myRightNexus { get => _rightNexus; set => _rightNexus = value; }
     public SpriteRenderer mySRenderer { get => _sRenderer; set => _sRenderer = value; }
+    public int myLaneNumber { get => _laneNumber; }
 
     private void Awake()
     {

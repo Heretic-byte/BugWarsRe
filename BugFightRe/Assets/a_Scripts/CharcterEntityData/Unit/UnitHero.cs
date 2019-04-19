@@ -16,13 +16,13 @@ public class UnitHero : Unit, ICanBeStun
     public UnityAction myOnStuned { get; set; }
     public UnityAction myOnRespawn { get; set; }
     public UnityAction myOnRecall { get; set; }
+    public UnityAction<float> myOnRespawnCountDown { get; set; }
 
-  
     [SerializeField]
     private float _respawnTime = 15f;
-    public float myRespawnTime { get => _respawnTime; }
+     float myRespawnTime { get => _respawnTime; }
 
-    private float myCurrentRespawnTime{get;set;}
+    public float myCurrentRespawnTime{get;private set;}
 
     private int _deathCount = 0;
     public int myDeathCount { get => _deathCount; set => _deathCount = value; }
@@ -61,6 +61,8 @@ public class UnitHero : Unit, ICanBeStun
         SetHpToMax();
         _startTemplePos = myTrans.position;
         _myIsHeroInLine = false;
+
+        myCurrentRespawnTime = _respawnTime;
     }
     public override void GetKill()
     {
@@ -105,15 +107,19 @@ public class UnitHero : Unit, ICanBeStun
             });
     }
 
+
+    
     public void SetRespawnDelay()
     {
         Sequence RespawnSeq = DOTween.Sequence();
 
-        myCurrentRespawnTime = (myDeathCount * myRespawnTime) * 0.8f;
-     
-         RespawnSeq.SetDelay(myCurrentRespawnTime).AppendCallback(Respawn);
+        myCurrentRespawnTime = ((myDeathCount*0.8f) * myRespawnTime);
+
+        RespawnSeq.PrependInterval(myCurrentRespawnTime)
+           .PrependCallback(delegate { myOnRespawnCountDown.Invoke(myCurrentRespawnTime); })
+           .onComplete += Respawn;
     }
-    private void Respawn()
+    public void Respawn()
     {
         _isDead = false;
         myCollider2D.enabled = true;
