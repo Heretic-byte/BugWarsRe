@@ -21,8 +21,14 @@ public class GameManager : Singleton<GameManager>
     event deleUpdateTick _myDeleScaleOnlyUpateTick;
     UnityAction _onGameEnd;
     public UnityAction myOnGameEnd { get => _onGameEnd; set => _onGameEnd = value; }
-  
-  
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        //프레임?
+    }
+
     public void AddScaledTickToManager(deleUpdateTick _deleUpdateTick)
     {
         _myDeleScaledUpdateTick += _deleUpdateTick;

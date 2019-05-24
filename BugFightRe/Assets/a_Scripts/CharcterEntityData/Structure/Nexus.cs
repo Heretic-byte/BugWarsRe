@@ -14,7 +14,6 @@ public class Nexus : Unit
     public override float GetArmor()
     {
         return myStat.m_BaseArmor;
-        
     }
 
     public override float GetAttackDamage()
@@ -44,22 +43,19 @@ public class Nexus : Unit
 
     private void Awake()
     {
-       
         MainSetInstance();
        
         SetHpToMax();
     }
-
 
     public override void GetKill()
     {
         base.GetKill();
         myObj.SetActive(false);
     }
+
     public Vector3 GetSpawnPos()
     {
-
-
         return myTrans.position+mySpawnPointArray[_mySpawnCount++ % 3];
     }
 }

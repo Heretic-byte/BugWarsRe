@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6458642408569696684}
   - component: {fileID: 6458642408569696685}
   m_Layer: 11
-  m_Name: LeftNexus1
+  m_Name: LeftNexus
   m_TagString: Structure
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   _allyLayers:
     serializedVersion: 2
     m_Bits: 0
+  _deathDelay: 3
   _SpawnPointArray:
   - {x: 0.145, y: -0.008, z: -0.3}
   - {x: 0.145, y: 0.096, z: -0.2}

@@ -71,7 +71,6 @@ public class UnitHero : Unit, ICanBeStun
 
         myDeathCount++;
 
-        
         GoBackToTemple(myDeathDelay).OnComplete(SetRespawnDelay);
     }
  
@@ -81,6 +80,7 @@ public class UnitHero : Unit, ICanBeStun
         myTrans.position = _pos;
         _myIsHeroInLine = true;
         myOnRushBattleField?.Invoke();
+
         foreach(var behav in myUnitBehaviors)
         {
             behav.AddTickToManager();

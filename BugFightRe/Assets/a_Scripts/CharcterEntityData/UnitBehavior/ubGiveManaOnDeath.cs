@@ -59,9 +59,15 @@ public class ubGiveManaOnDeath : myUnitBehavior
     RaycastHit2D[] CastRayAllSide()
     {
         rayOrigin = myTrans.position + myUnit.myRayCastOffset;
-        RaycastHit2D[] heroHitten = new RaycastHit2D[2];
-        heroHitten[0] = Physics2D.Raycast(rayOrigin, Vector2.right, myManaGiveRange, myEnemyHeroLayer);
-        heroHitten[1] = Physics2D.Raycast(rayOrigin, Vector2.left, myManaGiveRange, myEnemyHeroLayer);
+
+      
+        RaycastHit2D[] heroHitten = new RaycastHit2D[1];
+
+        rayOrigin.x -= myManaGiveRange;
+
+        heroHitten[0] = Physics2D.Raycast(rayOrigin, Vector2.right, myManaGiveRange*2, myEnemyHeroLayer);
+        //heroHitten[1] = Physics2D.Raycast(rayOrigin, Vector2.left, myManaGiveRange, myEnemyHeroLayer);
+
         return heroHitten;
     }
     void AddMana()

@@ -6,9 +6,9 @@ public class LaneRoad : MonoBehaviour
 {
     Collider2D _coll2D;  
     [SerializeField]
-    Nexus _leftNexus;
+    Transform _leftStartPos;
     [SerializeField]
-    Nexus _rightNexus;
+    Transform _rightStartPos;
     [Header("DragFeedBackSRender")]
     [SerializeField]
     SpriteRenderer _sRenderer;
@@ -18,8 +18,8 @@ public class LaneRoad : MonoBehaviour
     Tweener _fadeTweener;
 
     public Collider2D  myColl2D { get => _coll2D; set => _coll2D = value; }
-    public Nexus myLeftNexus { get => _leftNexus; set => _leftNexus = value; }
-    public Nexus myRightNexus { get => _rightNexus; set => _rightNexus = value; }
+    public Transform myLeftLaneStartPos { get => _leftStartPos; set => _leftStartPos = value; }
+    public Transform myRightLaneStartPos { get => _rightStartPos; set => _rightStartPos = value; }
     public SpriteRenderer mySRenderer { get => _sRenderer; set => _sRenderer = value; }
     public int myLaneNumber { get => _laneNumber; }
 

@@ -6,7 +6,8 @@ public class Tower : Unit
 {
     public override float GetArmor()
     {
-        throw new System.NotImplementedException();
+        return myStat.m_BaseArmor;
+
     }
 
     public override float GetAttackDamage()
@@ -21,12 +22,12 @@ public class Tower : Unit
 
     public override float GetMaxHealth()
     {
-        throw new System.NotImplementedException();
+        return myStat.m_BaseHealth;
     }
 
     public override float GetSpellArmorPercent()
     {
-        throw new System.NotImplementedException();
+        return myStat.m_BaseMagicArmor;
     }
 
     public override float GetSpellDamagePercent()
@@ -35,14 +36,20 @@ public class Tower : Unit
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        MainSetInstance();
+        SetHpToMax();
+
+        AddBehavTick();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void GetKill()
     {
-        
+        base.GetKill();
+        RemoveBehavTick();
+        myObj.SetActive(false);
     }
+
+
 }

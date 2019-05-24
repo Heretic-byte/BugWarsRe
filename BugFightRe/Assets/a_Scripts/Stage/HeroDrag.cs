@@ -49,6 +49,9 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Tween _myRespawnImageTween { get; set; }
     private Sequence _myRespawnImageSeq { get; set; }
 
+    Vector3 TempV3 = Vector3.zero;
+    
+
     public void Init()
     {
         _myDragButtonIcon = GetComponent<Image>();
@@ -56,6 +59,8 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         myDragIndicator.SetActive(false);
         _IsRecallCd = false;
         _myHeroPosText = GetComponentInChildren<Text>();
+        TempV3.z -= 0.1f;
+        TempV3.y -= 0.32f;
     }
 
     public void SetHero(GameObject heroObj, UnitHero heroUnit)
@@ -90,13 +95,14 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         var SummonLine= StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
        
         ShowHeroBattleFieldLineNumber(SummonLine.myLaneNumber);
-        var SummonNexus = SummonLine.myLeftNexus;
-        var TempV3 = SummonNexus.mySpawnPointArray[0];
-        TempV3.z -= 0.1f;
+        var SummonTrans = SummonLine.myLeftLaneStartPos;
+        // var TempV3 = SummonNexus.mySpawnPointArray[0];
+        //TempV3.z -= 0.1f;
+     
 
         _myHeroHealSeq?.Kill();
 
-        _myHeroUnit.GoRushBattleField(SummonNexus.myTrans.position + TempV3);
+        _myHeroUnit.GoRushBattleField(SummonTrans.position + TempV3);
     }
 
     public RaycastHit2D RaycastGround()

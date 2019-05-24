@@ -69,14 +69,17 @@ public abstract class ubRangeAttack : ubAttackBase
     {
         rayOrigin = myTrans.position + myUnit.myRayCastOffset;
         targetHitten = Physics2D.Raycast(rayOrigin, _attackDir, myAttackRange, myUnit.myTargetLayers);
-
+        Debug.DrawRay(rayOrigin, _attackDir * myAttackRange, Color.red, 1f);
+        
         if (targetHitten.collider != null)
         {
+       
             myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
            
         }
         else
         {
+
             myUnit.myAttackTarget = null;
             return;
         }
@@ -84,6 +87,7 @@ public abstract class ubRangeAttack : ubAttackBase
 
         if (_attackTimer > myAttackSpeed)
         {
+         
             _attackTimer = 0f;
 
             myUnit.myOnAttack?.Invoke();

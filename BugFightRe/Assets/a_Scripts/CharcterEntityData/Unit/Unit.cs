@@ -54,6 +54,20 @@ public abstract class Unit : DamageAble
             myB.SetInstance();
         }
     }
+    protected void AddBehavTick()
+    {
+        foreach (var behav in myUnitBehaviors)
+        {
+            behav.AddTickToManager();
+        }
+    }
+    protected void RemoveBehavTick()
+    {
+        foreach (var behav in myUnitBehaviors)
+        {
+            behav.RemoveTickFromManager();
+        }
+    }
     public virtual void SetAttackTargetNull()
     {
         myAttackTarget = null;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e1c762adc61124aafc89f69af215a6, type: 3}
   m_Name: StructNexus
   m_EditorClassIdentifier: 
-  m_BaseHealth: 8000
+  m_BaseHealth: 12000
   m_BaseAttackSpeed: 1
   m_BaseDamage: 50
   m_BaseSpellAmply: 1
@@ -21,3 +21,4 @@ MonoBehaviour:
   m_BaseMovementSpeed: 10
   m_BaseAttackRange: 5
   m_BaseAllyBlockRange: 5
+  m_BaseManaReward: 100
