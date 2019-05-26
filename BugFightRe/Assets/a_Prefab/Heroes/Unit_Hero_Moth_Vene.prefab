@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2077548911}
   - component: {fileID: 5920558957845672515}
   - component: {fileID: 3941220448930821510}
+  - component: {fileID: 5538062854573569754}
   m_Layer: 14
   m_Name: Unit_Hero_Moth_Vene
   m_TagString: Unit
@@ -224,6 +225,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdd9cef73d89ef40a555b595ea3804f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5538062854573569754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101944861823034444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f613e24c7808f6478f01ba1669ed9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MaxLevel: 3
+  _OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &8698598407077779869
 GameObject:
   m_ObjectHideFlags: 0

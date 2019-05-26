@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunglePortal : MonoBehaviour
+public class JunglePortal : MonoBehaviour,IlinePosHolder
 {
-    [Tooltip("SetThisForOpponent")]
+   // [Tooltip("SetThisForOpponent")]
     [SerializeField]
     private LayerMask _WhatToHit;
 
@@ -15,6 +15,14 @@ public class JunglePortal : MonoBehaviour
     public float myRadius { get => _Radius;}
 
     ColliderDicSingletone myManagerCollDic { get; set; }
+
+    [SerializeField]
+    Vector3[] _SpawnPointArray
+         = { new Vector3(0.145f, 0.0f, -0.3f)
+    ,new Vector3(0.145f, 0.1f, -0.3f)
+    ,new Vector3(0.145f, 0.2f, -0.3f)};
+
+    public Vector3[] myPosArray { get => _SpawnPointArray; set => _SpawnPointArray = value; }
 
     private void Start()
     {
@@ -40,6 +48,13 @@ public class JunglePortal : MonoBehaviour
         }
     }
 
+    public Vector3 GetSpawnPos()
+    {
+        throw new System.NotImplementedException();
+    }
 
-
+    public Vector3 GetSpawnPos(int index)
+    {
+        return transform.position + myPosArray[index];
+    }
 }

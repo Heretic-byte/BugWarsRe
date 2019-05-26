@@ -15,10 +15,9 @@ MonoBehaviour:
   m_BaseHealth: 2500
   m_BaseAttackSpeed: 0.6
   m_BaseDamage: 70
-  m_BaseSpellAmply: 1
+  m_BaseSpellAmplify: 1
   m_BaseArmor: 5
   m_BaseMagicArmor: 0
   m_BaseMovementSpeed: 0.5
-  m_BaseAttackRange: 4
-  m_BaseAllyBlockRange: 0.6
+  m_BaseAttackRange: 3
   m_BaseManaReward: 500

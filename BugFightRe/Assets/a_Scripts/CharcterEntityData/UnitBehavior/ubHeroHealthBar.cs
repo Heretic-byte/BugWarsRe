@@ -8,7 +8,7 @@ public class ubHeroHealthBar : ubHealthBar
 
     public override void AddTickToManager()
     {
-        base.AddTickToManager();
+        //base.AddTickToManager();
     }
 
     public override void FixedTickFloat(float _tick)
@@ -18,7 +18,7 @@ public class ubHeroHealthBar : ubHealthBar
 
     public override void RemoveTickFromManager()
     {
-        base.RemoveTickFromManager();
+       // base.RemoveTickFromManager();
     }
 
     public override void SetInstance()

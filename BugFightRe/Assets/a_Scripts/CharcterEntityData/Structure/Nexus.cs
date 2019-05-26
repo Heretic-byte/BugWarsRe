@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Nexus : Unit
+public class Nexus : Unit,IlinePosHolder
 {
     [SerializeField]
-    Vector3[] _SpawnPointArray;
+    Vector3[] _SpawnPointArray
+        = { new Vector3(0.145f, 0.0f, -0.3f)
+    ,new Vector3(0.145f, 0.1f, -0.3f)
+    ,new Vector3(0.145f, 0.2f, -0.3f)};
 
-    public Vector3[] mySpawnPointArray { get => _SpawnPointArray; set => _SpawnPointArray = value; }
-
+    public Vector3[] myPosArray { get => _SpawnPointArray; set => _SpawnPointArray = value; }
+  
+    //0.145//0.0 //-0.3
+    //0.145//0.1 //-0.3
+    //0.145//0.2 //-0.3
     private int _mySpawnCount = 0;
 
     public override float GetArmor()
@@ -56,6 +62,11 @@ public class Nexus : Unit
 
     public Vector3 GetSpawnPos()
     {
-        return myTrans.position+mySpawnPointArray[_mySpawnCount++ % 3];
+        return myTrans.position+myPosArray[_mySpawnCount++ % 3];
+    }
+
+    public Vector3 GetSpawnPos(int index)
+    {
+        return myTrans.position + myPosArray[index];
     }
 }

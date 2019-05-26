@@ -7,11 +7,11 @@ using DG.Tweening;
 
 public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    [SerializeField]
-    private float GroundPosZ = 20f;
+    //[SerializeField]
+    //private float GroundPosZ = 20f;
     [SerializeField]
     private GameObject _dragIndicatorP;
-    public GameObject myDragIndicator { get; set; }
+    public DragIndicator myDragIndicator { get; set; }
 
     [SerializeField]
     private LayerMask _whatToHit;
@@ -48,19 +48,16 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Sequence _myRespawnTimerSeq { get; set; }
     private Tween _myRespawnImageTween { get; set; }
     private Sequence _myRespawnImageSeq { get; set; }
-
-    Vector3 TempV3 = Vector3.zero;
-    
+    private CameraMover _myCamMover { get; set; }
 
     public void Init()
     {
         _myDragButtonIcon = GetComponent<Image>();
-        myDragIndicator = Instantiate(_dragIndicatorP, Vector3.zero, Quaternion.identity);
+        myDragIndicator = Instantiate(_dragIndicatorP, Vector3.zero, Quaternion.identity).GetComponent<DragIndicator>();
         myDragIndicator.SetActive(false);
         _IsRecallCd = false;
         _myHeroPosText = GetComponentInChildren<Text>();
-        TempV3.z -= 0.1f;
-        TempV3.y -= 0.32f;
+        _myCamMover = Camera.main.GetComponent<CameraMover>();
     }
 
     public void SetHero(GameObject heroObj, UnitHero heroUnit)
@@ -95,14 +92,12 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         var SummonLine= StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
        
         ShowHeroBattleFieldLineNumber(SummonLine.myLaneNumber);
-        var SummonTrans = SummonLine.myLeftLaneStartPos;
-        // var TempV3 = SummonNexus.mySpawnPointArray[0];
-        //TempV3.z -= 0.1f;
-     
 
+        var SummonTrans = SummonLine.myLeftLaneStartPos;
+         
         _myHeroHealSeq?.Kill();
 
-        _myHeroUnit.GoRushBattleField(SummonTrans.position + TempV3);
+        _myHeroUnit.GoRushBattleField(SummonTrans.GetSpawnPos(0));
     }
 
     public RaycastHit2D RaycastGround()
@@ -117,7 +112,6 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public Collider2D GetCollRaycast()
     {
         var hitten = RaycastGround();
-
         return hitten.collider;
     }
 
@@ -146,8 +140,8 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         var MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         myDragIndicator.transform.position = MousePos;
         myDragIndicator.SetActive(true);
+        myDragIndicator.SetIcon(_myDragButtonIcon.sprite);
         _myDragIndicatorTrans = myDragIndicator.transform;
-        SetDraggedPosition();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -157,9 +151,11 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             return;
         }
 
+        DragCameraMove();
         SetDraggedPosition();
-
+        
         var coll = GetCollRaycast();
+
         if (coll != null)
         {   
             HidePreLaneRoadFeedBack();
@@ -172,15 +168,23 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
     }
 
+    void DragCameraMove()
+    {
+        _myCamMover.DragCameraMove();
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
+
         if (!CheckCanHeroGoBattle())
         {
             return;
         }
 
         HidePreLaneRoadFeedBack();
+
         myDragIndicator.SetActive(false);
+        myDragIndicator.SetDefault();
         GoBattleField();
     }
 
@@ -211,7 +215,6 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         {
             return;
         }
-
 
         if (ManaManager.myInstance.SubstractManaFromPlayer(myRecallManaCost))
         {        
@@ -250,11 +253,9 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     void ShowHeroDeathRespawnTime(float respawnTime)
     {
         myRespawnTimer = respawnTime;
-      
         _myRespawnTimerSeq?.Kill();
         _myRespawnTimerSeq = DOTween.Sequence();
         _myRespawnTimerSeq.SetEase(Ease.Linear).SetLoops(-1).AppendCallback(RespawnTimer);
-
     }
    
     void ShowHeroDeathRespawnImage(float respawnTime)
@@ -265,7 +266,6 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         _myRespawnImageSeq.Append(myHeroRespawnCDImage.DOFade(1, 3))
             .Append(_myDragButtonIcon.DOFillAmount(0, respawnTime))
             .Append(myHeroRespawnCDImage.DOFade(0, 0.1f)).SetEase(Ease.Linear);
-
     }
     void RespawnTimer()
     {

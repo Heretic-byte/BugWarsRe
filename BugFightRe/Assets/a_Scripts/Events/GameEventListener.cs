@@ -25,5 +25,5 @@ public class GameEventListener : MonoBehaviour
         m_Response?.Invoke();
     }
 
-
+    
 }

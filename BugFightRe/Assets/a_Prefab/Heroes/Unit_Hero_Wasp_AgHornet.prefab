@@ -977,6 +977,7 @@ GameObject:
   - component: {fileID: 1739552850}
   - component: {fileID: 337403756425388817}
   - component: {fileID: 1060776290017049505}
+  - component: {fileID: 3484781304828077248}
   m_Layer: 14
   m_Name: Unit_Hero_Wasp_AgHornet
   m_TagString: Unit
@@ -1107,6 +1108,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdd9cef73d89ef40a555b595ea3804f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3484781304828077248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100954619542072713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f613e24c7808f6478f01ba1669ed9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MaxLevel: 5
+  _OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &8922990006543527992
 GameObject:
   m_ObjectHideFlags: 0

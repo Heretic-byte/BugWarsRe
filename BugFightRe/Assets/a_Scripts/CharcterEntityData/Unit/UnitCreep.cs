@@ -47,7 +47,7 @@ public class UnitCreep : Unit,IpoolingObj
     }
     public override float GetSpellDamagePercent()
     {
-        return myStat.m_BaseSpellAmply;
+        return myStat.m_BaseSpellAmplify;
     }
     #endregion
     public override void GetKill()

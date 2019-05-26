@@ -17,6 +17,8 @@ public class UnitHero : Unit, ICanBeStun
     public UnityAction myOnRespawn { get; set; }
     public UnityAction myOnRecall { get; set; }
     public UnityAction<float> myOnRespawnCountDown { get; set; }
+    [SerializeField]
+    private UnityEvent _OnRecallEvent;
 
     [SerializeField]
     private float _respawnTime = 15f;
@@ -28,42 +30,48 @@ public class UnitHero : Unit, ICanBeStun
     public int myDeathCount { get => _deathCount; set => _deathCount = value; }
     public bool _myIsHeroInLine { get;private set; }
 
+    public StatDataBase.StatValue myRealStat { get; private set; }=new StatDataBase.StatValue();
+    public UnityEvent myOnRecallEvent { get => _OnRecallEvent;  }
 
     #region GetStat
     public override float GetArmor()
     {
-        return myStat.m_BaseArmor;
+        return myRealStat.m_ArmorBonus;
     }
     public override float GetAttackDamage()
     {
-        return myStat.m_BaseDamage;
+        return myRealStat.m_DamageBonus;
     }
     public override float GetAttackSpeed()
     {
-        return myStat.m_BaseAttackSpeed;
+        return myRealStat.m_AttackSpeedBonus;
     }
     public override float GetMaxHealth()
     {
-        return myStat.m_BaseHealth;
+        return myRealStat.m_HealthBonus;
     }
     public override float GetSpellArmorPercent()
     {
-        return myStat.m_BaseMagicArmor;
+        return myRealStat.m_MagicArmorBonus;
     }
     public override float GetSpellDamagePercent()
     {
-        return myStat.m_BaseSpellAmply;
+        return myRealStat.m_SpellAmplifyBonus;
     }
     #endregion
     private void Awake()
     {
         MainSetInstance();
+        
+        myRealStat.SetStat(myStat);
+        
         SetHpToMax();
         _startTemplePos = myTrans.position;
         _myIsHeroInLine = false;
 
         myCurrentRespawnTime = _respawnTime;
     }
+ 
     public override void GetKill()
     {
         base.GetKill();
@@ -85,11 +93,11 @@ public class UnitHero : Unit, ICanBeStun
         {
             behav.AddTickToManager();
         }
-   
     }
     public Sequence GoBackToTemple(float _recallDelay)
     {
         myOnRecall.Invoke();
+        myOnRecallEvent?.Invoke();
 
         foreach (var behav in myUnitBehaviors)
         {
@@ -103,7 +111,6 @@ public class UnitHero : Unit, ICanBeStun
             {
                 myTrans.position = myStartTemplePos;
                 _myIsHeroInLine = false;
-              
             });
     }
 
@@ -124,15 +131,11 @@ public class UnitHero : Unit, ICanBeStun
         _isDead = false;
         myCollider2D.enabled = true;
         SetHpToMax();
-       
         myOnRespawn?.Invoke();
     }
 
     public void GetStunDur(float _dur)
     {
         myOnStuned?.Invoke();
-
-
     }
-    
 }

@@ -78,6 +78,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     Sequence _spawnCreepUiShowSeq;
     public Sequence mySpawnCreepUiShowSeq { get => _spawnCreepUiShowSeq; set => _spawnCreepUiShowSeq = value; }
     
+    TimeManager myTimeManage { get; set; }
 
     #endregion
     void Start()
@@ -91,6 +92,8 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
         SetLaneLoadAndNexus();
         SetNexusKillDelegate();
         SetTowerKillDelgate();
+
+        myTimeManage = TimeManager.myInstance;
 
         mySpawnCreepSeq = DOTween.Sequence();
         mySpawnCreepUiShowSeq = DOTween.Sequence();
@@ -152,7 +155,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
             .AppendCallback(
               delegate
               {
-                  SetCreepLoopTimeScale(TimeManager.myInstance.GetTimeScaleOnly);
+                  SetCreepLoopTimeScale(myTimeManage.GetTimeScaleOnly);
               })
                .AppendCallback(
               delegate
@@ -160,7 +163,6 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
                   ShuffleArrayForRandomLine(3);
               })
               .Append(
-
                   ShowSpawnTermUi()
               )        
              .AppendCallback(
