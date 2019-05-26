@@ -32,7 +32,7 @@ public class UnitHero : Unit, ICanBeStun
 
     public StatDataBase.StatValue myRealStat { get; private set; }=new StatDataBase.StatValue();
     public UnityEvent myOnRecallEvent { get => _OnRecallEvent;  }
-
+    Sequence _RecallSequence { get; set; }
     #region GetStat
     public override float GetArmor()
     {
@@ -76,7 +76,7 @@ public class UnitHero : Unit, ICanBeStun
     {
         base.GetKill();
         myOnEnqueueAction?.Invoke();
-
+        KillMyTweenForDeath();
         myDeathCount++;
 
         GoBackToTemple(myDeathDelay).OnComplete(SetRespawnDelay);
@@ -94,18 +94,20 @@ public class UnitHero : Unit, ICanBeStun
             behav.AddTickToManager();
         }
     }
+
+
     public Sequence GoBackToTemple(float _recallDelay)
     {
         myOnRecall.Invoke();
         myOnRecallEvent?.Invoke();
-
+       
         foreach (var behav in myUnitBehaviors)
         {
             behav.RemoveTickFromManager();
         }
 
-        Sequence sequence = DOTween.Sequence();
-      return  sequence.SetDelay(_recallDelay)
+        _RecallSequence = DOTween.Sequence();
+      return  _RecallSequence.SetDelay(_recallDelay)
             .AppendCallback(
             delegate
             {
@@ -120,7 +122,7 @@ public class UnitHero : Unit, ICanBeStun
     {
         Sequence RespawnSeq = DOTween.Sequence();
 
-        myCurrentRespawnTime = ((myDeathCount*0.8f) * myRespawnTime);
+        myCurrentRespawnTime = (myDeathCount * myRespawnTime);
 
         RespawnSeq.PrependInterval(myCurrentRespawnTime)
            .PrependCallback(delegate { myOnRespawnCountDown.Invoke(myCurrentRespawnTime); })
@@ -137,5 +139,10 @@ public class UnitHero : Unit, ICanBeStun
     public void GetStunDur(float _dur)
     {
         myOnStuned?.Invoke();
+    }
+
+    void KillMyTweenForDeath()
+    {
+        _RecallSequence?.Kill();
     }
 }

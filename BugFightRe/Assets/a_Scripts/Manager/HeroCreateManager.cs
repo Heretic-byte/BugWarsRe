@@ -9,8 +9,11 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
 
     [SerializeField]
     private HeroDrag[] _heroDrags;
-
     public HeroDrag[] myHeroDrags { get => _heroDrags; }
+
+    [SerializeField]
+    private SkillUseButton[] _heroSkillButtons;
+    public SkillUseButton[] myHeroSkillButtons { get => _heroSkillButtons; }
 
     private Dictionary<int, UnitHero> _playerHeroes = new Dictionary<int, UnitHero>();
 
@@ -31,7 +34,7 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
             AddPlayerHero(CreatedHero.GetInstanceID(), HeroUnit);
 
             myHeroDrags[i].SetHero(CreatedHero, HeroUnit);
-         
+            myHeroSkillButtons[i].SetSkill(HeroUnit);
         }
     }
 

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4623030056593184083}
   - component: {fileID: 5975130165800262954}
   - component: {fileID: 4837046021536060631}
+  - component: {fileID: 1894032820950321937}
   m_Layer: 14
   m_Name: Unit_Hero_Dyna_Herc
   m_TagString: Unit
@@ -245,6 +246,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _GrowRate: 25
+--- !u!114 &1894032820950321937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826963051989170208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f317743cebdc04ea2358f0193e552c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &322020508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,36 +422,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5751573869332261441}
     m_Modifications:
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4623030056593184083}
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7754591200585403659, guid: 3e84583264e50c641aa7474d6e975233,
         type: 3}
       propertyPath: m_Name
@@ -513,6 +496,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4623030056593184083}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1325752077623968002, guid: 3e84583264e50c641aa7474d6e975233, type: 3}
