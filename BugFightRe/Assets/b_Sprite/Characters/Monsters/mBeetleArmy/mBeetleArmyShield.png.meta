@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 87002c63b22771b40bb405e4be7b4215
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mBeetleArmyShield
-    21300002: mBeetleArmySpear
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mBeetleArmyShield
+  - first:
+      213: 21300002
+    second: mBeetleArmySpear
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -123,6 +127,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cf3f47df8b60e944d8c189fb7794356c
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -143,6 +148,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7887f8551de68fe48bebe750c7b0b424
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -196,6 +202,7 @@ TextureImporter:
       length: 531.7054
       parentId: 6
     spriteID: 16d01a817855cde47ae858de01d48187
+    internalID: 0
     vertices:
     - {x: 280.888, y: 139.31201}
     - {x: 285.015, y: 139.919}
@@ -4346,6 +4353,7 @@ TextureImporter:
       boneIndex[1]: 0
       boneIndex[2]: 0
       boneIndex[3]: 0
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

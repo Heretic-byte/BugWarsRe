@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 13c474eb9dfe9544fb0eac1950019d1b
 TextureImporter:
-  fileIDToRecycleName: {}
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -124,12 +124,12 @@ TextureImporter:
       parentId: 1
     - name: Torso_1
       position: {x: 113.6275, y: -1.9100479, z: 16}
-      rotation: {x: 0, y: 0, z: -0.022605762, w: 0.9997445}
-      length: 118.65848
+      rotation: {x: 0, y: 0, z: -0.022605103, w: 0.9997445}
+      length: 118.65846
       parentId: 0
     - name: Torso_2
-      position: {x: 118.65846, y: 0.00000068771305, z: 17}
-      rotation: {x: 0, y: 0, z: 0.09256151, w: 0.995707}
+      position: {x: 118.65847, y: -0.00015139359, z: 17}
+      rotation: {x: 0, y: 0, z: 0.09256086, w: 0.99570704}
       length: 124.411934
       parentId: 5
     - name: Arm_right_1
@@ -139,12 +139,12 @@ TextureImporter:
       parentId: 6
     - name: Arm_right_2
       position: {x: 157.93376, y: -20.479675, z: 7}
-      rotation: {x: 0, y: 0, z: -0.39158458, w: 0.9201421}
-      length: 131.22966
+      rotation: {x: 0, y: 0, z: -0.3915846, w: 0.9201421}
+      length: 131.22968
       parentId: 7
     - name: Arm_right_3
-      position: {x: 131.22968, y: -0.0000119690985, z: 6}
-      rotation: {x: 0, y: 0, z: -0.07206692, w: 0.99739987}
+      position: {x: 131.2297, y: 0.000016911414, z: 6}
+      rotation: {x: 0, y: 0, z: -0.07206691, w: 0.9973998}
       length: 37.95263
       parentId: 8
     - name: Arm_left_1
@@ -155,20 +155,20 @@ TextureImporter:
     - name: Arm_left_2
       position: {x: 142.80617, y: -11.485172, z: 35}
       rotation: {x: 0, y: 0, z: 0.44936672, w: 0.8933474}
-      length: 138.70834
+      length: 138.70831
       parentId: 10
     - name: bone_13
-      position: {x: 138.70833, y: -0.0000015769092, z: 36}
-      rotation: {x: 0, y: 0, z: 0.20502909, w: 0.9787559}
+      position: {x: 138.70828, y: -0.0000055257105, z: 36}
+      rotation: {x: 0, y: 0, z: 0.2050291, w: 0.97875595}
       length: 39.29862
       parentId: 11
     - name: Head_1
       position: {x: 164.79765, y: -319.02853, z: 30}
       rotation: {x: 0, y: 0, z: -0.094088115, w: 0.99556386}
-      length: 128.4897
+      length: 128.48969
       parentId: 6
     - name: Head_2
-      position: {x: 128.4897, y: 0.000027275848, z: 31}
+      position: {x: 128.48975, y: 0.000022190847, z: 31}
       rotation: {x: 0, y: 0, z: 0.027271882, w: 0.99962807}
       length: 89.225655
       parentId: 13
@@ -203,6 +203,7 @@ TextureImporter:
       length: 9.288663
       parentId: 19
     spriteID: 57e0b83aa33201044bd7563acc0a0b90
+    internalID: 0
     vertices:
     - {x: 363.06702, y: 923.906}
     - {x: 378.906, y: 932.463}
@@ -2440,6 +2441,7 @@ TextureImporter:
       boneIndex[1]: 14
       boneIndex[2]: 0
       boneIndex[3]: 0
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

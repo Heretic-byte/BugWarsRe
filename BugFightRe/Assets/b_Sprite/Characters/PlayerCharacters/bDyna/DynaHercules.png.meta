@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 4656305cc8e91e2489e03cf754f664b4
 TextureImporter:
-  fileIDToRecycleName: {}
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -104,12 +104,12 @@ TextureImporter:
       parentId: -1
     - name: Chest
       position: {x: 135.56126, y: 15.659939, z: 15}
-      rotation: {x: 0, y: 0, z: -0.14209636, w: 0.98985285}
-      length: 82.81918
+      rotation: {x: 0, y: 0, z: -0.14209647, w: 0.98985285}
+      length: 82.81916
       parentId: 0
     - name: Chest2
-      position: {x: 82.81916, y: -0.0000020216848, z: 16}
-      rotation: {x: 0, y: 0, z: 0.03589731, w: 0.9993555}
+      position: {x: 82.81914, y: 0.000013802532, z: 16}
+      rotation: {x: 0, y: 0, z: 0.03589743, w: 0.9993555}
       length: 158.91425
       parentId: 1
     - name: Head
@@ -213,6 +213,7 @@ TextureImporter:
       length: 74.42884
       parentId: 21
     spriteID: 658457285bb30d54886af7314162dcc4
+    internalID: 0
     vertices:
     - {x: 419.038, y: 529.81396}
     - {x: 431.298, y: 531.492}
@@ -7534,6 +7535,7 @@ TextureImporter:
       boneIndex[1]: 12
       boneIndex[2]: 0
       boneIndex[3]: 0
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 0be2d987c4a05df449cf46dd1d3f5bd6
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: BookMark_Chapter1_0
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: BookMark_Chapter1_0
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -111,6 +113,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 77aca4e1f23912045a7609c7bc21251b
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -119,10 +122,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: f00832452e78a594f8aef89b086477e5
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

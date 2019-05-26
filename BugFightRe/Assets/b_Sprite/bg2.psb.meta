@@ -1,40 +1,105 @@
 fileFormatVersion: 2
 guid: c8ec494804a125e47bcf6b8219ddfbd2
 ScriptedImporter:
-  fileIDToRecycleName:
-    100000: 1_GO/1_GO
-    100002: 1_GO/1_GO/1
-    100004: 1_GO/1_GO/2
-    100008: 1_GO/1_GO/4
-    100010: 1_GO/1_GO/5
-    100012: 1_GO/1_GO/6
-    100014: 1_GO/1_GO/7
-    100016: 1_GO/1_GO/MainLog
-    400000: 1_GO/1_GO/Transform
-    400002: 1_GO/1_GO/1/Transform
-    400004: 1_GO/1_GO/2/Transform
-    400008: 1_GO/1_GO/4/Transform
-    400010: 1_GO/1_GO/5/Transform
-    400012: 1_GO/1_GO/6/Transform
-    400014: 1_GO/1_GO/7/Transform
-    400016: 1_GO/1_GO/MainLog/Transform
-    2800000: bg2
-    21200000: 1_GO/1_GO/1/SpriteRenderer
-    21200002: 1_GO/1_GO/2/SpriteRenderer
-    21200006: 1_GO/1_GO/4/SpriteRenderer
-    21200008: 1_GO/1_GO/5/SpriteRenderer
-    21200010: 1_GO/1_GO/6/SpriteRenderer
-    21200012: 1_GO/1_GO/7/SpriteRenderer
-    21200014: 1_GO/1_GO/MainLog/SpriteRenderer
-    21300000: 7
-    21300002: 6
-    21300004: 5
-    21300006: 4
-    21300008: MainLog
-    21300010: 2
-    21300012: 1
-    100100000: 1_GO
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: 1_GO/1_GO
+  - first:
+      1: 100002
+    second: 1_GO/1_GO/1
+  - first:
+      1: 100004
+    second: 1_GO/1_GO/2
+  - first:
+      1: 100008
+    second: 1_GO/1_GO/4
+  - first:
+      1: 100010
+    second: 1_GO/1_GO/5
+  - first:
+      1: 100012
+    second: 1_GO/1_GO/6
+  - first:
+      1: 100014
+    second: 1_GO/1_GO/7
+  - first:
+      1: 100016
+    second: 1_GO/1_GO/MainLog
+  - first:
+      4: 400000
+    second: 1_GO/1_GO/Transform
+  - first:
+      4: 400002
+    second: 1_GO/1_GO/1/Transform
+  - first:
+      4: 400004
+    second: 1_GO/1_GO/2/Transform
+  - first:
+      4: 400008
+    second: 1_GO/1_GO/4/Transform
+  - first:
+      4: 400010
+    second: 1_GO/1_GO/5/Transform
+  - first:
+      4: 400012
+    second: 1_GO/1_GO/6/Transform
+  - first:
+      4: 400014
+    second: 1_GO/1_GO/7/Transform
+  - first:
+      4: 400016
+    second: 1_GO/1_GO/MainLog/Transform
+  - first:
+      28: 2800000
+    second: bg2
+  - first:
+      212: 21200000
+    second: 1_GO/1_GO/1/SpriteRenderer
+  - first:
+      212: 21200002
+    second: 1_GO/1_GO/2/SpriteRenderer
+  - first:
+      212: 21200006
+    second: 1_GO/1_GO/4/SpriteRenderer
+  - first:
+      212: 21200008
+    second: 1_GO/1_GO/5/SpriteRenderer
+  - first:
+      212: 21200010
+    second: 1_GO/1_GO/6/SpriteRenderer
+  - first:
+      212: 21200012
+    second: 1_GO/1_GO/7/SpriteRenderer
+  - first:
+      212: 21200014
+    second: 1_GO/1_GO/MainLog/SpriteRenderer
+  - first:
+      213: 21300000
+    second: 7
+  - first:
+      213: 21300002
+    second: 6
+  - first:
+      213: 21300004
+    second: 5
+  - first:
+      213: 21300006
+    second: 4
+  - first:
+      213: 21300008
+    second: MainLog
+  - first:
+      213: 21300010
+    second: 2
+  - first:
+      213: 21300012
+    second: 1
+  - first:
+      1001: 100100000
+    second: 1_GO
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -105,6 +170,7 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -128,6 +194,7 @@ ScriptedImporter:
       width: 2048
       height: 1018
     spriteID: d30f5f305be74cc43a54a862cd5b7c76
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -149,6 +216,7 @@ ScriptedImporter:
       width: 1453
       height: 915
     spriteID: 2fa575d236c345b43aba8141d47b28fe
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,6 +238,7 @@ ScriptedImporter:
       width: 1920
       height: 491
     spriteID: a7539d3eccc321c4cb75cec090e861f7
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -191,6 +260,7 @@ ScriptedImporter:
       width: 1765
       height: 499
     spriteID: afc831ecc40b4fe42b4a8d91857b6546
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,6 +282,7 @@ ScriptedImporter:
       width: 1880
       height: 709
     spriteID: ac0e5afe11342e4468ec807907ceecd6
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -233,6 +304,7 @@ ScriptedImporter:
       width: 1920
       height: 1043
     spriteID: 220762684d2f48d469d045a0536e2c36
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -254,6 +326,7 @@ ScriptedImporter:
       width: 1920
       height: 1500
     spriteID: aa1169dfb5dd6c641b6ebd393f6f9fc9
+    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []

@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: f27c89b38d4dc1041b9dabd8181851be
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Ui5_0
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Ui5_0
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -111,6 +113,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f7c0d0d7bad860d488e638112f81cb04
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -119,10 +122,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: a6edf8fe9dfc0de48b17d76fd7764026
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -255,7 +255,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     {
         myStructLifeCount--;
 
-        if (myStructLifeCount < 0)
+        if (myStructLifeCount <= 0)
         {
             myIsILose = true;
             GetLoseGame();
