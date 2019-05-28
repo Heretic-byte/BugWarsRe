@@ -2,6 +2,7 @@
   "registry": "https://staging-packages.unity.com",
   "dependencies": {
     "com.unity.2d.animation": "2.1.0-preview.5",
+    "com.unity.2d.psdimporter": "1.1.0-preview.3",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.2",
     "com.unity.cinemachine": "2.3.3",

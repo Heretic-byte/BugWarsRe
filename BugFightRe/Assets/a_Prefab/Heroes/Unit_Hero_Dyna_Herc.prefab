@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f317743cebdc04ea2358f0193e552c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Skill: {fileID: 11400000, guid: 67c79efa9c256ec4a9b148a383c15025, type: 2}
 --- !u!1001 &322020508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,11 +423,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5751573869332261441}
     m_Modifications:
-    - target: {fileID: 7754591200585403659, guid: 3e84583264e50c641aa7474d6e975233,
-        type: 3}
-      propertyPath: m_Name
-      value: Model_DynaHercules
-      objectReference: {fileID: 0}
     - target: {fileID: 7754591200585403654, guid: 3e84583264e50c641aa7474d6e975233,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -496,6 +492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7754591200585403659, guid: 3e84583264e50c641aa7474d6e975233,
+        type: 3}
+      propertyPath: m_Name
+      value: Model_DynaHercules
       objectReference: {fileID: 0}
     - target: {fileID: 5734580584058140584, guid: 3e84583264e50c641aa7474d6e975233,
         type: 3}
