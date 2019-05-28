@@ -15,12 +15,7 @@ public class SkillUseButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void SetSkill(UnitHero unitHero)
     {
-        m_SkillUse=unitHero.GetComponent<HeroSkillUse>();
-
-        if(m_SkillUse.m_Skill.m_IsDragSkill)
-        {
-           
-        }
+       
        
     }
 

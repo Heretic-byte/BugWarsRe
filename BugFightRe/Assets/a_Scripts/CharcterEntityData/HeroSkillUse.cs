@@ -8,4 +8,6 @@ public class HeroSkillUse : MonoBehaviour
     SkillBase _Skill;
 
     public SkillBase m_Skill { get => _Skill;  }
+
+
 }
