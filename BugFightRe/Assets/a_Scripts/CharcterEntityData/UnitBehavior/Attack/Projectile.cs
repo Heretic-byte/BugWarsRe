@@ -13,7 +13,7 @@ public abstract class Projectile : MonoBehaviour,IfixedTickFloat
     float _MoveSpeed;
     protected virtual void Awake()
     {
-        myManagerGame = GameManager.myInstance;
+        myManagerGame = GameManager.GetInstance;
         myTrans = transform;
         myObj = gameObject;
 
@@ -22,11 +22,11 @@ public abstract class Projectile : MonoBehaviour,IfixedTickFloat
 
     public virtual void AddTickToManager()
     {
-        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
+        GameManager.GetInstance.AddScaledTickToManager(FixedTickFloat);
     }
     public virtual void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
+        GameManager.GetInstance.RemoveScaledTickFromManager(FixedTickFloat);
     }
 
     public abstract void FixedTickFloat(float _tick);

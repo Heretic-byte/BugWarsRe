@@ -93,7 +93,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
         SetNexusKillDelegate();
         SetTowerKillDelgate();
 
-        myTimeManage = TimeManager.myInstance;
+        myTimeManage = TimeManager.GetInstance;
 
         mySpawnCreepSeq = DOTween.Sequence();
         mySpawnCreepUiShowSeq = DOTween.Sequence();
@@ -212,9 +212,9 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     {
         var DequeuedObj = myCreepPoolQue.Dequeue();
         var DequeueEntity = myCreepEntityDic[DequeuedObj.GetInstanceID()];
-        DequeueEntity.myTrans.position = _spawnPos;
-        DequeueEntity.OnDequeue();
-        DequeuedObj.SetActive(true);   
+        DequeueEntity.GoRushBattleField( _spawnPos);
+    
+       
     }
 
     void EnqueueCreep(GameObject unitSelf)
@@ -224,14 +224,14 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
 
     public void SetDeleOnGameEnd()
     {
-        GameManager.myInstance.myOnGameEnd += delegate { mySpawnCreepSeq.Kill();mySpawnCreepUiShowSeq.Kill(); };
+        GameManager.GetInstance.myOnGameEnd += delegate { mySpawnCreepSeq.Kill();mySpawnCreepUiShowSeq.Kill(); };
     }
 
     void SetLaneLoadAndNexus()
     {
         for (int i = 0; i < myCreepNexus.Length; i++)
         {
-            myLaneAndNexus.Add(StageMapManager.myInstance.myStageLaneRoads[i].myColl2D.GetInstanceID(),
+            myLaneAndNexus.Add(StageMapManager.GetInstance.myStageLaneRoads[i].myColl2D.GetInstanceID(),
                 myCreepNexus[i]);
         }
     }
@@ -265,7 +265,7 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
     void GetLoseGame()
     {
         Debug.Log(myObj.name + "'s Lost");
-        GameManager.myInstance.FinishGame();
+        GameManager.GetInstance.FinishGame();
     }
 
     Tweener ShowSpawnTermUi()

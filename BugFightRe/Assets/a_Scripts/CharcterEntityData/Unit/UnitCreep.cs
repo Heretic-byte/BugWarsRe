@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 
-public class UnitCreep : Unit,IpoolingObj
+public class UnitCreep : Unit
 {
   
    public GameManager myManagerGame { get ; set ; }
-    public UnityAction<GameObject> OnEnqueActionObj { get; set; } 
-    
+    public UnityAction<GameObject> OnEnqueActionObj { get; set; }
+  
     private void Awake()
     {
         
@@ -21,7 +21,7 @@ public class UnitCreep : Unit,IpoolingObj
     protected override void MainSetInstance()
     {
         base.MainSetInstance();
-        myManagerGame = GameManager.myInstance;
+        myManagerGame = GameManager.GetInstance;
 
     }
     #region GetStat
@@ -50,30 +50,29 @@ public class UnitCreep : Unit,IpoolingObj
         return myStat.m_BaseSpellAmplify;
     }
     #endregion
-    public override void GetKill()
+    public override void TakeKill()
     {
-        base.GetKill();
+        base.TakeKill();
 
         Sequence DieDelay = DOTween.Sequence();
-        myOnEnqueueAction?.Invoke();
+        
         DieDelay.SetDelay(myDeathDelay).OnComplete(OnEnqueue);
     }
-
-    public void OnDequeue()
+    public override void GoRushBattleField(Vector3 _pos)
     {
+        base.GoRushBattleField(_pos);
+
+        myObj.SetActive(true);
         myIsDead = false;
         SetHpToMax();
         myUnitStatement = UnitStatement.Walk;
-        myOnDequeueAction?.Invoke();
         myCollider2D.enabled = true;
     }
+  
     public void OnEnqueue()
     {
+        RemoveBehavTick();
         myObj.SetActive(false);
-      
         OnEnqueActionObj?.Invoke(myObj);
     }
-
-   
-
 }

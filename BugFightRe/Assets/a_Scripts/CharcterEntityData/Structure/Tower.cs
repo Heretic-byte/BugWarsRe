@@ -44,9 +44,9 @@ public class Tower : Unit
         AddBehavTick();
     }
 
-    public override void GetKill()
+    public override void TakeKill()
     {
-        base.GetKill();
+        base.TakeKill();
         RemoveBehavTick();
         myObj.SetActive(false);
     }

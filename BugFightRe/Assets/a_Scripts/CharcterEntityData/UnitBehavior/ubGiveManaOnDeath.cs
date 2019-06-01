@@ -72,7 +72,7 @@ public class ubGiveManaOnDeath : myUnitBehavior
     }
     void AddMana()
     {
-        ManaManager.myInstance.myPlayerAndEnemyManaDeleDic[myEnemyHeroLayer]?.Invoke(myUnit.myStat.m_BaseManaReward);
+        ManaManager.GetInstance.myPlayerAndEnemyManaDeleDic[myEnemyHeroLayer]?.Invoke(myUnit.myStat.m_BaseManaReward);
     }
   
 }

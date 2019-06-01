@@ -1,5 +1,5 @@
 ﻿
-using UnityEngine;
+
 
 namespace MyMarmot.Tools
 {
@@ -13,6 +13,11 @@ namespace MyMarmot.Tools
             sw.Start();
             UnityEngine.Debug.Log("Timer Start");
             return sw;
+        }
+        public static void StopTimer(string yourDesc,Stopwatch timerWatch)
+        {
+            timerWatch.Stop();
+            UnityEngine.Debug.Log(yourDesc + "-Timer Stop-걸린시간:" + timerWatch.ElapsedMilliseconds.ToString() + "ms");
         }
         public static void StopTimer(Stopwatch timerWatch)
         {

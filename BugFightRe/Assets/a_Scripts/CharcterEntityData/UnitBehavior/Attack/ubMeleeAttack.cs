@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using MyMarmot.Tools;
 public abstract class ubMeleeAttack : ubAttackBase
 {
     protected override void TryAttack()
@@ -12,9 +13,10 @@ public abstract class ubMeleeAttack : ubAttackBase
 
         if (targetHitten.collider != null)
         {
-
-            myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
-        
+            var AA = MethodTimer.StartTimer();
+            myUnit.myAttackTarget = myManagerCollDic.GetDamageAble(targetHitten.collider.GetInstanceID());
+            //myUnit.myAttackTarget = targetHitten.collider.GetComponent<DamageAble>();
+            MethodTimer.StopTimer("AttackTime", AA);
         }
         else
         {
@@ -22,26 +24,20 @@ public abstract class ubMeleeAttack : ubAttackBase
             return;
         }
 
-      
         if (_attackTimer > myAttackSpeed)
         {
             _attackTimer = 0f;
 
             myUnit.myOnAttack?.Invoke();
-
-         
         }
     }
-   public override void Attack()
+    public override void Attack()
     {
 
-        if (myUnit.myAttackTarget==null)
+        if (myUnit.myAttackTarget == null)
         {
-          
             return;
         }
-        myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
-
+        myUnit.myAttackTarget.TakePhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
     }
-
 }

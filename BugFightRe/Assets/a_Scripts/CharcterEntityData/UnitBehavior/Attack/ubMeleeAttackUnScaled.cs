@@ -7,12 +7,12 @@ public class ubMeleeAttackUnScaled : ubMeleeAttack
 
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);
+        GameManager.GetInstance.AddUnScaledTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
+        GameManager.GetInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
     }
 
 

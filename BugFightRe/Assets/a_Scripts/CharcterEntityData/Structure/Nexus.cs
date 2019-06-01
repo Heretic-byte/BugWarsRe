@@ -54,9 +54,9 @@ public class Nexus : Unit,IlinePosHolder
         SetHpToMax();
     }
 
-    public override void GetKill()
+    public override void TakeKill()
     {
-        base.GetKill();
+        base.TakeKill();
         myObj.SetActive(false);
     }
 

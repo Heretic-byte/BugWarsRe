@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfe45b870a16e947bc016992aa3fbaf, type: 3}
-  m_Name: New Click Skill
+  m_Script: {fileID: 11500000, guid: f99af8210cb035f43a20b95a89208219, type: 3}
+  m_Name: LineLineAttack
   m_EditorClassIdentifier: 
-  m_ManaCost: 0
-  m_CoolDown: 0
-  _OnBeginClick:
+  m_Radius: 1
+  m_Dist: 5
+  m_EventDamageable:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 532f09a5d59e82049b027982f624217f, type: 2}
-        m_MethodName: CreateEffect
+      - m_Target: {fileID: 11400000, guid: 12e7fd305f227484c9ae2c8804901422, type: 2}
+        m_MethodName: MagicalDamageObj
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28,10 +28,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Skills.SkillEffectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: Skills.EventDamageable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  _OnEndClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Skills.SkillEffectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  m_WhatToHit:
+    serializedVersion: 2
+    m_Bits: 33280

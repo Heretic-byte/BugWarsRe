@@ -60,17 +60,17 @@ public class GameManager : Singleton<GameManager>
 
     private void FixedUpdate()
     {
-        float ScaleOnly = TimeManager.myInstance.GetTimeScaleOnly;
+        float ScaleOnly = TimeManager.GetInstance.GetTimeScaleOnly;
         _myDeleScaleOnlyUpateTick?.Invoke(ScaleOnly);
-        float ScaledTick = TimeManager.myInstance.GetScaledDeltaTimeTick;
+        float ScaledTick = TimeManager.GetInstance.GetScaledDeltaTimeTick;
         _myDeleScaledUpdateTick?.Invoke(ScaledTick);
-        float unScaledTick = TimeManager.myInstance.GetUnScaledDeltaTimeTick;
+        float unScaledTick = TimeManager.GetInstance.GetUnScaledDeltaTimeTick;
         _myDeleUnScaledUpdateTick?.Invoke(unScaledTick);
     }
 
     private void OnLevelWasLoaded(int level)
     {
-        HeroCreateManager.myInstance.SetHeroToUi();  
+        HeroCreateManager.GetInstance.SetHeroToUi();  
     }
 
     public void FinishGame()

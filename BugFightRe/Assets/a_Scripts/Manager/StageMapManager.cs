@@ -26,4 +26,8 @@ public class StageMapManager : Singleton<StageMapManager>
         }
 
     }
+    public LaneRoad GetIndexLine(int index)
+    {
+        return myStageLaneRoads[index]; 
+    }
 }

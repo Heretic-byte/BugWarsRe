@@ -48,7 +48,7 @@ public class JungleLane : MonoBehaviour
         _myLaneRoad = GetComponent<LaneRoad>();
         GetColliderSize();
         SetPoint();
-        myTimeManage = TimeManager.myInstance;
+        myTimeManage = TimeManager.GetInstance;
         myRegenSeq = DOTween.Sequence();
         myRuneRegenTime = _RuneRegenTime;
         CreateRunePool();

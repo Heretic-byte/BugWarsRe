@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f529c6a98362a284eaafc5bab3540d05, type: 3}
+  m_Name: LineBlood
+  m_EditorClassIdentifier: 
+  m_SpellPower: 300
+  m_SpellDuration: 10
+  m_SpellTick: 1
+  m_TargetSkillEffect: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  m_CasterSkillEffect: {fileID: 130730, guid: 640ef30391bac3645a1cb5d8a5d8cf77, type: 3}

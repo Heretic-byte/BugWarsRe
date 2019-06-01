@@ -19,25 +19,31 @@ public class ubHealthBar : myUnitBehavior
     public Vector3 myFollowOffset { get => _FollowOffset; set => _FollowOffset = value; }
 
     GameObject _myObj { get; set; }
-    public override void SetInstance()
+
+   protected virtual void Awake()
     {
         myTrans = transform;
         _myObj = gameObject;
-
-         myUnit = GetComponentInParent<Unit>();
-        SetDir();
-        SetBarFillAmountMax();
-        myUnit.myOnDequeueAction += AddTickToManager;
-        myUnit.myOnDequeueAction += SetBarFillAmount;
-        myUnit.myOnEnqueueAction += RemoveTickFromManager;
+        myUnit = GetComponentInParent<Unit>();
+      
         myUnit.myOnDamageAction += BarUpdate;
+        myUnit.myOnRushBattleField += SetBarFillAmount;
+        myUnit.myOnRushBattleField += ShowHealthBar;
+       
         myUnit.myOnHealAction += BarUpdate;
-        myUnit.myOnEnqueueAction += HideHealthBar;
-        myUnit.myOnDequeueAction += ShowHealthBar;
-
-        myFollowOffset = this.myTrans.position - myUnit.myTrans.position;
-
+        myUnit.myOnKillAction += HideHealthBar;
     }
+    void Start()
+    {
+        SetDir();
+        myFollowOffset = this.myTrans.position - myUnit.myTrans.position;
+    }
+
+    public override void SetInstance()
+    {
+        SetBarFillAmountMax();
+    }
+
     protected void SetDir()
     {
         if (!myUnit.myIsFacingRight)
@@ -48,7 +54,6 @@ public class ubHealthBar : myUnitBehavior
 
             myForwardBar.fillOrigin = 1;
         }
-       
     }
     protected void SetBarFillAmountMax()
     {
@@ -65,16 +70,16 @@ public class ubHealthBar : myUnitBehavior
  
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);
+        //GameManager.myInstance.AddUnScaledTickToManager(FixedTickFloat);
     }
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
+        //GameManager.myInstance.RemoveUnScaledTickFromManager(FixedTickFloat);
     }
     public override void FixedTickFloat(float _tick)
     {
 
-        FollowMyUnit(_tick);
+        //FollowMyUnit(_tick);
     }
 
     protected void FollowMyUnit(float tick)

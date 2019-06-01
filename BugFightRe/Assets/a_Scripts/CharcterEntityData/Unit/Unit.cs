@@ -34,14 +34,10 @@ public abstract class Unit : DamageAble
     public UnityAction myOnAttack { get; set ; }
     public UnityAction myOnWalking { get ; set; }
     public UnityAction myOnNotWalking { get; set; }
-    public UnityAction myOnDequeueAction { get; set; }
-    public UnityAction myOnEnqueueAction { get; set; }
     public UnityAction myOnAttackTargetDead { get; set; }
-    public UnityAction myOnHealAction { get; set; }
+    public UnityAction myOnRushBattleField { get; set; }
    
     public Vector3 myRayCastOffset { get => _rayCastOffset; set => _rayCastOffset = value; }
-
-
 
     protected override void MainSetInstance()
     {
@@ -54,14 +50,14 @@ public abstract class Unit : DamageAble
             myB.SetInstance();
         }
     }
-    protected void AddBehavTick()
+    public void AddBehavTick()
     {
         foreach (var behav in myUnitBehaviors)
         {
             behav.AddTickToManager();
         }
     }
-    protected void RemoveBehavTick()
+    public void RemoveBehavTick()
     {
         foreach (var behav in myUnitBehaviors)
         {
@@ -77,21 +73,23 @@ public abstract class Unit : DamageAble
         SetAttackTargetNull();
         myOnAttackTargetDead?.Invoke();
     }
-  public virtual void GetHeal(float _HealValue)
-    {
-        GetCurrentHealth += _HealValue;
 
-        myOnHealAction?.Invoke();
-        if (GetCurrentHealth>GetMaxHealth())
-        {
-            SetHpToMax();
-        }
-
-    }
     public override void SetHpToMax()
     {
         base.SetHpToMax();
         myOnHealAction?.Invoke();
     }
+    public void SetPosition(Vector3 pos)
+    {
+        myTrans.position = pos;
+    }
+    public virtual void GoRushBattleField(Vector3 _pos)
+    {
+        Debug.Log("RUSH2");
+        SetPosition(_pos);
+        myOnRushBattleField?.Invoke();
+        AddBehavTick();
+    }
+
 }
 

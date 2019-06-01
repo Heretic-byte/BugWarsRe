@@ -5,13 +5,14 @@ using UnityEngine.Events;
 public abstract class DamageAble : MonoBehaviour
 {
     public delegate void OnDamageFloatDele(float _damageTaken);
-    public delegate void OnDamageBySomeone(Unit _attacker);
+    public delegate void OnDamageBySomeone(Unit _attacker,float _damageGiven);
     public delegate void OnKillFromAttackerDele(Unit _attacker);
 
     public Transform myTrans { get ; set ; }
     public GameObject myObj { get ; set ; }
     public Collider2D myCollider2D { get ; set ; }
     public event UnityAction myOnDamageAction;
+    public UnityAction myOnHealAction { get; set; }
     public event OnDamageFloatDele myOnDamageFloat;
     public event OnDamageBySomeone myOnDamageBySomeone;
     public event OnKillFromAttackerDele myOnKillFromAttacker;
@@ -26,6 +27,7 @@ public abstract class DamageAble : MonoBehaviour
     public StatDataBase myStat { get => _stat; set => _stat = value; }
     public ColliderDicSingletone myManagerColider { get => _managerColider; set => _managerColider = value; }
     public float GetCurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+    public Vector2 GetMyDir { get => myDir;  }
 
     [SerializeField]
     protected StatDataBase _stat;
@@ -38,7 +40,7 @@ public abstract class DamageAble : MonoBehaviour
     public abstract float GetSpellArmorPercent();
 
     private float _currentHealth = 0f;
-    protected Vector2 myDir = Vector2.right;
+    private Vector2 myDir = Vector2.right;
 
     protected ColliderDicSingletone _managerColider;
   
@@ -49,27 +51,26 @@ public abstract class DamageAble : MonoBehaviour
         myObj = gameObject;
         myCollider2D = GetComponent<Collider2D>();
 
-        myManagerColider = ColliderDicSingletone.myInstance;
+        myManagerColider = ColliderDicSingletone.GetInstance;
         SetColliderDic();
       
     }
     public void SetColliderDic()
     {
-        myManagerColider.myColliderDamageAble.Add(myCollider2D.GetInstanceID(), this);
+        myManagerColider.AddDamageAble(myCollider2D.GetInstanceID(), this);
     }
     public void RemoveColliderDic()
     {
-        myManagerColider.myColliderDamageAble.Remove(myCollider2D.GetInstanceID());
+        myManagerColider.RemoveDamageAble(myCollider2D.GetInstanceID());
     }
     public virtual void SetHpToMax()
     {
         GetCurrentHealth = GetMaxHealth();
-        
     }
 
-    public  void GetPhysicalDamage(float _damageTaken, Unit _attacker)
+    public  void TakePhysicalDamage(float _damageTaken, Unit _attacker)
     {
-        myOnDamageBySomeone?.Invoke(_attacker);
+        myOnDamageBySomeone?.Invoke(_attacker,_damageTaken);
 
 
         float myArmor = GetArmor();
@@ -87,14 +88,14 @@ public abstract class DamageAble : MonoBehaviour
         {
             myOnKillFromAttacker?.Invoke(_attacker);
             _attacker.AttackTargetDead();
-            GetKill();
+            TakeKill();
         }
     }
     
-    public void GetMagicalDamage(float _damageTaken, Unit _attacker)
+    public void TakeMagicalDamage(float _damageTaken, Unit _attacker)
     {
       
-        myOnDamageBySomeone?.Invoke(_attacker);
+        myOnDamageBySomeone?.Invoke(_attacker,_damageTaken);
 
         float mySpellArmor = GetSpellArmorPercent();
 
@@ -108,15 +109,22 @@ public abstract class DamageAble : MonoBehaviour
         if (GetCurrentHealth <= 0)
         {
             myOnKillFromAttacker?.Invoke(_attacker);
-            _attacker.AttackTargetDead();
-            GetKill();
+            //_attacker.AttackTargetDead();
+            TakeKill();
         }
-
     }
-  
-    public virtual void GetKill()
+    public virtual void GetHeal(float _HealValue)
     {
+        GetCurrentHealth += _HealValue;
 
+        myOnHealAction?.Invoke();
+        if (GetCurrentHealth > GetMaxHealth())
+        {
+            SetHpToMax();
+        }
+    }
+    public virtual void TakeKill()
+    {
         myOnKillAction?.Invoke();
         
         myIsDead = true;
@@ -128,6 +136,7 @@ public abstract class DamageAble : MonoBehaviour
     {
         Vector3 myScaleTemp = myTrans.localScale;
         myScaleTemp.x = Mathf.Abs(myScaleTemp.x);
+
         if (myIsFacingRight)
         {
 
@@ -140,5 +149,20 @@ public abstract class DamageAble : MonoBehaviour
             myTrans.localScale = myScaleTemp;
             myDir = Vector2.left;
         }
+    }
+    public void SetDir(Vector3 dir)
+    {
+        Vector3 myScaleTemp = myTrans.localScale;
+        myScaleTemp.x = Mathf.Abs(myScaleTemp.x);
+
+        if (dir.x > 1)
+        {
+            myIsFacingRight = true;
+        }
+        else 
+        {
+            myIsFacingRight = false;
+        }
+        
     }
 }

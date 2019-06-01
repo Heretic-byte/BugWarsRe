@@ -26,16 +26,16 @@ public class Debug_CallMethod : MonoBehaviour
 
     public void CheckHashInColliderDic()
     {
-        Debug.Log("Hash:" + ColliderDicSingletone.myInstance.myColliderDamageAble[CheckUnitHash].name);
+        Debug.Log("Hash:" + ColliderDicSingletone.GetInstance.GetDamageAble(CheckUnitHash).name);
     }
 
 
     public void ChangeScaleTime(float _v)
     {
-        TimeManager.myInstance.SetCustomTimeScale = _v;
+        TimeManager.GetInstance.SetCustomTimeScale = _v;
 
-        TempleManager.myInstance.myMonsterTemple.SetCreepLoopTimeScale(_v);
-        TempleManager.myInstance.myPlayerTemple.SetCreepLoopTimeScale(_v);
+        TempleManager.GetInstance.myMonsterTemple.SetCreepLoopTimeScale(_v);
+        TempleManager.GetInstance.myPlayerTemple.SetCreepLoopTimeScale(_v);
     }
 }
 

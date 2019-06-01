@@ -13,7 +13,7 @@ public class ubHeroHealthBar : ubHealthBar
 
     public override void FixedTickFloat(float _tick)
     {
-        base.FixedTickFloat(_tick);
+       
     }
 
     public override void RemoveTickFromManager()
@@ -21,10 +21,12 @@ public class ubHeroHealthBar : ubHealthBar
        // base.RemoveTickFromManager();
     }
 
-    public override void SetInstance()
+    protected override void Awake()
     {
-        base.SetInstance();
-        _myUnitHero = myUnit as UnitHero;
+        base.Awake();
+        _myUnitHero = GetComponent<UnitHero>();
         _myUnitHero.myOnRespawn += ShowHealthBar;
     }
+
+
 }

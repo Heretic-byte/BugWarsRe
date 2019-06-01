@@ -145,36 +145,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2409637610470144109}
     m_Modifications:
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3651737397423451674}
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5465983191437635532, guid: 6429e8bc40187b44bb63f769ae961fab,
         type: 3}
       propertyPath: m_Name
@@ -249,6 +219,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465983191437635528, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465983191437635528, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465983191437635528, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465983191437635528, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3651737397423451674}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: -245615051142037716, guid: 6429e8bc40187b44bb63f769ae961fab,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6429e8bc40187b44bb63f769ae961fab, type: 3}

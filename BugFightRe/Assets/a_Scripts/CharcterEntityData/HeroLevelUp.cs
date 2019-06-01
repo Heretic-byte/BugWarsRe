@@ -31,7 +31,6 @@ public class HeroLevelUp : MonoBehaviour
     {
         myHero = GetComponent<UnitHero>();
         StatSet(myHero.myStat);
-
     }
 
     void StatSet(StatDataBase myHeroStat)

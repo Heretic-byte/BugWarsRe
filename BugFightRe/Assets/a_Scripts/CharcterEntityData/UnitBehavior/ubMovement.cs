@@ -17,8 +17,6 @@ public class ubMovement :myUnitBehavior
         SetTranslateDir();
         myMovementSpeed = myUnit.myStat.m_BaseMovementSpeed;
 
-        myUnit.myOnDequeueAction += AddTickToManager;
-        myUnit.myOnEnqueueAction += RemoveTickFromManager;
     }
     public void SetTranslateDir()
     {
@@ -48,11 +46,11 @@ public class ubMovement :myUnitBehavior
     //프레임마다 계속 처넣고있음
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddScaledTickToManager(FixedTickFloat);
+        GameManager.GetInstance.AddScaledTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-        GameManager.myInstance.RemoveScaledTickFromManager(FixedTickFloat);
+        GameManager.GetInstance.RemoveScaledTickFromManager(FixedTickFloat);
     }
 }

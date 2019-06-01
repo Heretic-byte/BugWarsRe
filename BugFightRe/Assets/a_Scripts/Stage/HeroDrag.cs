@@ -89,7 +89,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             return;
         }
      
-        var SummonLine= StageMapManager.myInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
+        var SummonLine= StageMapManager.GetInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
        
         ShowHeroBattleFieldLineNumber(SummonLine.myLaneNumber);
 
@@ -159,7 +159,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (coll != null)
         {   
             HidePreLaneRoadFeedBack();
-            _myPreLaneRoad = StageMapManager.myInstance.myLaneAndCollDic[coll.GetInstanceID()];
+            _myPreLaneRoad = StageMapManager.GetInstance.myLaneAndCollDic[coll.GetInstanceID()];
             _myPreLaneRoad.ShowFeedBackLaneRoad();
         }
         else
@@ -216,7 +216,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             return;
         }
 
-        if (ManaManager.myInstance.SubstractManaFromPlayer(myRecallManaCost))
+        if (ManaManager.GetInstance.SubstractManaFromPlayer(myRecallManaCost))
         {        
             _myHeroUnit.GoBackToTemple(myRecallDelay).onComplete+= TempleHeroHealSequence;
             _IsRecallCd = true;
@@ -287,6 +287,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
     void ShowHeroBattleFieldLineNumber(int _laneNumb)
     {
+        _myHeroUnit.SetCurrentLaneNumber(_laneNumb);
         _myHeroPosText.text = _laneNumb.ToString();
     }
     void HideHeroBattleFieldLineNumber()

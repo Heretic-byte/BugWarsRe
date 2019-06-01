@@ -15,12 +15,12 @@ public class JungleRune : MonoBehaviour
 
     void OnEnable()
     {
-        GameManager.myInstance.AddScaledTickToManager(MyTick);
+        GameManager.GetInstance.AddScaledTickToManager(MyTick);
     }
 
     void OnDisable()
     {
-        GameManager.myInstance.RemoveScaledTickFromManager(MyTick);
+        GameManager.GetInstance.RemoveScaledTickFromManager(MyTick);
     }
 
     void MyTick(float tick)

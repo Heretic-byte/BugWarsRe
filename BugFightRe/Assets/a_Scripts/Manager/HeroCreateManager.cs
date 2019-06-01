@@ -12,8 +12,8 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
     public HeroDrag[] myHeroDrags { get => _heroDrags; }
 
     [SerializeField]
-    private SkillUseButton[] _heroSkillButtons;
-    public SkillUseButton[] myHeroSkillButtons { get => _heroSkillButtons; }
+    private GameObject[] _heroSkillButtons;
+    public GameObject[] myHeroSkillButtons { get => _heroSkillButtons; }
 
     private Dictionary<int, UnitHero> _playerHeroes = new Dictionary<int, UnitHero>();
 
@@ -27,14 +27,16 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
 
     public void CreateHeroFromSelectData()
     {
-        for (int i = 0; i < HeroStageManager.myInstance.mySelectedHero.Length; i++)
+        for (int i = 0; i < HeroStageManager.GetInstance.mySelectedHero.Length; i++)
         {
-            var CreatedHero = Instantiate(HeroStageManager.myInstance.mySelectedHero[i], TempleManager.myInstance.myPlayerHeroPos[i].position,Quaternion.identity, myTans);
+            var CreatedHero = Instantiate(HeroStageManager.GetInstance.mySelectedHero[i], TempleManager.GetInstance.myPlayerHeroPos[i].position,Quaternion.identity, myTans);
             var HeroUnit = CreatedHero.GetComponent<UnitHero>();
             AddPlayerHero(CreatedHero.GetInstanceID(), HeroUnit);
 
             myHeroDrags[i].SetHero(CreatedHero, HeroUnit);
-            myHeroSkillButtons[i].SetSkill(HeroUnit);
+            //
+            var HeroSkill = HeroUnit.GetComponent<HeroSkillUse>();
+            HeroSkill.CreateSkillUseButton(HeroUnit,myHeroSkillButtons[i]);
         }
     }
 

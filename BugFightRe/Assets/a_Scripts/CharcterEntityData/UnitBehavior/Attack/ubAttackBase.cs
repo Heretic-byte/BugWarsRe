@@ -24,11 +24,9 @@ public abstract class ubAttackBase : myUnitBehavior
         myAttackSpeed = myUnit.myStat.m_BaseAttackSpeed;
         myAttackRange = myUnit.myStat.m_BaseAttackRange;
 
-        myManagerCollDic = ColliderDicSingletone.myInstance;
+        myManagerCollDic = ColliderDicSingletone.GetInstance;
 
 
-        myUnit.myOnDequeueAction += AddTickToManager;
-        myUnit.myOnEnqueueAction += RemoveTickFromManager;
      
     }
    protected virtual void SetTranslateDir()

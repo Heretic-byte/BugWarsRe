@@ -74,7 +74,7 @@ public abstract class ubRangeAttack : ubAttackBase
         if (targetHitten.collider != null)
         {
        
-            myUnit.myAttackTarget = myManagerCollDic.myColliderDamageAble[targetHitten.collider.GetInstanceID()];
+            myUnit.myAttackTarget = myManagerCollDic.GetDamageAble(targetHitten.collider.GetInstanceID());
            
         }
         else
@@ -100,21 +100,19 @@ public abstract class ubRangeAttack : ubAttackBase
 
         if (myUnit.myAttackTarget == null)
         {
-
             return;
         }
         ShootBullet();
     }
- 
+
     void ShootBullet()
     {
-       myBulletsArray[myCurrentBulletIndex].SetActive(true);
-       myBullets[myCurrentBulletIndex].myTrans.position = myTrans.TransformPoint(  myBulletShootingPos);
+        myBulletsArray[myCurrentBulletIndex].SetActive(true);
+        myBullets[myCurrentBulletIndex].myTrans.position = myTrans.TransformPoint(myBulletShootingPos);
         myBullets[myCurrentBulletIndex].BulletShooting(myUnit.myAttackTarget);
 
-
         myCurrentBulletIndex++;
-        if(myCurrentBulletIndex >= myBulletMaxCount)
+        if (myCurrentBulletIndex >= myBulletMaxCount)
         {
             myCurrentBulletIndex = 0;
         }
@@ -122,11 +120,11 @@ public abstract class ubRangeAttack : ubAttackBase
 
     void OnBulletDealDamage()
     {
-        if (myUnit.myAttackTarget==null)
+        if (myUnit.myAttackTarget == null)
         {
             return;
         }
-        myUnit.myAttackTarget.GetPhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
+        myUnit.myAttackTarget.TakePhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
     }
 
 }

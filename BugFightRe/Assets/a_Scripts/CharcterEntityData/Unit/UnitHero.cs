@@ -12,9 +12,9 @@ public class UnitHero : Unit, ICanBeStun
     private Vector3 _startTemplePos;
     public Vector3 myStartTemplePos { get => _startTemplePos; }
 
-    public UnityAction myOnRushBattleField { get; set; }
+   
     public UnityAction myOnStuned { get; set; }
-    public UnityAction myOnRespawn { get; set; }
+   
     public UnityAction myOnRecall { get; set; }
     public UnityAction<float> myOnRespawnCountDown { get; set; }
     [SerializeField]
@@ -33,6 +33,8 @@ public class UnitHero : Unit, ICanBeStun
     public StatDataBase.StatValue myRealStat { get; private set; }=new StatDataBase.StatValue();
     public UnityEvent myOnRecallEvent { get => _OnRecallEvent;  }
     Sequence _RecallSequence { get; set; }
+    public int GetCurrentLaneNumber { get; private set; } = 0;
+    public UnityAction myOnRespawn { get; set; }
     #region GetStat
     public override float GetArmor()
     {
@@ -70,41 +72,40 @@ public class UnitHero : Unit, ICanBeStun
         _myIsHeroInLine = false;
 
         myCurrentRespawnTime = _respawnTime;
+
+        myOnRecall += SetCurrentLaneNumberNull;
     }
- 
-    public override void GetKill()
+    public void SetCurrentLaneNumber(int battleFieldLane)
     {
-        base.GetKill();
-        myOnEnqueueAction?.Invoke();
+        GetCurrentLaneNumber = battleFieldLane;
+    }
+    public void SetCurrentLaneNumberNull()
+    {
+        GetCurrentLaneNumber = 0;
+    }
+    public override void TakeKill()
+    {
+        base.TakeKill();
+
         KillMyTweenForDeath();
         myDeathCount++;
 
         GoBackToTemple(myDeathDelay).OnComplete(SetRespawnDelay);
     }
  
-    public void GoRushBattleField(Vector3 _pos)
+    public override void GoRushBattleField(Vector3 _pos)
     {
-        Debug.Log("RUSH2");
-        myTrans.position = _pos;
+        base.GoRushBattleField(_pos);
+
         _myIsHeroInLine = true;
-        myOnRushBattleField?.Invoke();
-
-        foreach(var behav in myUnitBehaviors)
-        {
-            behav.AddTickToManager();
-        }
     }
-
 
     public Sequence GoBackToTemple(float _recallDelay)
     {
         myOnRecall.Invoke();
         myOnRecallEvent?.Invoke();
        
-        foreach (var behav in myUnitBehaviors)
-        {
-            behav.RemoveTickFromManager();
-        }
+        RemoveBehavTick();
 
         _RecallSequence = DOTween.Sequence();
       return  _RecallSequence.SetDelay(_recallDelay)

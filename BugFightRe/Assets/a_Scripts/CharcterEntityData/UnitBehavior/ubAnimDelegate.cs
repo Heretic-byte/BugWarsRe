@@ -14,12 +14,12 @@ public class ubAnimDelegate : myUnitBehavior
 
     public override void AddTickToManager()
     {
-        GameManager.myInstance.AddOnlyScaleTickToManager(FixedTickFloat);
+        GameManager.GetInstance.AddOnlyScaleTickToManager(FixedTickFloat);
     }
 
     public override void RemoveTickFromManager()
     {
-       GameManager.myInstance.RemoveOnlyScaleTickFromManager(FixedTickFloat);    
+       GameManager.GetInstance.RemoveOnlyScaleTickFromManager(FixedTickFloat);    
     }
 
     public override void SetInstance()

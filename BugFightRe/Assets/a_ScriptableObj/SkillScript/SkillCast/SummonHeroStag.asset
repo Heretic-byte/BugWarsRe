@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363da12e6b11d1d4a902dd0bdf6c3381, type: 3}
-  m_Name: New Skill Base
+  m_Script: {fileID: 11500000, guid: 6c9a59b2d4902b8459ee15205fbdc5ff, type: 3}
+  m_Name: SummonHeroStag
   m_EditorClassIdentifier: 
-  m_IsDragSkill: 0
-  m_ManaCost: 0
-  m_CoolDown: 0
+  m_SummonUnitPrefab: {fileID: 885600473830169058, guid: 56f3ad17163630f42ade534a7fc0f6f5,
+    type: 3}

@@ -26,8 +26,8 @@ public class JunglePortal : MonoBehaviour,IlinePosHolder
 
     private void Start()
     {
-        GameManager.myInstance.AddScaledTickToManager(MyTick);
-        myManagerCollDic = ColliderDicSingletone.myInstance;
+        GameManager.GetInstance.AddScaledTickToManager(MyTick);
+        myManagerCollDic = ColliderDicSingletone.GetInstance;
     }
 
     void MyTick(float tick)
