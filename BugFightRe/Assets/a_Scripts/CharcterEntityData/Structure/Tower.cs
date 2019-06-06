@@ -7,17 +7,16 @@ public class Tower : Unit
     public override float GetArmor()
     {
         return myStat.m_BaseArmor;
-
     }
 
     public override float GetAttackDamage()
     {
-        throw new System.NotImplementedException();
+        return myStat.m_BaseDamage;
     }
 
     public override float GetAttackSpeed()
     {
-        throw new System.NotImplementedException();
+        return myStat.m_BaseAttackSpeed;
     }
 
     public override float GetMaxHealth()

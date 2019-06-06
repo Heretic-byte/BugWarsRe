@@ -6,7 +6,7 @@ public interface ICanBeStun
 {
  
 
-    UnityAction myOnStuned { get; set; }
+    UnityAction<int> myOnCancel { get; set; }
     void GetStunDur(float _dur);
 
 }

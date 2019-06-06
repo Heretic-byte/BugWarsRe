@@ -20,8 +20,8 @@ public abstract class ubAttackBase : myUnitBehavior
         myUnit = GetComponent<Unit>();
         myTrans = myUnit.myTrans;
         SetTranslateDir();
-
-        myAttackSpeed = myUnit.myStat.m_BaseAttackSpeed;
+        
+        myAttackSpeed = myUnit.GetAttackSpeed();
         myAttackRange = myUnit.myStat.m_BaseAttackRange;
 
         myManagerCollDic = ColliderDicSingletone.GetInstance;

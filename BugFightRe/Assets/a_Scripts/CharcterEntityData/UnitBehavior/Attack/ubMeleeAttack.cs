@@ -13,10 +13,7 @@ public abstract class ubMeleeAttack : ubAttackBase
 
         if (targetHitten.collider != null)
         {
-            var AA = MethodTimer.StartTimer();
             myUnit.myAttackTarget = myManagerCollDic.GetDamageAble(targetHitten.collider.GetInstanceID());
-            //myUnit.myAttackTarget = targetHitten.collider.GetComponent<DamageAble>();
-            MethodTimer.StopTimer("AttackTime", AA);
         }
         else
         {

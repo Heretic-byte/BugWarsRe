@@ -39,6 +39,7 @@ public abstract class Unit : DamageAble
    
     public Vector3 myRayCastOffset { get => _rayCastOffset; set => _rayCastOffset = value; }
 
+ 
     protected override void MainSetInstance()
     {
         base.MainSetInstance();

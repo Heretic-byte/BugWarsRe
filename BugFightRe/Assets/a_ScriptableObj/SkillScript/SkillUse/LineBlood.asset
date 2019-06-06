@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LineBlood
   m_EditorClassIdentifier: 
   m_SpellPower: 300
-  m_SpellDuration: 10
-  m_SpellTick: 1
-  m_TargetSkillEffect: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  m_SpellDuration: 0
+  m_SpellTick: 0
+  m_TargetSkillEffect: {fileID: 144926, guid: fcb242a204cb73e46bb764583d0bf1fa, type: 3}
   m_CasterSkillEffect: {fileID: 130730, guid: 640ef30391bac3645a1cb5d8a5d8cf77, type: 3}

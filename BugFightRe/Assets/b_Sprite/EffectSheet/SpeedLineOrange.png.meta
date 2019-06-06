@@ -1,0 +1,682 @@
+fileFormatVersion: 2
+guid: 4933a0cd951238446bb557eb12525648
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: SpeedLineOrange_0
+  - first:
+      213: 21300002
+    second: SpeedLineOrange_1
+  - first:
+      213: 21300004
+    second: SpeedLineOrange_2
+  - first:
+      213: 21300006
+    second: SpeedLineOrange_3
+  - first:
+      213: 21300008
+    second: SpeedLineOrange_4
+  - first:
+      213: 21300010
+    second: SpeedLineOrange_5
+  - first:
+      213: 21300012
+    second: SpeedLineOrange_6
+  - first:
+      213: 21300014
+    second: SpeedLineOrange_7
+  - first:
+      213: 21300016
+    second: SpeedLineOrange_8
+  - first:
+      213: 21300018
+    second: SpeedLineOrange_9
+  - first:
+      213: 21300020
+    second: SpeedLineOrange_10
+  - first:
+      213: 21300022
+    second: SpeedLineOrange_11
+  - first:
+      213: 21300024
+    second: SpeedLineOrange_12
+  - first:
+      213: 21300026
+    second: SpeedLineOrange_13
+  - first:
+      213: 21300028
+    second: SpeedLineOrange_14
+  - first:
+      213: 21300030
+    second: SpeedLineOrange_15
+  - first:
+      213: 21300032
+    second: SpeedLineOrange_16
+  - first:
+      213: 21300034
+    second: SpeedLineOrange_17
+  - first:
+      213: 21300036
+    second: SpeedLineOrange_18
+  - first:
+      213: 21300038
+    second: SpeedLineOrange_19
+  - first:
+      213: 21300040
+    second: SpeedLineOrange_20
+  - first:
+      213: 21300042
+    second: SpeedLineOrange_21
+  - first:
+      213: 21300044
+    second: SpeedLineOrange_22
+  - first:
+      213: 21300046
+    second: SpeedLineOrange_23
+  - first:
+      213: 21300048
+    second: SpeedLineOrange_24
+  - first:
+      213: 21300050
+    second: SpeedLineOrange_25
+  - first:
+      213: 21300052
+    second: SpeedLineOrange_26
+  - first:
+      213: 21300054
+    second: SpeedLineOrange_27
+  - first:
+      213: 21300056
+    second: SpeedLineOrange_28
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpeedLineOrange_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9b730371f62a74f8222754df48e42e
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d111b5bf2c93174eac14c5539633b6c
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_2
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346a5e15411d180429b05c70a871ce0b
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_3
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d95906a133b586428c21e56e9514722
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_4
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c2513aaf6c6374691ff1a4a5339d9c
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11357f4798dc11408ecc2723a1fac90
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_6
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf693bb70d5a99e49ba32c4144582747
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_7
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac8de5856ab1f74e939c611606f5d75
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_8
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3027d57c67e9d3a40b0640bbefd05884
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_9
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d59889c8f151f9408c5a5f0b465a1a9
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68ea52db5ba0514fa27197ddc1197fb
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_11
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c1b57921982f34986ca5b4987a30a5
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_12
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e10b35deb4a6f04d8c63ee3893bcfea
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_13
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e647d627ede324e9a26ff84c862ff8
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_14
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115e39f8d04145149a614092f06e1b6f
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b294a0feec95a143934558167b086c3
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_16
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3179813e2e8af46448b6653da62663cc
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_17
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de893cfee9538824fa386f467d953882
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_18
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d10cead0c7bcd44905ee3dea9d2147
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_19
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b01d56e7f6f2645a2054b2c13fe5de
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b5b0fd9ee7c764ba2e5bba2a914ade
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_21
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee2c0e043a42864da78541f40ab4fa9
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineOrange_22
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2924d83be4c904cb784ae5b6e1bad7
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 403ce1cbde07c004ea234190abf3f6aa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

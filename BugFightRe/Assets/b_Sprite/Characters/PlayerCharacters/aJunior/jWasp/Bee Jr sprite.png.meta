@@ -99,12 +99,12 @@ TextureImporter:
     bones:
     - name: Hip
       position: {x: 564.227, y: 307.9652, z: 18}
-      rotation: {x: 0, y: 0, z: 0.43172827, w: 0.9020037}
-      length: 57.124115
+      rotation: {x: 0, y: 0, z: 0.43172845, w: 0.90200365}
+      length: 57.124134
       parentId: -1
     - name: Chest
-      position: {x: 57.124165, y: 0.000007450046, z: 19}
-      rotation: {x: 0, y: 0, z: 0.29513645, w: 0.9554551}
+      position: {x: 57.124107, y: -0.0000073896226, z: 19}
+      rotation: {x: 0, y: 0, z: 0.29513627, w: 0.95545524}
       length: 104.28218
       parentId: 0
     - name: Chest2_left
@@ -134,12 +134,12 @@ TextureImporter:
       parentId: 5
     - name: Arm_right_1
       position: {x: 124.527794, y: -0.6583793, z: 11}
-      rotation: {x: 0, y: 0, z: -0.16454917, w: 0.9863689}
-      length: 44.660583
+      rotation: {x: 0, y: 0, z: -0.16454878, w: 0.98636895}
+      length: 44.660507
       parentId: 3
     - name: Arm_right_2
-      position: {x: 44.660614, y: -0.000026156642, z: 12}
-      rotation: {x: 0, y: 0, z: -0.35648084, w: 0.9343026}
+      position: {x: 44.660576, y: -0.000030144358, z: 12}
+      rotation: {x: 0, y: 0, z: -0.35648113, w: 0.93430257}
       length: 81.16669
       parentId: 7
     - name: Hand_right
@@ -199,22 +199,22 @@ TextureImporter:
       parentId: 24
     - name: Leg_left_1
       position: {x: -162.09691, y: 66.76252, z: 21}
-      rotation: {x: 0, y: -0, z: -0.9483297, w: 0.31728664}
-      length: 75.64317
+      rotation: {x: 0, y: -0, z: -0.9483297, w: 0.3172867}
+      length: 75.64319
       parentId: 0
     - name: Leg_left_2
-      position: {x: 75.643166, y: -0.000017346474, z: 22}
-      rotation: {x: 0, y: 0, z: -0.08930389, w: 0.99600446}
+      position: {x: 75.64317, y: 0.00000093196553, z: 22}
+      rotation: {x: 0, y: 0, z: -0.08930396, w: 0.99600446}
       length: 87.296974
       parentId: 20
     - name: Leg_right_1
       position: {x: 36.682877, y: -184.92874, z: 10}
-      rotation: {x: 0, y: -0, z: -0.76766366, w: 0.640853}
-      length: 71.75425
+      rotation: {x: 0, y: -0, z: -0.7676638, w: 0.6408528}
+      length: 71.75424
       parentId: 0
     - name: Leg_right_2
-      position: {x: 71.75423, y: -0.000014959663, z: 9}
-      rotation: {x: 0, y: 0, z: -0.30002728, w: 0.9539307}
+      position: {x: 71.75425, y: 0.000030291914, z: 9}
+      rotation: {x: 0, y: 0, z: -0.30002707, w: 0.95393074}
       length: 88.27307
       parentId: 22
     - name: Tail

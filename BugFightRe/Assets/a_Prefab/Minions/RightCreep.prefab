@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779f5f4e69b3dce4980d82dacd179525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manaGiveRange: 2.5
+  _manaGiveRange: 6
   _enemyHeroLayer:
     serializedVersion: 2
     m_Bits: 16384

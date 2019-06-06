@@ -66,16 +66,16 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         _myHeroObj = heroObj;
         _myHeroUnit = heroUnit;
         _myDragButtonIcon.sprite = heroUnit.myPortrait;
-
-        heroUnit.myOnRecall += HideHeroBattleFieldLineNumber;
-
+        heroUnit.myOnRecall += ShowHeroLineNumberInPortal;
+        heroUnit.myOnRecallComplete += ShowHeroLineNumberInTemple;
+        heroUnit.myOnCancel += ShowHeroLineNumberInLine;
         heroUnit.myOnRespawnCountDown += ShowHeroDeathRespawnTime;
         heroUnit.myOnRespawn += HideHeroDeathRespawnTime;
 
         heroUnit.myOnRespawnCountDown += ShowHeroDeathRespawnImage;
         heroUnit.myOnRespawn += HideHeroDeathRespawnImage;
 
-        HideHeroBattleFieldLineNumber();
+        ShowHeroLineNumberInTemple();
         HideHeroDeathRespawnTime();
         //ui표시 등등
     }
@@ -91,7 +91,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
      
         var SummonLine= StageMapManager.GetInstance.myLaneAndCollDic[hittenLog.GetInstanceID()];
        
-        ShowHeroBattleFieldLineNumber(SummonLine.myLaneNumber);
+        ShowHeroLineNumberInLine(SummonLine.myLaneNumber);
 
         var SummonTrans = SummonLine.myLeftLaneStartPos;
          
@@ -222,10 +222,6 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             _IsRecallCd = true;
             Sequence RecallCdSeq = DOTween.Sequence();
             RecallCdSeq.SetDelay(myRecallCoolDown).OnComplete(delegate { _IsRecallCd = false; });
-            //쿨다운표시랑 리스폰쿨다운이랑 겹침
-            //쿨다운 일단존재하고
-            //죽으면 초상화 검게만들고 부활시간 표시
-            
         }
     }
 
@@ -245,6 +241,7 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         _myHeroHealSeq = DOTween.Sequence();
         _myHeroHealSeq.SetLoops(-1).PrependInterval(0.5f).PrependCallback(HealHero);
     }
+
     void HealHero()
     {
         _myHeroUnit.GetHeal(myHealTickValue);
@@ -270,7 +267,6 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     void RespawnTimer()
     {
         myRespawnTimer -= (Time.deltaTime/2f);
-
         myHeroRespawnTimeText.text = string.Format("{00:F1}", myRespawnTimer);
     }
     void HideHeroDeathRespawnTime()
@@ -283,14 +279,18 @@ public class HeroDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         _myRespawnImageSeq?.Kill();
         myHeroRespawnCDImage.fillAmount = 0;
         myHeroRespawnCDImage.DOFade(0, 0);
-
     }
-    void ShowHeroBattleFieldLineNumber(int _laneNumb)
+    void ShowHeroLineNumberInLine(int _laneNumb)
     {
         _myHeroUnit.SetCurrentLaneNumber(_laneNumb);
         _myHeroPosText.text = _laneNumb.ToString();
     }
-    void HideHeroBattleFieldLineNumber()
+    void ShowHeroLineNumberInPortal()
+    {
+        _myHeroPosText.text = "Ptrl";
+    }
+   
+    void ShowHeroLineNumberInTemple()
     {
         _myHeroPosText.text = "In";
     }

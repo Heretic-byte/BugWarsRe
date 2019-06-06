@@ -11,8 +11,6 @@ public class Bullet : Projectile
 {
     public DamageAble myTargetUnit { get => _targetUnit; private set => _targetUnit = value; }
     DamageAble _targetUnit;
-    float _BulletDamage;
-    public float myBulletDamage { get => _BulletDamage; set => _BulletDamage = value; }
 
   
     Unit _theBulletCaster;
@@ -52,14 +50,14 @@ public class Bullet : Projectile
     }
 
 
-    public void SetInstance(Unit _myCaster,UnityAction _onBulletTriggered)
+    public override void SetInstance(Unit _myCaster,UnityAction _onBulletTriggered)
     {
         myTheBulletCaster = _myCaster;
         myTheBulletCaster.myOnAttackTargetDead += OnEnqueue;
         _OnBulletTrigger += _onBulletTriggered;
        
     }
-    public  void BulletShooting( DamageAble _targetUnit)
+    public override void ShootProjectile( DamageAble _targetUnit)
     {
         if(myTimerCounter!=null)
         {
@@ -78,7 +76,7 @@ public class Bullet : Projectile
         myTimerCounter.SetDelay(myBulletMaxLifeDur).OnComplete(OnEnqueue);
     }
 
-    public  void OnEnqueue()
+      void OnEnqueue()
     {
         myObj.SetActive(false);
         RemoveTickFromManager();

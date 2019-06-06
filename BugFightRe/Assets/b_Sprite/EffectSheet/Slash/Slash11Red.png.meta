@@ -1,0 +1,976 @@
+fileFormatVersion: 2
+guid: fbdb7db3f94f2514eb2c2bdb1bdf9782
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Slash11Red_0
+  - first:
+      213: 21300002
+    second: Slash11Red_1
+  - first:
+      213: 21300004
+    second: Slash11Red_2
+  - first:
+      213: 21300006
+    second: Slash11Red_3
+  - first:
+      213: 21300008
+    second: Slash11Red_4
+  - first:
+      213: 21300010
+    second: Slash11Red_5
+  - first:
+      213: 21300012
+    second: Slash11Red_6
+  - first:
+      213: 21300014
+    second: Slash11Red_7
+  - first:
+      213: 21300016
+    second: Slash11Red_8
+  - first:
+      213: 21300018
+    second: Slash11Red_9
+  - first:
+      213: 21300020
+    second: Slash11Red_10
+  - first:
+      213: 21300022
+    second: Slash11Red_11
+  - first:
+      213: 21300024
+    second: Slash11Red_12
+  - first:
+      213: 21300026
+    second: Slash11Red_13
+  - first:
+      213: 21300028
+    second: Slash11Red_14
+  - first:
+      213: 21300030
+    second: Slash11Red_15
+  - first:
+      213: 21300032
+    second: Slash11Red_16
+  - first:
+      213: 21300034
+    second: Slash11Red_17
+  - first:
+      213: 21300036
+    second: Slash11Red_18
+  - first:
+      213: 21300038
+    second: Slash11Red_19
+  - first:
+      213: 21300040
+    second: Slash11Red_20
+  - first:
+      213: 21300042
+    second: Slash11Red_21
+  - first:
+      213: 21300044
+    second: Slash11Red_22
+  - first:
+      213: 21300046
+    second: Slash11Red_23
+  - first:
+      213: 21300048
+    second: Slash11Red_24
+  - first:
+      213: 21300050
+    second: Slash11Red_25
+  - first:
+      213: 21300052
+    second: Slash11Red_26
+  - first:
+      213: 21300054
+    second: Slash11Red_27
+  - first:
+      213: 21300056
+    second: Slash11Red_28
+  - first:
+      213: 21300058
+    second: Slash11Red_29
+  - first:
+      213: 21300060
+    second: Slash11Red_30
+  - first:
+      213: 21300062
+    second: Slash11Red_31
+  - first:
+      213: 21300064
+    second: Slash11Red_32
+  - first:
+      213: 21300066
+    second: Slash11Red_33
+  - first:
+      213: 21300068
+    second: Slash11Red_34
+  - first:
+      213: 21300070
+    second: Slash11Red_35
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slash11Red_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16df78a920a3e0d40990e780f539e51e
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bd15b5c14b90e4a9759796be127d2b
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61b69d8ab2e9724082cd0c1585a559d
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0613212dfe5b3ca49a18d70458a0edfc
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_4
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc2990f8a5634947a16e6d4e3fea1ff
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_5
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34aa98f560b452c47863cecc4021afb7
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_6
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e21c92c2e5f5047aecf2c42bcda21b
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596032084913a0e4785c94d572d56184
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a414830936f0ce040a055b1067ccf81c
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56b12ed63acc18438ab12a756b8c836
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_10
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfae2a0889358064d8b2217f8558082a
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_11
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202d394c469bb4748947064dc5a34aa3
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_12
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f339055a946e894c84b3606d57c91dc
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_13
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cbad372fa1010f458872d10b4e60514
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1af63af0f1e4144abefc36ac3581d2
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_15
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8068e30c1fedc34f83693b68fdf68b4
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_16
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a800cf2cc7b6fd4f9c0849d6c0d36fd
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_17
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143d7e271c8c9ef4a919e2cd43f52344
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_18
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1c50074d4b2b047b10e4da45386736
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_19
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800637408bd68784682f3e1300488fa9
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_20
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274a8ba8c617a3d4f84d7648a0204cd0
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e0837e27ac1e34b89fd31eb645247c
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_22
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d537fdb2bd81e4dbe532179b88faec
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_23
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3709ee2e8b70224687204544f166c2a
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_24
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f48ae03229c0ae49b1f3dd5130bb6ae
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_25
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613262d4c8a9f3949a77ca31797a7af7
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_26
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55445d9109a3e344bae4b60827423fdd
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_27
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73eab4570852a144a1d303d4297576d
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f449712def0d33c468082edf7126b1b9
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_29
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3387f6bfa6972dc4882d6c5ec4098ddd
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_30
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbedf48e43e894c42bc45ffcd66c252d
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_31
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01676230589c2541864f89302886aa5
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_32
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96229db5a7e378d4dbe8b105b3d28af4
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_33
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff5d89acf15b354b8d9d1028aa5a301
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_34
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0be45680bf1af4a98fb6dcd276d127
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Red_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147.71428
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe73c7ed4a03bf04aa4a5d46aafaf95d
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7c49c3b5f5c976445bcb57070b16e685
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -27,8 +27,6 @@ namespace Skills
 
             var Damageables = ColliderDicSingletone.GetInstance.GetDamageAbleArry(Hitten);
 
-           
-
             foreach (var AA in Damageables)
             {
                 m_EventDamageable?.Invoke(AA, hero);
@@ -46,7 +44,12 @@ namespace Skills
         {
           var iter= Physics2D.RaycastNonAlloc(coord, hero.GetMyDir, m_HitArray,m_Dist,m_WhatToHit);
 
-            List<RaycastHit2D> SortedHittenList = new List<RaycastHit2D>(m_HitArray);
+            List<RaycastHit2D> SortedHittenList = new List<RaycastHit2D>();
+            SortedHittenList.Capacity = iter;
+            for (int i=0; i< iter;i++)
+            {
+                SortedHittenList.Add( m_HitArray[i]);
+            }
 
             SortedHittenList.Sort(new RayCastXCompare());
 
@@ -65,6 +68,7 @@ namespace Skills
             {
                 m_EventDamageable?.Invoke(AA,hero);
             }
+
         }
 
         public class RayCastXCompare : IComparer<RaycastHit2D>

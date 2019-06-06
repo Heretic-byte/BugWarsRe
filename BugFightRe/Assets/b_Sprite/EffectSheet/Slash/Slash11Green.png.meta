@@ -1,0 +1,976 @@
+fileFormatVersion: 2
+guid: 6ba471b9656c54c4a8b75b6541a77191
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Slash11Green_0
+  - first:
+      213: 21300002
+    second: Slash11Green_1
+  - first:
+      213: 21300004
+    second: Slash11Green_2
+  - first:
+      213: 21300006
+    second: Slash11Green_3
+  - first:
+      213: 21300008
+    second: Slash11Green_4
+  - first:
+      213: 21300010
+    second: Slash11Green_5
+  - first:
+      213: 21300012
+    second: Slash11Green_6
+  - first:
+      213: 21300014
+    second: Slash11Green_7
+  - first:
+      213: 21300016
+    second: Slash11Green_8
+  - first:
+      213: 21300018
+    second: Slash11Green_9
+  - first:
+      213: 21300020
+    second: Slash11Green_10
+  - first:
+      213: 21300022
+    second: Slash11Green_11
+  - first:
+      213: 21300024
+    second: Slash11Green_12
+  - first:
+      213: 21300026
+    second: Slash11Green_13
+  - first:
+      213: 21300028
+    second: Slash11Green_14
+  - first:
+      213: 21300030
+    second: Slash11Green_15
+  - first:
+      213: 21300032
+    second: Slash11Green_16
+  - first:
+      213: 21300034
+    second: Slash11Green_17
+  - first:
+      213: 21300036
+    second: Slash11Green_18
+  - first:
+      213: 21300038
+    second: Slash11Green_19
+  - first:
+      213: 21300040
+    second: Slash11Green_20
+  - first:
+      213: 21300042
+    second: Slash11Green_21
+  - first:
+      213: 21300044
+    second: Slash11Green_22
+  - first:
+      213: 21300046
+    second: Slash11Green_23
+  - first:
+      213: 21300048
+    second: Slash11Green_24
+  - first:
+      213: 21300050
+    second: Slash11Green_25
+  - first:
+      213: 21300052
+    second: Slash11Green_26
+  - first:
+      213: 21300054
+    second: Slash11Green_27
+  - first:
+      213: 21300056
+    second: Slash11Green_28
+  - first:
+      213: 21300058
+    second: Slash11Green_29
+  - first:
+      213: 21300060
+    second: Slash11Green_30
+  - first:
+      213: 21300062
+    second: Slash11Green_31
+  - first:
+      213: 21300064
+    second: Slash11Green_32
+  - first:
+      213: 21300066
+    second: Slash11Green_33
+  - first:
+      213: 21300068
+    second: Slash11Green_34
+  - first:
+      213: 21300070
+    second: Slash11Green_35
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slash11Green_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebae7ad15f58ba14b9ec3506e0eebc77
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac35e93050a58d2478ed6c33b82e3851
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e07c93255aabd49b7ae21fbdce086b
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b19a4a63a8d4584d946e1ab493b446c
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_4
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b26cb8661c9f041aa6377d8f6c5143
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_5
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c943f89be8ebd24ea7ce87da017314c
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_6
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 877.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2980f012848d6e24e9cff092d38883fc
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f517048b76120458b49a9f0d1d0117
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4f81e3918c4b145bfce74dd370daac
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621c03bc28cdcc848b7607346dee00e3
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_10
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee07fb7c8f8a774ebd5e43e0601d8c4
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_11
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e22182294c4c4843aa440d86fd1af5c
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_12
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259bbfb34f2303d4b936b92ab2add373
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_13
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 731.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24888340145c134998f9092e9aa6605
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47852c741874474494ac7fb58460156
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_15
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549967d7cbcab4e41947d80a6ae12a48
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_16
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ee51445cec00d449ddd67e39c3fd74
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_17
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26752d88859a3b4bafac930ab539ec3
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_18
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c70b515b14f71742afa9b998c50bdd1
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_19
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0354e3ee5f06ca343a59277ab4687f52
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_20
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 585.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e6d0eacf2f54b4eb9a93b5e09e8f81
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1088781a13a83684c82382ad9daeb5c0
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_22
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04de4d2609b6524c9d89b5087909052
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_23
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359d613a1a6e59243b7926a9b58ca498
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_24
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dff871a32fc5554b8af9a45052f0e70
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_25
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cbb8bb9f35dd644bc92630e340ef5e
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_26
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a04b045c5cfadc499caec2b3092b621
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_27
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 439.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd30b75b51eae8f40a6053cc66d1a2bc
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd022caf23cc6945bbb68f6ed9bdf39
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_29
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d268be15b56d0c49a186c885d072cda
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_30
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88b01e94f4e97043ae27b959c4185bb
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_31
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b91c739f59aa634eb6ad1d418e55d28
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_32
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f0a4051e5aa3a4e90a313ac0f1333c
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_33
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610e323fb92bcbd46a84b002cf4d0261
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_34
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 293.7143
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c021998463ac7042b6c2fff2f3c665c
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash11Green_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147.71428
+        width: 146.28572
+        height: 146.28572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5502773962307a24c8fb11dc60ce0d79
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2ad0b55747d40734093819d4154fa0a7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

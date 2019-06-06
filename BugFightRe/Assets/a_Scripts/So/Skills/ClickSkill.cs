@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.Events;
 using DG.Tweening;
 namespace Skills
@@ -15,14 +16,13 @@ namespace Skills
         [Header("Default is Right")]
         [SerializeField]
         Vector3 _Offset;
-        public Vector3 m_Offset { get => _Offset;  }
+        public Vector3 m_Offset { get => _Offset; }
 
-         Vector3 GetOffset(UnitHero unitHero)
+        Vector3 GetOffset(UnitHero unitHero)
         {
             Vector3 newVector3 = m_Offset;
             if (!unitHero.myIsFacingRight)
             {
-                
                 newVector3.x *= -1;
                 return newVector3;
             }
@@ -42,7 +42,7 @@ namespace Skills
         public override void CreateSkillButton(UnitHero unitHero ,GameObject targetObj)
         {
             var clickSkillBtn = targetObj.AddComponent<ClickSkillButton>();
-            clickSkillBtn.SetInstance(unitHero);
+            clickSkillBtn.SetInstance(unitHero,this);
             clickSkillBtn.SetClickSkill(OnBeginClick);
         }
     }

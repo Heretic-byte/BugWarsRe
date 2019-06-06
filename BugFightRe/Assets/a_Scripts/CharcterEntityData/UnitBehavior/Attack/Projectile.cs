@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public abstract class Projectile : MonoBehaviour,IfixedTickFloat
 {
     public GameManager myManagerGame { get; set; }
@@ -31,7 +31,8 @@ public abstract class Projectile : MonoBehaviour,IfixedTickFloat
 
     public abstract void FixedTickFloat(float _tick);
 
-  
+    public abstract void SetInstance(Unit _myCaster, UnityAction _onBulletTriggered);
+    public abstract void ShootProjectile(DamageAble _targetUnit);
 
-   
+
 }

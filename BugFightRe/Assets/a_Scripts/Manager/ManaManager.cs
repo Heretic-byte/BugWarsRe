@@ -10,11 +10,11 @@ public delegate void DeleGiveMana(int manaValue);
 public class ManaManager : Singleton<ManaManager>
 {
     [SerializeField]
-    private int _nPlayerMaxMana=1000;
-    private int _nPlayerCurrentMana=0;
+    private int _nPlayerMaxMana = 1000;
+    private int _nPlayerCurrentMana = 0;
     [SerializeField]
-    private int _nMonsterMaxMana=1000;
-    private int _nMonsterCurrentMana=0;
+    private int _nMonsterMaxMana = 1000;
+    private int _nMonsterCurrentMana = 0;
 
     [SerializeField]
     private LayerMask _playerLayer;
@@ -29,10 +29,10 @@ public class ManaManager : Singleton<ManaManager>
     [SerializeField]
     private Text _manaMaxValueText;
     [SerializeField]
-    private float _TweenDur=0.2f;
+    private float _TweenDur = 0.2f;
     private float _TextTweenDur;
 
-    private Tween _playerManaFillTween;
+    private Tween _playerManaFillTween { get; set; }
 
     private Dictionary<LayerMask, DeleGiveMana> _PlayerAndEnemyManaDeleDic = new Dictionary<LayerMask, DeleGiveMana>();
 
@@ -43,11 +43,11 @@ public class ManaManager : Singleton<ManaManager>
     public Dictionary<LayerMask, DeleGiveMana> myPlayerAndEnemyManaDeleDic { get => _PlayerAndEnemyManaDeleDic; set => _PlayerAndEnemyManaDeleDic = value; }
     public LayerMask myPlayerLayer { get => _playerLayer; set => _playerLayer = value; }
     public LayerMask myMonsterLayer { get => _monsterLayer; set => _monsterLayer = value; }
-    public Image myManaBarBackGround { get => _manaBarBackGround;  }
-    public Image myManaBarForeGround { get => _manaBarForeGround;  }
+    public Image myManaBarBackGround { get => _manaBarBackGround; }
+    public Image myManaBarForeGround { get => _manaBarForeGround; }
     public Text myManaValueText { get => _manaValueText; }
-    public Text myManaMaxValueText { get => _manaMaxValueText;  }
-    public float myTweenDur { get => _TweenDur;  }
+    public Text myManaMaxValueText { get => _manaMaxValueText; }
+    public float myTweenDur { get => _TweenDur; }
     public float myTextTweenDur { get => _TextTweenDur; set => _TextTweenDur = value; }
 
     protected override void Awake()
@@ -70,7 +70,7 @@ public class ManaManager : Singleton<ManaManager>
     {
         myPlayerCurrentMana += manaValue;
 
-      
+
         if (myPlayerMaxMana < myPlayerCurrentMana)
         {
             myPlayerCurrentMana = myPlayerMaxMana;
@@ -96,7 +96,7 @@ public class ManaManager : Singleton<ManaManager>
     public bool SubstractManaFromPlayer(int manaValue)
     {
 
-        if(manaValue> myPlayerCurrentMana)
+        if (manaValue > myPlayerCurrentMana)
         {
             return false;
         }
@@ -121,7 +121,7 @@ public class ManaManager : Singleton<ManaManager>
     void SetPlayerManaText()
     {
         myManaValueText.text = "0";
-        myManaMaxValueText.text ="/"+ myPlayerMaxMana.ToString();
+        myManaMaxValueText.text = "/" + myPlayerMaxMana.ToString();
     }
 
     void UpdatePlayerCurrentManaText()
@@ -142,7 +142,20 @@ public class ManaManager : Singleton<ManaManager>
     {
         _playerManaFillTween?.Complete();
         float percent = (float)myPlayerCurrentMana / (float)myPlayerMaxMana;
-           _playerManaFillTween = myManaBarForeGround.DOFillAmount(percent, myTweenDur);
+        _playerManaFillTween = myManaBarForeGround.DOFillAmount(percent, myTweenDur);
     }
 
+    public bool UsePlayerMana(SkillBase skillBase)
+    {
+        if (skillBase.m_ManaCost > myPlayerCurrentMana)
+        {
+            return false;
+        }
+
+        SubstractManaFromPlayer(skillBase.m_ManaCost);
+
+
+
+        return true;
+    }
 }

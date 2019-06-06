@@ -23,31 +23,34 @@ public class UnitCreep : Unit
         base.MainSetInstance();
         myManagerGame = GameManager.GetInstance;
 
+        myRealStat.SetStat(myStat);
+
+
     }
     #region GetStat
     public override float GetArmor()
     {
-        return myStat.m_BaseArmor;
+        return myRealStat.m_ArmorBonus;
     }
     public override float GetAttackDamage()
     {
-        return myStat.m_BaseDamage;
+        return myRealStat.m_DamageBonus;
     }
     public override float GetAttackSpeed()
     {
-        return myStat.m_BaseAttackSpeed;
+        return myRealStat.m_AttackSpeedBonus;
     }
     public override float GetMaxHealth()
     {
-        return myStat.m_BaseHealth;
+        return myRealStat.m_HealthBonus;
     }
     public override float GetSpellArmorPercent()
     {
-        return myStat.m_BaseMagicArmor;
+        return myRealStat.m_MagicArmorBonus;
     }
     public override float GetSpellDamagePercent()
     {
-        return myStat.m_BaseSpellAmplify;
+        return myRealStat.m_SpellAmplifyBonus;
     }
     #endregion
     public override void TakeKill()

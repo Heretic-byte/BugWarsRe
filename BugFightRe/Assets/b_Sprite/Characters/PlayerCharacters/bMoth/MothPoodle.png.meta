@@ -219,22 +219,22 @@ TextureImporter:
       parentId: 1
     - name: LegLeft2
       position: {x: -35.103424, y: -226.515, z: 12}
-      rotation: {x: 0, y: -0, z: 0.9956864, w: 0.09278257}
-      length: 61.27644
+      rotation: {x: 0, y: -0, z: 0.9956864, w: 0.09278281}
+      length: 61.27643
       parentId: 0
     - name: LegRight2
       position: {x: -35.932304, y: -262.8861, z: 11}
-      rotation: {x: 0, y: -0, z: -0.98974866, w: 0.14282036}
-      length: 53.82677
+      rotation: {x: 0, y: -0, z: -0.98974866, w: 0.14282024}
+      length: 53.82678
       parentId: 0
     - name: LegLeft
-      position: {x: 61.276466, y: -0.000027870035, z: 10}
-      rotation: {x: 0, y: 0, z: -0.00000041732085, w: 1}
+      position: {x: 61.276436, y: -0.0000025176053, z: 10}
+      rotation: {x: 0, y: 0, z: -0.00000018546102, w: 1}
       length: 68.55026
       parentId: 24
     - name: LegRight
-      position: {x: 53.826775, y: -0.000024499386, z: 9}
-      rotation: {x: 0, y: 0, z: -0.00000025072285, w: -1}
+      position: {x: 53.826775, y: 0.000013939852, z: 9}
+      rotation: {x: 0, y: 0, z: -0.00000036871006, w: -1}
       length: 71.7194
       parentId: 25
     spriteID: c890e2a6750dd8a4bae93f818285e1c4

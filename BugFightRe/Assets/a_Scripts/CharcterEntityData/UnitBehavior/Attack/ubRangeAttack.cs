@@ -25,8 +25,8 @@ public abstract class ubRangeAttack : ubAttackBase
     GameObject[] _bulletsArray;
     public GameObject[] myBulletsArray { get => _bulletsArray; set => _bulletsArray = value; }
 
-    Bullet[] _bullets;
-    public Bullet[] myBullets { get => _bullets; set => _bullets = value; }
+    Projectile[] _bullets;
+    public Projectile[] myBullets { get => _bullets; set => _bullets = value; }
     //
     
     public override void SetInstance()
@@ -54,12 +54,12 @@ public abstract class ubRangeAttack : ubAttackBase
     {
         var _bulletHolder = new GameObject(myUnit.myObj.name + "'s BulletHolder");
         myBulletsArray = new GameObject[myBulletMaxCount];
-        myBullets = new Bullet[myBulletMaxCount];
+        myBullets = new Projectile[myBulletMaxCount];
 
         for (int i=0; i< myBulletsArray.Length; i++)
         {
             myBulletsArray[i] = Instantiate(myBulletPrefab, myTrans.position, Quaternion.identity, _bulletHolder.transform);
-            myBullets[i]= myBulletsArray[i].GetComponent<Bullet>();
+            myBullets[i]= myBulletsArray[i].GetComponent<Projectile>();
             myBullets[i].SetInstance(myUnit,OnBulletDealDamage);
             myBulletsArray[i].SetActive(false);
         }
@@ -109,7 +109,7 @@ public abstract class ubRangeAttack : ubAttackBase
     {
         myBulletsArray[myCurrentBulletIndex].SetActive(true);
         myBullets[myCurrentBulletIndex].myTrans.position = myTrans.TransformPoint(myBulletShootingPos);
-        myBullets[myCurrentBulletIndex].BulletShooting(myUnit.myAttackTarget);
+        myBullets[myCurrentBulletIndex].ShootProjectile(myUnit.myAttackTarget);
 
         myCurrentBulletIndex++;
         if (myCurrentBulletIndex >= myBulletMaxCount)
@@ -124,7 +124,7 @@ public abstract class ubRangeAttack : ubAttackBase
         {
             return;
         }
-        myUnit.myAttackTarget.TakePhysicalDamage(myUnit.myStat.m_BaseDamage, myUnit);
+        myUnit.myAttackTarget.TakePhysicalDamage(myUnit.GetAttackDamage(), myUnit);
     }
 
 }

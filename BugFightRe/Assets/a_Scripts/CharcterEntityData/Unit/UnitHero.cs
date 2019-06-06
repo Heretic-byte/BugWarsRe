@@ -11,17 +11,19 @@ public class UnitHero : Unit, ICanBeStun
 
     private Vector3 _startTemplePos;
     public Vector3 myStartTemplePos { get => _startTemplePos; }
-
    
-    public UnityAction myOnStuned { get; set; }
+    public UnityAction<int> myOnCancel { get; set; }
    
     public UnityAction myOnRecall { get; set; }
+    public UnityAction myOnRecallComplete { get; set; }
+    public UnityAction<float> myOnStuned { get; set; }
     public UnityAction<float> myOnRespawnCountDown { get; set; }
+
     [SerializeField]
     private UnityEvent _OnRecallEvent;
 
     [SerializeField]
-    private float _respawnTime = 15f;
+    private float _respawnTime = 10f;
      float myRespawnTime { get => _respawnTime; }
 
     public float myCurrentRespawnTime{get;private set;}
@@ -30,7 +32,7 @@ public class UnitHero : Unit, ICanBeStun
     public int myDeathCount { get => _deathCount; set => _deathCount = value; }
     public bool _myIsHeroInLine { get;private set; }
 
-    public StatDataBase.StatValue myRealStat { get; private set; }=new StatDataBase.StatValue();
+   
     public UnityEvent myOnRecallEvent { get => _OnRecallEvent;  }
     Sequence _RecallSequence { get; set; }
     public int GetCurrentLaneNumber { get; private set; } = 0;
@@ -68,10 +70,12 @@ public class UnitHero : Unit, ICanBeStun
         myRealStat.SetStat(myStat);
         
         SetHpToMax();
+
         _startTemplePos = myTrans.position;
+
         _myIsHeroInLine = false;
 
-        myCurrentRespawnTime = _respawnTime;
+        myCurrentRespawnTime = myRespawnTime;
 
         myOnRecall += SetCurrentLaneNumberNull;
     }
@@ -112,6 +116,7 @@ public class UnitHero : Unit, ICanBeStun
             .AppendCallback(
             delegate
             {
+                myOnRecallComplete?.Invoke();
                 myTrans.position = myStartTemplePos;
                 _myIsHeroInLine = false;
             });
@@ -139,7 +144,18 @@ public class UnitHero : Unit, ICanBeStun
 
     public void GetStunDur(float _dur)
     {
-        myOnStuned?.Invoke();
+        if(_myIsHeroInLine)
+        {
+            CancelPortal();
+            myOnStuned?.Invoke(_dur);
+        }
+       
+    }
+
+    public void CancelPortal()
+    {
+        _RecallSequence?.Kill();
+        myOnCancel?.Invoke(GetCurrentLaneNumber);
     }
 
     void KillMyTweenForDeath()

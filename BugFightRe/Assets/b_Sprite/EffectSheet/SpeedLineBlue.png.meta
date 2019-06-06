@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: dd3ec0fe5b1213749a113c9119770b00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: SpeedLineBlue_0
+  - first:
+      213: 21300002
+    second: SpeedLineBlue_1
+  - first:
+      213: 21300004
+    second: SpeedLineBlue_2
+  - first:
+      213: 21300006
+    second: SpeedLineBlue_3
+  - first:
+      213: 21300008
+    second: SpeedLineBlue_4
+  - first:
+      213: 21300010
+    second: SpeedLineBlue_5
+  - first:
+      213: 21300012
+    second: SpeedLineBlue_6
+  - first:
+      213: 21300014
+    second: SpeedLineBlue_7
+  - first:
+      213: 21300016
+    second: SpeedLineBlue_8
+  - first:
+      213: 21300018
+    second: SpeedLineBlue_9
+  - first:
+      213: 21300020
+    second: SpeedLineBlue_10
+  - first:
+      213: 21300022
+    second: SpeedLineBlue_11
+  - first:
+      213: 21300024
+    second: SpeedLineBlue_12
+  - first:
+      213: 21300026
+    second: SpeedLineBlue_13
+  - first:
+      213: 21300028
+    second: SpeedLineBlue_14
+  - first:
+      213: 21300030
+    second: SpeedLineBlue_15
+  - first:
+      213: 21300032
+    second: SpeedLineBlue_16
+  - first:
+      213: 21300034
+    second: SpeedLineBlue_17
+  - first:
+      213: 21300036
+    second: SpeedLineBlue_18
+  - first:
+      213: 21300038
+    second: SpeedLineBlue_19
+  - first:
+      213: 21300040
+    second: SpeedLineBlue_20
+  - first:
+      213: 21300042
+    second: SpeedLineBlue_21
+  - first:
+      213: 21300044
+    second: SpeedLineBlue_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpeedLineBlue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9413c6c428958ae4ab26e8b8c1b0f222
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53607d42621458c4d87b0e4c7d3694f2
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_2
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bee2d17e2436184cb48475bea60a3a1
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_3
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6c2e518043084c99c4c87b9435286
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_4
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1818
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4322b7738c2c2a44a8424f0ebc359cdf
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6f96912c7af5c4db3feab536ccd77e
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_6
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ebb27332dcd4445a10465bb4481f16
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_7
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0baa6bdddd10e4ebe8a2044f579b32
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_8
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d908df0b340ccc4f920c3ae92e04ab6
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_9
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1588
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931cbfecfaa779948be3a704fd1663af
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d61e69ab0eb9344fa15d454e0ea5758
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_11
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6d5c41397cf214f95bd99e0e59affe
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_12
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4618e86a8beb8439ad05e5290b0414
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_13
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904f3ea678106c548ba46f8849091cd9
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_14
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1358
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156661f427501884eab7eefa756da738
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae5b87a126993e45a340a0d30d4abab
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_16
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35d13cae5f90984ab1a1ec77657d9a6
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_17
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b20dd711b389cc4e845f9bb5fc21e78
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_18
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293624fab081dde4c8e8314f0e3cbb45
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_19
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1128
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84b775b56a35df4b9c6cb1eb51477c6
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5661ada76f8214eaa2cf59f042e263
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_21
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c150e087ac730184d94809a2e23ef441
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpeedLineBlue_22
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 898
+        width: 409
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68704e9b118271b4bb59cae1e1a2317c
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 360c65690bdbab747b1216d6ed54700a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

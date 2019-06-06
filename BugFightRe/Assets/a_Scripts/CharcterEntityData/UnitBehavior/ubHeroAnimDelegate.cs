@@ -14,4 +14,9 @@ public class ubHeroAnimDelegate : ubAnimDelegate
         _myUnitHero.myOnRespawn += SetTriggerOnIdle;
         _myUnitHero.myOnRecall += SetBoolOnStopWalk;
     }
+
+    public void UseSkillMotion1()
+    {
+        myAnim.SetTrigger("Skill1");
+    }
 }
