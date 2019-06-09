@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6f201b09cb4da48a23aef2ea92c5b6, type: 3}
+  m_Name: StageData
+  m_EditorClassIdentifier: 
+  _mainIndex: 1
+  _stageIndex: 1
+  _stageName: "\uD1B5\uB098\uBB34\uB530\uB9AC\uC232"
+  _enemyHeroDatas:
+  - {fileID: 11400000, guid: d31c2d0d1920c3e49b3469b9a66f3fc0, type: 2}
+  _enemyDatas:
+  - {fileID: 11400000, guid: 7f9c077574d1e814986ca8b295d28ef5, type: 2}
+  _itemDatas:
+  - {fileID: 11400000, guid: a41b02a8fdb3aef4180f946a4fa41734, type: 2}
+  _prizeItemDatas:
+  - {fileID: 11400000, guid: 7d14acf1c0f8c744cb6a5277fe749cf7, type: 2}
+  _questDatas:
+  - {fileID: 11400000, guid: b1084550a8ba6f84cbdfd59c6b45500d, type: 2}

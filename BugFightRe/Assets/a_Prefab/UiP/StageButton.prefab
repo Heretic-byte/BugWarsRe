@@ -334,7 +334,7 @@ GameObject:
   m_Layer: 5
   m_Name: StageButton
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a5bada12fbf3747be4eac213a66b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockStageButtons: []
+  _unlockStageButtons: {fileID: 0}
   _lockedColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   _isUnlocked: 0
   _onClick:

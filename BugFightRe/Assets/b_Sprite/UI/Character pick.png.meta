@@ -94,6 +94,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -101,13 +112,13 @@ TextureImporter:
       name: FrameCharSelect
       rect:
         serializedVersion: 2
-        x: 162
-        y: 164
-        width: 1577
-        height: 1658
+        x: 254
+        y: 281
+        width: 1491
+        height: 1494
       alignment: 9
       pivot: {x: 0.5249453, y: 0.5103453}
-      border: {x: 203, y: 227, z: 96, w: 239}
+      border: {x: 658, y: 642, z: 586, w: 608}
       outline: []
       physicsShape: []
       tessellationDetail: 0
