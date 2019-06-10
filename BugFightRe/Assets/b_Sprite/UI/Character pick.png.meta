@@ -112,13 +112,13 @@ TextureImporter:
       name: FrameCharSelect
       rect:
         serializedVersion: 2
-        x: 254
+        x: 248
         y: 281
-        width: 1491
+        width: 1499
         height: 1494
       alignment: 9
-      pivot: {x: 0.5249453, y: 0.5103453}
-      border: {x: 658, y: 642, z: 586, w: 608}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 648, y: 642, z: 653, w: 640}
       outline: []
       physicsShape: []
       tessellationDetail: 0
