@@ -506,8 +506,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1354682317}
   - component: {fileID: 1354682319}
-  - component: {fileID: 1354682318}
   - component: {fileID: 1354682320}
+  - component: {fileID: 1354682318}
   m_Layer: 0
   m_Name: DyanamicManager
   m_TagString: Untagged
@@ -540,13 +540,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354682316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6487c5c9de838489eee6ccacc44b1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cb00601933d18c4598ad50a5368a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedHero:
-  - {fileID: 6826963051989170208, guid: b28ffadc9daa8f04aa25b9ed8591cbe1, type: 3}
-  - {fileID: 1339512245233243232, guid: 7cb969be8e5eeb44085af120adb1a48e, type: 3}
-  - {fileID: 885600473830169058, guid: 56f3ad17163630f42ade534a7fc0f6f5, type: 3}
 --- !u!114 &1354682319
 MonoBehaviour:
   m_ObjectHideFlags: 0

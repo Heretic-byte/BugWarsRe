@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e1c762adc61124aafc89f69af215a6, type: 3}
   m_Name: TestHeroRange
   m_EditorClassIdentifier: 
-  m_BaseHealth: 2500
+  m_BaseHealth: 1500
   m_BaseAttackSpeed: 0.6
   m_BaseDamage: 70
   m_BaseSpellAmplify: 1

@@ -255,26 +255,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8124340356359595650, guid: b71d749a78b5f7c41911b8931137b043,
-        type: 3}
-      propertyPath: _ForwardBar
-      value: 
-      objectReference: {fileID: 4692715535257011605}
-    - target: {fileID: 4692715535105736796, guid: b71d749a78b5f7c41911b8931137b043,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 4692715536262442561, guid: b71d749a78b5f7c41911b8931137b043,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 8124340354953382226, guid: b71d749a78b5f7c41911b8931137b043,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5882353
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71d749a78b5f7c41911b8931137b043, type: 3}
 --- !u!224 &4692715535952009839 stripped
@@ -283,18 +263,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 186435017}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4692715535257011605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4692715535105736796, guid: b71d749a78b5f7c41911b8931137b043,
-    type: 3}
-  m_PrefabInstance: {fileID: 186435017}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1777149696053078221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,30 +340,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1550233222414658641, guid: 399769bed3e046345aba655922690d77,
+    - target: {fileID: 3522883734780663208, guid: 399769bed3e046345aba655922690d77,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fd872c73542c0944b4f88be64062177,
+        type: 3}
+    - target: {fileID: 3522883734780663208, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.507331
       objectReference: {fileID: 0}
     - target: {fileID: 3522883734780663208, guid: 399769bed3e046345aba655922690d77,
         type: 3}
-      propertyPath: m_Color.a
+      propertyPath: m_Size.y
+      value: 4.9999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522883734780663208, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
         type: 3}
       propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
-        type: 3}
-      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
         type: 3}
@@ -409,8 +378,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
         type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
       propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471929986997981102, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: OnAttackKeyFrameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037657724493227745, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 1.4429227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037657724493227745, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.7019831
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037657724493227745, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 2.4967682
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037657724493227745, guid: 399769bed3e046345aba655922690d77,
+        type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 2.4575498
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 399769bed3e046345aba655922690d77, type: 3}

@@ -23,7 +23,8 @@ public class HeroLevelUp : MonoBehaviour
     public int myCurrentLevel { get; private set; } = 1;
     public UnityEvent myOnLevelUp { get => _OnLevelUp;  }
 
-    StatDataBase.StatValue myBonusStat= new StatDataBase.StatValue();
+    StatDataBase.StatValue myBonusStat;
+
     Vector3 _mybonusScale { get; set; }
      float myGrowRate { get => _GrowRate;  }
 
@@ -59,14 +60,9 @@ public class HeroLevelUp : MonoBehaviour
 
     void LevelUpStatPlus()
     {
-        myHero.myRealStat.BonusPlusHealth(myBonusStat.m_HealthBonus);
-        myHero.myRealStat.BonusPlusAttackSpeed(myBonusStat.m_AttackSpeedBonus);
-        myHero.myRealStat.BonusPlusDamage(myBonusStat.m_DamageBonus);
-        myHero.myRealStat.BonusPlusSpellAmplify(myBonusStat.m_SpellAmplifyBonus);
-        myHero.myRealStat.BonusPlusArmor(myBonusStat.m_ArmorBonus);
-        myHero.myRealStat.BonusPlusMagicArmor(myBonusStat.m_MagicArmorBonus);
-        myHero.myRealStat.BonusPlusManaReward(myBonusStat.m_ManaRewardBonus);
+       
         //
+        myHero.myRealStat.SetModifyStat(myBonusStat);
         myHero.myTrans.DOScale(myHero.myTrans.localScale + _mybonusScale,0.4f);
     }
 }

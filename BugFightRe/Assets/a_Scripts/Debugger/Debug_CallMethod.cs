@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 public class Debug_CallMethod : MonoBehaviour
 {
@@ -9,11 +10,22 @@ public class Debug_CallMethod : MonoBehaviour
 
     public int CheckUnitHash = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Font wantChangeFont;
+  
+    [ContextMenu("FindAndChangeFont")]
+    public void SetGlobalFont()
     {
+        var texts = Resources.FindObjectsOfTypeAll(typeof(Text));
+        Debug.Log("TEXTCOUNT:" + texts.Length);
 
+        for(int i=0; i<texts.Length;i++)
+        {
+            var TextReal = texts[i] as Text;
+            TextReal.font = wantChangeFont;
+        }
     }
+
 
     // Update is called once per frame
     void Update()

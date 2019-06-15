@@ -66,8 +66,8 @@ public class UnitHero : Unit, ICanBeStun
     private void Awake()
     {
         MainSetInstance();
-        
-        myRealStat.SetStat(myStat);
+
+        myRealStat = new StatDataBase.StatValue(myStat);
         
         SetHpToMax();
 

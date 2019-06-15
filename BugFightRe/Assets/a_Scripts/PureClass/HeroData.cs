@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public struct HeroData 
+[System.Serializable]
+public class HeroData 
 {
     //저장되는 실제 영웅데이터
     public int m_HeroLevel;
-    public HeroType m_HeroType;
     public int m_HeroRank;
     public int m_HeroIndex;
-
+    public bool m_Ihave;
+    public ItemSaveData m_ItemSaveData;//Maxis 6
  
     public string GetLevelText()
     {

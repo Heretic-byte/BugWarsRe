@@ -25,7 +25,7 @@ public abstract class DamageAble : MonoBehaviour
     protected bool _IsFacingRight = true;
     public bool myIsFacingRight { get => _IsFacingRight; set => _IsFacingRight = value; }
     public StatDataBase myStat { get => _stat; set => _stat = value; }
-    public StatDataBase.StatValue myRealStat { get; private set; } = new StatDataBase.StatValue();
+    public StatDataBase.StatValue myRealStat { get; protected set; }
     public ColliderDicSingletone myManagerColider { get => _managerColider; set => _managerColider = value; }
     public float GetCurrentHealth { get => _currentHealth; set => _currentHealth = value; }
     public Vector2 GetMyDir { get => myDir;  }

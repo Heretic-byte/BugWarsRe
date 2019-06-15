@@ -19,7 +19,7 @@ public class StatDataBase :ScriptableObject {
     public int m_BaseManaReward = 100;
 
     [System.Serializable]
-    public class StatValue
+    public struct StatValue
     {
         public float m_HealthBonus;
         public float m_AttackSpeedBonus;
@@ -32,9 +32,8 @@ public class StatDataBase :ScriptableObject {
         public float m_MovementBonus;
         public float m_AttackRangeBonus;
 
-        public void SetStat(StatDataBase myHeroStat)
+        public  StatValue(StatDataBase myHeroStat)
         {
-            
             m_HealthBonus = myHeroStat.m_BaseHealth;
 
             m_AttackSpeedBonus = myHeroStat.m_BaseAttackSpeed;
@@ -48,6 +47,32 @@ public class StatDataBase :ScriptableObject {
             m_AttackRangeBonus = myHeroStat.m_BaseAttackRange;
         }
 
+     
+
+        public void SetModifyStat(StatDataBase myHeroStat)
+        {
+            BonusPlusHealth(myHeroStat.m_BaseHealth);
+            BonusPlusAttackSpeed(myHeroStat.m_BaseAttackSpeed);
+            BonusPlusArmor(myHeroStat.m_BaseArmor);
+            BonusPlusAttackRange(myHeroStat.m_BaseAttackRange);
+            BonusPlusDamage(myHeroStat.m_BaseDamage);
+            BonusPlusMagicArmor(myHeroStat.m_BaseMagicArmor);
+            BonusPlusManaReward(myHeroStat.m_BaseManaReward);
+            BonusPlusMoveSpeed(myHeroStat.m_BaseMovementSpeed);
+            BonusPlusSpellAmplify(myHeroStat.m_BaseSpellAmplify);
+        }
+        public void SetModifyStat(StatValue myHeroStat)
+        {
+            BonusPlusHealth(myHeroStat.m_HealthBonus);
+            BonusPlusAttackSpeed(myHeroStat.m_AttackSpeedBonus);
+            BonusPlusArmor(myHeroStat.m_ArmorBonus);
+            BonusPlusAttackRange(myHeroStat.m_AttackRangeBonus);
+            BonusPlusDamage(myHeroStat.m_DamageBonus);
+            BonusPlusMagicArmor(myHeroStat.m_MagicArmorBonus);
+            BonusPlusManaReward(myHeroStat.m_ManaRewardBonus);
+            BonusPlusMoveSpeed(myHeroStat.m_MovementBonus);
+            BonusPlusSpellAmplify(myHeroStat.m_SpellAmplifyBonus);
+        }
         public void BonusPlusHealth(float v)
         {
             m_HealthBonus += v;

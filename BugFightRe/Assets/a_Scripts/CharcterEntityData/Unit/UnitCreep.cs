@@ -23,7 +23,7 @@ public class UnitCreep : Unit
         base.MainSetInstance();
         myManagerGame = GameManager.GetInstance;
 
-        myRealStat.SetStat(myStat);
+        myRealStat = new StatDataBase.StatValue(myStat);
 
 
     }

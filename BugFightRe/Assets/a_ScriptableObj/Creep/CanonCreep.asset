@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BaseHealth: 1500
   m_BaseAttackSpeed: 3
-  m_BaseDamage: 190
+  m_BaseDamage: 500
   m_BaseSpellAmplify: 1
   m_BaseArmor: 3
   m_BaseMagicArmor: 0

@@ -532,6 +532,9 @@ MonoBehaviour:
   _recallDelay: 3
   _recallCoolDown: 20
   _healTickValue: 200
+  _skillBtnArray:
+  - {fileID: 8730603701490505227}
+  - {fileID: 8730603700895653112}
 --- !u!1 &8730603700776854229
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,9 +719,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -78.668335, y: 0}
   m_SizeDelta: {x: 240, y: 80}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.1722152, y: 0.4999999}
 --- !u!114 &8730603701353627878
 MonoBehaviour:
   m_ObjectHideFlags: 0
