@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e1c762adc61124aafc89f69af215a6, type: 3}
   m_Name: LongSword
   m_EditorClassIdentifier: 
+  _desc: 
   m_BaseHealth: 0
-  m_BaseAttackSpeed: 15
+  m_BaseAttackSpeed: 0.12
   m_BaseDamage: 30
   m_BaseSpellAmplify: 0
   m_BaseArmor: 0

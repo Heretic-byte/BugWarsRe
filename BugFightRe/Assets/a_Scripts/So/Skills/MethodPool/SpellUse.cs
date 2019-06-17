@@ -114,7 +114,7 @@ namespace Skills
         {
             var FinalPower = m_SpellPower;
             var per = FinalPower / 100f;
-            ShowTargetEffect( caster);
+            ShowTargetEffect(target);
             FinalPower += (per * caster.GetSpellDamagePercent());
             target.GetHeal(FinalPower);
         }
@@ -167,7 +167,7 @@ namespace Skills
             }
         }
         //버프있어야함
-        void BuffDamage(DamageAble target, Unit caster)
+        public void BuffDamage(DamageAble target, Unit caster)
         {
             ShowCasterEffect( caster);
             ShowTargetEffect(target);
@@ -176,7 +176,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusMinusDamage(m_SpellPower); });
         }
 
-        void BuffMoveSpeed(DamageAble target, Unit caster)
+        public void BuffMoveSpeed(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -185,7 +185,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusMinusMoveSpeed(m_SpellPower); });
         }
 
-        void BuffAttackSpeed(DamageAble target, Unit caster)
+        public void BuffAttackSpeed(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -194,7 +194,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusMinusAttackSpeed(m_SpellPower); });
         }
 
-        void BuffArmor(DamageAble target, Unit caster)
+        public void BuffArmor(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -203,7 +203,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusMinusArmor(m_SpellPower); });
         }
         //debuff
-        void DeBuffDamage(DamageAble target, Unit caster)
+        public void DeBuffDamage(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -212,7 +212,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusPlusDamage(m_SpellPower); });
         }
 
-        void DeBuffMoveSpeed(DamageAble target, Unit caster)
+        public void DeBuffMoveSpeed(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -221,7 +221,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusPlusMoveSpeed(m_SpellPower); });
         }
 
-        void DeBuffAttackSpeed(DamageAble target, Unit caster)
+        public void DeBuffAttackSpeed(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);
@@ -230,7 +230,7 @@ namespace Skills
             SeqDeadTimer(m_Seq).OnComplete(delegate { target.myRealStat.BonusPlusAttackSpeed(m_SpellPower); });
         }
 
-        void DeBuffArmor(DamageAble target, Unit caster)
+        public void DeBuffArmor(DamageAble target, Unit caster)
         {
             ShowCasterEffect(caster);
             ShowTargetEffect(target);

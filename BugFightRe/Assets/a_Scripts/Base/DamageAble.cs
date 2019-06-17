@@ -69,7 +69,7 @@ public abstract class DamageAble : MonoBehaviour
         GetCurrentHealth = GetMaxHealth();
     }
 
-    public  void TakePhysicalDamage(float _damageTaken, Unit _attacker)
+    public virtual void TakePhysicalDamage(float _damageTaken, Unit _attacker)
     {
         myOnDamageBySomeone?.Invoke(_attacker,_damageTaken);
 
@@ -127,7 +127,9 @@ public abstract class DamageAble : MonoBehaviour
     public virtual void TakeKill()
     {
         myOnKillAction?.Invoke();
+
         
+
         myIsDead = true;
 
         myCollider2D.enabled = false;

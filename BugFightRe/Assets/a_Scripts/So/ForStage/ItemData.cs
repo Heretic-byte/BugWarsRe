@@ -17,15 +17,14 @@ public class ItemData : StageDataElement
     [Header("BaseStat")]
     public StatDataBase m_ItemStatGive;
 
-    public void SetStatBonus(StatDataBase.StatValue heroStatInstance)
+    public void EquipStatBonus(ref StatDataBase.StatValue heroStatInstance)
     {
         heroStatInstance.SetModifyStat(m_ItemStatGive);
     }
-
-
+    public void UnEquipStatBonus(ref StatDataBase.StatValue heroStatInstance)
+    {
+        heroStatInstance.SetUnModifyStat(m_ItemStatGive);
+    }
     //아이템자체의 부가효과는 어떻게하냐
     //퍼센트수치는?
-
-
-
 }

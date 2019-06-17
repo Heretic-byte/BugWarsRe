@@ -26,7 +26,7 @@ namespace Skills
             var Hitten = Physics2D.OverlapCircleAll(coord, m_Radius,m_WhatToHit);
 
             var Damageables = ColliderDicSingletone.GetInstance.GetDamageAbleArry(Hitten);
-
+            Debug.Log("Hitten:" + Damageables.Length);
             foreach (var AA in Damageables)
             {
                 m_EventDamageable?.Invoke(AA, hero);

@@ -241,6 +241,12 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
         foreach (var nexus in myCreepNexus)
         {
             nexus.myOnKillAction += DiscountLife;
+            nexus.myOnKillAction += delegate {
+                if (myStructLifeCount <= 0)
+                {
+                    GameManager.GetInstance.m_OverEffect.SetCamTarget(nexus.transform.position);
+                } };
+            
         }
     }
     void SetTowerKillDelgate()
@@ -248,8 +254,18 @@ public class SpawnTemple : MonoBehaviour, IgameEnd
         foreach (var twr in myTower)
         {
             twr.myOnKillAction += DiscountLife;
+            twr.myOnKillAction += delegate
+            {
+                if (myStructLifeCount <= 0)
+                {
+                    GameManager.GetInstance.m_OverEffect.SetCamTarget(twr.transform.position);
+                }
+
+            };
+
         }
     }
+
 
     void DiscountLife()
     {

@@ -8,8 +8,8 @@ public class HeroData
     public int m_HeroLevel;
     public int m_HeroRank;
     public int m_HeroIndex;
-    public bool m_Ihave;
-    public ItemSaveData m_ItemSaveData;//Maxis 6
+    public bool m_Ihave=false;
+    public ItemInstanceData[] m_ItemSaveData;//Maxis 6
  
     public string GetLevelText()
     {

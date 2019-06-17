@@ -21,6 +21,7 @@ public class IconShowUi : MonoBehaviour,IPointerClickHandler
 
     public void HideIcon()
     {
+        m_IconSlot.sprite = null;
         m_IconSlot.color = new Color(0, 0, 0, 0);
     }
 

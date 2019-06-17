@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CircleCastHeal
   m_EditorClassIdentifier: 
   m_Radius: 4
-  m_Dist: 1
+  m_Dist: 0.3
   m_EventDamageable:
     m_PersistentCalls:
       m_Calls:

@@ -49,8 +49,11 @@ public class HeroCreateManager : Singleton<HeroCreateManager>
                 HeroControlPanel.SetHero(CreatedHero, unitHero);
                 //
                 var HeroSkill = unitHero.GetComponent<HeroSkillUse>();
-                //버튼또한 컨트롤패널이 갖게 수정필요 0612
-                HeroSkill.CreateSkillUseButton(unitHero, HeroControlPanel.m_SkillBtnArray[0].gameObject);
+
+                
+                HeroSkill.CreateSkillUseButton(unitHero, HeroControlPanel.m_SkillBtnArray);
+
+                
             }
         }
     }

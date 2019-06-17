@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Tower : Unit
 {
+
+  
     public override float GetArmor()
     {
         return myStat.m_BaseArmor;
@@ -47,7 +50,11 @@ public class Tower : Unit
     {
         base.TakeKill();
         RemoveBehavTick();
-        myObj.SetActive(false);
+
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.SetDelay(myDeathDelay).OnComplete(delegate { myObj.SetActive(false); });
+        
     }
 
 

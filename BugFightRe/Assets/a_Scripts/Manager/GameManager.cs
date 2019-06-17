@@ -22,6 +22,9 @@ public class GameManager : Singleton<GameManager>
     UnityAction _onGameEnd;
     public UnityAction myOnGameEnd { get => _onGameEnd; set => _onGameEnd = value; }
 
+    [SerializeField]
+    GameOverEffect _overEffect;
+    public GameOverEffect m_OverEffect { get => _overEffect;}
 
     protected override void Awake()
     {
@@ -91,10 +94,12 @@ public class GameManager : Singleton<GameManager>
     }
     public void PlayerWinGame()
     {
+        m_OverEffect.GameOver("승리!");
         Debug.Log("Player Win");
     }
     public void EnemyWinGame()
     {
+        m_OverEffect.GameOver("패배!");
         Debug.Log("Enemy Win");
     }
 }

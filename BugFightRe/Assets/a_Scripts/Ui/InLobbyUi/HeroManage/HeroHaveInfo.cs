@@ -16,7 +16,7 @@ public class HeroHaveInfo : MonoBehaviour
     [SerializeField]
     StarShow _speedStarShow;
 
-    HeroInfo m_HeroInfo { get => _heroInfo; }
+    public HeroInfo m_HeroInfo { get => _heroInfo; }
     StarShow m_AttackStarShow { get => _attackStarShow; }
     StarShow m_DefenseStarShow { get => _defenseStarShow; }
     StarShow m_SpeedStarShow { get => _speedStarShow; }
@@ -34,27 +34,18 @@ public class HeroHaveInfo : MonoBehaviour
     public void OnStart()
     {
         m_HeroManage = HeroManager.GetInstance;
+        m_HeroInfo.OnEquipCallback(SetStar);
+        m_HeroInfo.OnUnEquipCallback(delegate { SetNullStar(); });
+        m_HeroInfo.OnUnEquipCallback(SetStar);
     }
 
     public void SetHeroHaveInfoPanel(HeroData heroData)
     {
-        //아이템띄우고
-        //영웅띄우고
-        //영웅스텟띄워야함
-
-        m_HeroInfo.SetHeroName(m_HeroManage.GetHeroName( heroData.m_HeroIndex));
-        m_HeroInfo.SetItemData(heroData.m_ItemSaveData);
         var HeroStatValue = m_HeroManage.GetHeroStatData(heroData.m_HeroIndex);
-
-
-        StatDataBase.StatValue statValue = new StatDataBase.StatValue(HeroStatValue);
-        SetItemStat(statValue, heroData);
-        SetStar(statValue);
-        //이것들은 또아이템 추가될때 콜백으로 불려야함
-
-        //영웅스킬띄워야함
-        //영웅레벨띄워야함
+        StatDataBase.StatValue HeroFinalStat = new StatDataBase.StatValue(HeroStatValue);//this is for just Ui
+        m_HeroInfo.SetHeroData(HeroFinalStat,heroData);
     }
+
     public void SetNullHaveInfo()
     {
         m_HeroInfo.SetNullHeroName();
@@ -67,19 +58,6 @@ public class HeroHaveInfo : MonoBehaviour
         m_AttackStarShow.SetEmptyStarSequence(5);
         m_DefenseStarShow.SetEmptyStarSequence(5);
         m_SpeedStarShow.SetEmptyStarSequence(5);
-    }
-
-    void SetItemStat(StatDataBase.StatValue HeroStatValue, HeroData heroData)
-    {
-        ItemManager itemManager = ItemManager.GetInstance;
-        for (int i = 0; i < heroData.m_ItemSaveData.m_ItemIndex.Length; i++)
-        {
-            var result = itemManager.GetItemData(heroData.m_ItemSaveData.m_ItemIndex[i]);
-            if (result != null)
-            {
-                HeroStatValue.SetModifyStat(result.m_ItemStatGive);
-            }
-        }
     }
 
     void SetStar(StatDataBase.StatValue HeroStatValue)
@@ -97,10 +75,7 @@ public class HeroHaveInfo : MonoBehaviour
         float StarPercent1 = statValue.m_DamageBonus / StarDamageRatio;
         float StarPercent2 = statValue.m_AttackSpeedBonus / StarAttackSpeedRatio;
         float StarPercent3 = statValue.m_AttackRangeBonus / StarAttackRange;
-        Debug.Log("Damage:" + StarPercent1);
-        Debug.Log("Speed:" + StarPercent2);
-        Debug.Log("Range:" + StarPercent3);
-        Debug.Log("Total /2 :" + (int)((StarPercent1 + StarPercent2+StarPercent3)/3f));
+       
         return (int)((StarPercent1 + StarPercent2 + StarPercent3) / 3f);
     }
 

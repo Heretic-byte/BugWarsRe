@@ -5,14 +5,17 @@ using UnityEngine;
 public class HeroSkillUse : MonoBehaviour
 {
     [SerializeField]
-    SkillBase _Skill;
-    public SkillBase m_Skill { get => _Skill; }
+    SkillBase[] _Skill;
+    public SkillBase[] m_Skill { get => _Skill; }
     UnitHero m_UnitHero { get; set; }
 
-    public void CreateSkillUseButton(UnitHero skillUseHero,GameObject targetObj)
+    public void CreateSkillUseButton(UnitHero skillUseHero,Transform[] targetObj)
     {
         m_UnitHero = skillUseHero;
       
-        m_Skill.CreateSkillButton(skillUseHero,targetObj);
+        for(int i=0; i< m_Skill.Length;i++)
+        {
+        m_Skill[i].CreateSkillButton(skillUseHero, targetObj[i].gameObject);
+        }
     }
 }

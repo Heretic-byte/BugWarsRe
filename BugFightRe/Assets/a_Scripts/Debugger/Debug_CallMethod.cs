@@ -25,11 +25,18 @@ public class Debug_CallMethod : MonoBehaviour
             TextReal.font = wantChangeFont;
         }
     }
-
+    public UnityEvent asd;
 
     // Update is called once per frame
     void Update()
     {
+        asd?.Invoke();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
        foreach(var DebugMethod in debugDataMethods)
         {
             DebugMethod.InvokeMyMethod();

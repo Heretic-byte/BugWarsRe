@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpellPower: 30
   m_SpellDuration: 10
-  m_SpellTick: 1
-  m_TargetSkillEffect: {fileID: 0}
+  m_SpellTick: 0
+  m_TargetSkillEffect: {fileID: 1758803709462083835, guid: 71514e1140712024abea2d0b745ae388,
+    type: 3}
   m_TargetEffectOffset: {x: 0, y: 0, z: 0}
-  m_CasterSkillEffect: {fileID: 0}
-  m_CasterEffectOffset: {x: 0, y: 0, z: 0}
+  m_CasterSkillEffect: {fileID: 4479963796760717784, guid: b5e31bd4994e8df4697967d8f1b0f276,
+    type: 3}
+  m_CasterEffectOffset: {x: 0, y: 0.1, z: 0}

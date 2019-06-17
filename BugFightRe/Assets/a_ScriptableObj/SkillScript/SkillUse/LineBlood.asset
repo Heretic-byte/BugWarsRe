@@ -16,4 +16,6 @@ MonoBehaviour:
   m_SpellDuration: 0
   m_SpellTick: 0
   m_TargetSkillEffect: {fileID: 144926, guid: fcb242a204cb73e46bb764583d0bf1fa, type: 3}
-  m_CasterSkillEffect: {fileID: 130730, guid: 640ef30391bac3645a1cb5d8a5d8cf77, type: 3}
+  m_TargetEffectOffset: {x: 0, y: 0.2, z: 0}
+  m_CasterSkillEffect: {fileID: 186274, guid: bf180fb3ea7ee6849ae8893ae05aca86, type: 3}
+  m_CasterEffectOffset: {x: 0, y: 1, z: 0}

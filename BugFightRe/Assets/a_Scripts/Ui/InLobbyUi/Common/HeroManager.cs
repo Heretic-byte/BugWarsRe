@@ -23,7 +23,7 @@ namespace HeroSelectUI
 
         [SerializeField]
         HeroSelectedBtnUi[] _heroSelectedBtnUis;
-        HeroSelectedBtnUi[] m_HeroSelectedBtnUis { get => _heroSelectedBtnUis; }
+        public HeroSelectedBtnUi[] m_HeroSelectedBtnUis { get => _heroSelectedBtnUis; }
 
         [SerializeField]
         HeroUiInfoData[] _heroUiInfoDatas;
@@ -31,12 +31,20 @@ namespace HeroSelectUI
 
         [SerializeField]
         HeroHaveInfo _heroHaveInfo;
-        HeroHaveInfo m_HeroHaveInfo { get => _heroHaveInfo; }
+        public HeroHaveInfo m_HeroHaveInfo { get => _heroHaveInfo; }
+
+        [SerializeField]
+        HeroPortraitManager _heroPortraitManager;
+        public HeroPortraitManager m_HeroPortraitManager { get => _heroPortraitManager; }
 
         [Header("Test its SaveData")]//Current SaveData
         [SerializeField]
         private HeroSaveData heroSaveData;
         public HeroSaveData m_HeroSaveData { get => heroSaveData; }
+
+        [ColorUsage(true)]
+        public Color m_HideColor;
+
         [ContextMenu("SaveHeroData")]
         public void Save()
         {
@@ -61,33 +69,34 @@ namespace HeroSelectUI
             int myHaveHero = heroLoadData.m_MyHaveHero.Count;
             int myNotHaveHero = heroLoadData.m_MyNotHaveHero.Count;
 
+            CreateHeroModel();
+
             for (int i = 0; i < myHaveHero; i++)
             {
-                CreateMyHeroUi(heroLoadData.m_MyHaveHero.First.Value);
+                var heroFirstData = heroLoadData.m_MyHaveHero.First.Value;
+                CreateMyHeroUi(heroFirstData);
                 heroLoadData.m_MyHaveHero.RemoveFirst();
-                CreateHeroModel();
             }
 
             for (int j = 0; j < myNotHaveHero; j++)
             {
-                CreateManageNotHaveHeroSlotUi(heroLoadData.m_MyHaveHero.First.Value);
+                var heroFirstData = heroLoadData.m_MyNotHaveHero.First.Value;
+                CreateManageNotHaveHeroSlotUi(heroFirstData);
                 heroLoadData.m_MyNotHaveHero.RemoveFirst();
-                CreateHeroModel();
             }
         }
 
         private void CreateHeroModel()
         {
-
+            for(int i=0; i< m_HeroUiInfoDatas.Length;i++)
+            m_HeroPortraitManager.CreateHeroModel(i);
         }
-
-
-        //
 
         public void SetHaveInfoPanel(HeroData heroData)
         {
             m_HeroHaveInfo.transform.parent.gameObject.SetActive(true);
             m_HeroHaveInfo.SetHeroHaveInfoPanel(heroData);
+            m_HeroPortraitManager.MoveCamera(heroData.m_HeroIndex);
         }
 
         public string GetHeroName(int index)
@@ -118,9 +127,9 @@ namespace HeroSelectUI
 
         }
 
-        HeroSelectSlotUi CreateHeroSelectSlotUi(HeroData heroData)
+        HeroSelectSlotUi CreateHeroSelectSlotUi(HeroData heroData,Transform parentTrans)
         {
-            var Obj = Instantiate(m_HeroSlotUiPrefab, m_HeroSelectSlotParentGrid)
+            var Obj = Instantiate(m_HeroSlotUiPrefab, parentTrans)
                    .GetComponent<HeroSelectSlotUi>();
             Obj.SetHeroData(heroData);
 
@@ -129,19 +138,19 @@ namespace HeroSelectUI
 
         void CreateStageHeroSlotUi(HeroData heroData)
         {
-            var Obj = CreateHeroSelectSlotUi(heroData);
+            var Obj = CreateHeroSelectSlotUi(heroData,m_HeroSelectSlotParentGrid);
             Obj.SetSlotDelegate();
         }
 
         void CreateManageMyHaveHeroSlotUi(HeroData heroData)
         {
-            var ManageObj = CreateHeroSelectSlotUi(heroData);
+            var ManageObj = CreateHeroSelectSlotUi(heroData, m_HeroManageSlotParentGrid);
             ManageObj.SetManageSlotHaveDelegate();
         }
 
         void CreateManageNotHaveHeroSlotUi(HeroData heroData)
         {
-            var NotHaveManageObj = CreateHeroSelectSlotUi(heroData);
+            var NotHaveManageObj = CreateHeroSelectSlotUi(heroData,m_HeroManageSlotParentGrid);
             NotHaveManageObj.SetManageSlotNotHaveDelegate();
         }
 
@@ -227,12 +236,17 @@ namespace HeroSelectUI
 
             return HeroSelectedObj;
         }
+      
+
 
         void SetSelectHeroForCreateHero()
         {
             //call this before stage entrance
-            PlayerManager.GetInstance.SetSelectHero(GetSelectedHeroPrefabObj());
+            var selectedHero = GetSelectedHeroPrefabObj();
+            PlayerManager.GetInstance.SetSelectHero(selectedHero);
+
         }
+
         public void MoveToStage(int index)
         {
             SetSelectHeroForCreateHero();
@@ -280,6 +294,14 @@ namespace HeroSelectUI
         }
         public void SaveData()
         {
+            for(int i=0; i< m_TotalHeroDatas.Length;i++)
+            {
+                foreach (var AA in m_TotalHeroDatas[i].m_ItemSaveData)
+                {
+                    AA.SetNullDelegate();
+                }
+            }
+
             SaveLoadManager.Save(m_TotalHeroDatas, "MyHeroData");
         }
 

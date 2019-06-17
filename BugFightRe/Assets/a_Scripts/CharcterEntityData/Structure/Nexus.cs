@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.UI;
 public class Nexus : Unit,IlinePosHolder
 {
@@ -16,6 +17,8 @@ public class Nexus : Unit,IlinePosHolder
     //0.145//0.1 //-0.3
     //0.145//0.2 //-0.3
     private int _mySpawnCount = 0;
+
+    public Animator m_Anim;
 
     public override float GetArmor()
     {
@@ -57,7 +60,16 @@ public class Nexus : Unit,IlinePosHolder
     public override void TakeKill()
     {
         base.TakeKill();
-        myObj.SetActive(false);
+        m_Anim.SetTrigger("GetKill");
+        Sequence sequence = DOTween.Sequence();
+        sequence.SetDelay(myDeathDelay).OnComplete(delegate { myObj.SetActive(false); });
+
+        
+    }
+    public override void TakePhysicalDamage(float _damageTaken, Unit _attacker)
+    {
+        m_Anim.SetTrigger("GetDamage");
+        base.TakePhysicalDamage(_damageTaken, _attacker);
     }
 
     public Vector3 GetSpawnPos()

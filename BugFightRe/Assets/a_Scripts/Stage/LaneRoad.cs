@@ -35,7 +35,7 @@ public class LaneRoad : MonoBehaviour
         {
             _fadeTweener.Complete();
         }
-         _fadeTweener = mySRenderer.DOFade(1, 0.4f);
+         _fadeTweener = mySRenderer.DOFade(0.6f, 0.4f);
     }
     public void HideFeedBackLaneRoad()
     {

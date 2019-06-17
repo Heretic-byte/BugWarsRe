@@ -19,9 +19,6 @@ public class StarShow : MonoBehaviour
 
     public void SetStarSequence(int starCount)
     {
-        Debug.Log("starCount:" + starCount);
-
-       
         for (int i=0; i < starCount;i++)
         {
             SetStar(i+1);
@@ -30,7 +27,6 @@ public class StarShow : MonoBehaviour
 
     public void SetStar(int index)
     {
-        Debug.Log("index" + index);
         if(index<1)
         {
             index = 1;

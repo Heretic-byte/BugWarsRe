@@ -20,6 +20,9 @@ public class GridSizeControl : MonoBehaviour
 
     public void SetGrid()
     {
+        if(rectTransform==null)
+            rectTransform = GetComponent<RectTransform>();
+
         int childCount = rectTransform.childCount;
 
         var rect= rectTransform.rect;
@@ -34,8 +37,4 @@ public class GridSizeControl : MonoBehaviour
 
         Debug.Log("Height:" + rect.size);
     }
-
-
-
-
 }

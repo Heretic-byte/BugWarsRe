@@ -17,6 +17,8 @@ public class ClickSkillButton : MonoBehaviour, IPointerClickHandler
 
     ubHeroAnimDelegate m_UnitHeroAnim { get; set; }
 
+    Image m_MainIcon { get; set; }
+    Text m_ManaCostText { get; set; }
 
     public void SetInstance(UnitHero unitHero,SkillBase skillBase)
     {
@@ -25,6 +27,13 @@ public class ClickSkillButton : MonoBehaviour, IPointerClickHandler
         m_Skill = skillBase;
 
         m_CdImage = transform.GetChild(1).GetComponent<Image>();
+        //
+        m_MainIcon = GetComponent<Image>();
+        m_MainIcon.sprite = skillBase.m_SkillIcon;
+        //
+        m_ManaCostText = GetComponentInChildren<Text>();
+        m_ManaCostText.text = ":"+skillBase.m_ManaCost.ToString();
+
 
         m_UnitHeroAnim = m_UnitHero.GetComponent<ubHeroAnimDelegate>();
 

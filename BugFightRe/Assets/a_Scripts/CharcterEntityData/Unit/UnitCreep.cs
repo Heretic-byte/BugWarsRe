@@ -12,18 +12,19 @@ public class UnitCreep : Unit
   
     private void Awake()
     {
+        myRealStat = new StatDataBase.StatValue(myStat);
         
         MainSetInstance();
         
         SetDir();
-       
+
     }
     protected override void MainSetInstance()
     {
         base.MainSetInstance();
         myManagerGame = GameManager.GetInstance;
 
-        myRealStat = new StatDataBase.StatValue(myStat);
+       
 
 
     }

@@ -21,7 +21,8 @@ public class UnitHero : Unit, ICanBeStun
 
     [SerializeField]
     private UnityEvent _OnRecallEvent;
-
+    [SerializeField]
+    private UnityEvent _OnRecallCompleteEvent;
     [SerializeField]
     private float _respawnTime = 10f;
      float myRespawnTime { get => _respawnTime; }
@@ -37,6 +38,7 @@ public class UnitHero : Unit, ICanBeStun
     Sequence _RecallSequence { get; set; }
     public int GetCurrentLaneNumber { get; private set; } = 0;
     public UnityAction myOnRespawn { get; set; }
+    public UnityEvent myOnRecallCompleteEvent { get => _OnRecallCompleteEvent;  }
     #region GetStat
     public override float GetArmor()
     {
@@ -65,9 +67,9 @@ public class UnitHero : Unit, ICanBeStun
     #endregion
     private void Awake()
     {
+        myRealStat = new StatDataBase.StatValue(myStat);
         MainSetInstance();
 
-        myRealStat = new StatDataBase.StatValue(myStat);
         
         SetHpToMax();
 
@@ -78,6 +80,14 @@ public class UnitHero : Unit, ICanBeStun
         myCurrentRespawnTime = myRespawnTime;
 
         myOnRecall += SetCurrentLaneNumberNull;
+    }
+    public void AddStatValue(StatDataBase statDataBase)
+    {
+        myRealStat.SetModifyStat(statDataBase);
+    }
+    public void AddStatValue(StatDataBase.StatValue statDataBaseValue)
+    {
+        myRealStat.SetModifyStat(statDataBaseValue);
     }
     public void SetCurrentLaneNumber(int battleFieldLane)
     {
@@ -116,7 +126,8 @@ public class UnitHero : Unit, ICanBeStun
             .AppendCallback(
             delegate
             {
-                myOnRecallComplete?.Invoke();
+                myOnRecallCompleteEvent?.Invoke();
+                   myOnRecallComplete?.Invoke();
                 myTrans.position = myStartTemplePos;
                 _myIsHeroInLine = false;
             });

@@ -6,6 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Stat", menuName = "StatDataBase")]
 public class StatDataBase :ScriptableObject {
 
+    [SerializeField]
+    [TextArea]
+    string _desc;
+    public string m_Description { get => _desc; }
+
     [Header("BaseStats")]
     public float m_BaseHealth = 800; 
     public float m_BaseAttackSpeed =1;
@@ -17,6 +22,21 @@ public class StatDataBase :ScriptableObject {
     public float m_BaseAttackRange = 5f;
     //public float m_BaseAllyBlockRange = 5f;
     public int m_BaseManaReward = 100;
+
+    public string GetStatString()
+    {
+        return 
+            "공격력: " + m_BaseDamage + "\n\r" +
+            "공격속도: " + m_BaseAttackSpeed + "\n\r"+
+            "사거리: " + m_BaseAttackRange + "\n\r" +
+            "주문력: " + m_BaseSpellAmplify + "\n\r" +
+            "체력:"+m_BaseHealth+"\n\r"+
+            "물리방어: " + m_BaseArmor + "\n\r" +
+            "마법방어: " + m_BaseMagicArmor + "\n\r" +
+            "이동속도: " + m_BaseMovementSpeed + "\n\r" +
+            "마나보상: " + m_BaseManaReward + "\n\r"
+            ;
+    }
 
     [System.Serializable]
     public struct StatValue
@@ -31,6 +51,21 @@ public class StatDataBase :ScriptableObject {
         //
         public float m_MovementBonus;
         public float m_AttackRangeBonus;
+
+        public string GetStatString()
+        {
+            return
+                "공격력: " + m_DamageBonus + "\n\r" +
+                "공격속도: " + m_AttackSpeedBonus + "\n\r" +
+                "사거리: " + m_AttackRangeBonus + "\n\r" +
+                "주문력: " + m_SpellAmplifyBonus + "\n\r" +
+                "체력: " + m_HealthBonus + "\n\r" +
+                "물리방어: " + m_ArmorBonus + "\n\r" +
+                "마법방어: " + m_MagicArmorBonus + "\n\r" +
+                "이동속도: " + m_MovementBonus + "\n\r" +
+                "마나보상: " + m_ManaRewardBonus + "\n\r"
+                ;
+        }
 
         public  StatValue(StatDataBase myHeroStat)
         {
@@ -72,6 +107,30 @@ public class StatDataBase :ScriptableObject {
             BonusPlusManaReward(myHeroStat.m_ManaRewardBonus);
             BonusPlusMoveSpeed(myHeroStat.m_MovementBonus);
             BonusPlusSpellAmplify(myHeroStat.m_SpellAmplifyBonus);
+        }
+        public void SetUnModifyStat(StatDataBase myHeroStat)
+        {
+            BonusMinusHealth(myHeroStat.m_BaseHealth);
+            BonusMinusAttackSpeed(myHeroStat.m_BaseAttackSpeed);
+            BonusMinusArmor(myHeroStat.m_BaseArmor);
+            BonusMinusAttackRange(myHeroStat.m_BaseAttackRange);
+            BonusMinusDamage(myHeroStat.m_BaseDamage);
+            BonusMinusMagicArmor(myHeroStat.m_BaseMagicArmor);
+            BonusMinusManaReward(myHeroStat.m_BaseManaReward);
+            BonusMinusMoveSpeed(myHeroStat.m_BaseMovementSpeed);
+            BonusMinusSpellAmplify(myHeroStat.m_BaseSpellAmplify);
+        }
+        public void SetUnModifyStat(StatValue myHeroStat)
+        {
+            BonusMinusHealth(myHeroStat.m_HealthBonus);
+            BonusMinusAttackSpeed(myHeroStat.m_AttackSpeedBonus);
+            BonusMinusArmor(myHeroStat.m_ArmorBonus);
+            BonusMinusAttackRange(myHeroStat.m_AttackRangeBonus);
+            BonusMinusDamage(myHeroStat.m_DamageBonus);
+            BonusMinusMagicArmor(myHeroStat.m_MagicArmorBonus);
+            BonusMinusManaReward(myHeroStat.m_ManaRewardBonus);
+            BonusMinusMoveSpeed(myHeroStat.m_MovementBonus);
+            BonusMinusSpellAmplify(myHeroStat.m_SpellAmplifyBonus);
         }
         public void BonusPlusHealth(float v)
         {

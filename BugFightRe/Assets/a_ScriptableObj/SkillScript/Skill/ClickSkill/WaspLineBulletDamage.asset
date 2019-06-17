@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfe45b870a16e947bc016992aa3fbaf, type: 3}
   m_Name: WaspLineBulletDamage
   m_EditorClassIdentifier: 
+  m_SkillName: "\uC9C1\uC120 \uCD1D\uC54C \uBC1C\uC0AC"
+  m_SkillDesc: "\uC601\uC6C5\uC774 \uC790\uC2E0\uC758 \uC804\uBC29\uC73C\uB85C \uAD00\uD1B5\uD0C4\uD658\uC744
+    \uBC1C\uC0AC\uD569\uB2C8\uB2E4,\n"
   m_ManaCost: 0
-  m_CoolDown: 5
+  m_CoolDown: 1
+  m_SkillIcon: {fileID: 21300000, guid: 3fde5efb22fcd6843a634b5d59e06b9e, type: 3}
   _OnBeginClick:
   - m_EventVector3Hero:
       m_PersistentCalls:

@@ -18,4 +18,5 @@ public class mySceneManager : Singleton<mySceneManager>
     {
         SceneManager.LoadScene(index);
     }
+
 }

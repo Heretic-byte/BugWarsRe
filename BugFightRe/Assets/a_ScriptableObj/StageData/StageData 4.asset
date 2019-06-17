@@ -16,7 +16,12 @@ MonoBehaviour:
   _stageIndex: 5
   _stageName: "\uD1B5\uB098\uBB34\uC232"
   _enemyHeroDatas: []
-  _enemyDatas: []
+  _enemyDatas:
+  - {fileID: 11400000, guid: eea0c668efbeeef4da0bae7eda9d5788, type: 2}
+  - {fileID: 11400000, guid: 7f9c077574d1e814986ca8b295d28ef5, type: 2}
   _itemDatas: []
   _prizeItemDatas: []
-  _questDatas: []
+  _questDatas:
+  - {fileID: 11400000, guid: b1084550a8ba6f84cbdfd59c6b45500d, type: 2}
+  - {fileID: 11400000, guid: a2b07320e3008054f95c781fe5bade96, type: 2}
+  - {fileID: 11400000, guid: 2e25494a145454d49b93135b2321a9fe, type: 2}
