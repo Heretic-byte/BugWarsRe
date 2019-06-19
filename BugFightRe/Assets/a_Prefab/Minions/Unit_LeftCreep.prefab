@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1683881927}
   - component: {fileID: 2798371727099472048}
   m_Layer: 8
-  m_Name: LeftCreep
+  m_Name: Unit_LeftCreep
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

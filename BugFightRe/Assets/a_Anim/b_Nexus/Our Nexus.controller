@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 65f731f9bf3fc2e42a005a1967546f64, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9c9272098aa576b4d821e726d442ffe6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -109,7 +109,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: E Nexus unity
+  m_Name: Our Nexus
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: GetDamage
@@ -183,7 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5f6198aba1e18d04e8a464bf3ebc084c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 365fc7083b7901348a98c6d912234355, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

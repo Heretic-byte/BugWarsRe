@@ -370,7 +370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b6d4db408fbfb174b8bddc7c71af850d, type: 2}
+      objectReference: {fileID: 9100000, guid: e7c8cfda7abe55444b7da04e87fba24d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2caaa0f27255a8c46adf9c5d499f6c01, type: 3}
 --- !u!1 &1360225457769736049 stripped
@@ -447,7 +447,7 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0.7609
       objectReference: {fileID: 0}
-    - target: {fileID: 3417721072820536626, guid: 87f55d1788c510c439ba3aea676bacf0,
+    - target: {fileID: 3417721073532340743, guid: 87f55d1788c510c439ba3aea676bacf0,
         type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
@@ -457,7 +457,7 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.5882353
       objectReference: {fileID: 0}
-    - target: {fileID: 3417721073532340743, guid: 87f55d1788c510c439ba3aea676bacf0,
+    - target: {fileID: 3417721072820536626, guid: 87f55d1788c510c439ba3aea676bacf0,
         type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
